@@ -415,25 +415,10 @@ tr:hover td{background:#1c2128;}
 
 <script>
 // ════════════════════════════════════════════════
-// CONFIG — JSONBin.io
+// CONFIG
 // ════════════════════════════════════════════════
-const BIN_URL = 'https://api.jsonbin.io/v3/b/69fd7d3dadc21f119a6d9bbb';
-const BIN_KEY = '$2a$10$56D59qyPrDrzOow5UZYebOTFPtR5ehBZnYlJ8J45t3WgTY9p0UYMK';
-const LS_PWD  = 'khtn_pwd';
-
-async function apiCall(method, body) {
-  const opts = {
-    method,
-    headers: { 'Content-Type': 'application/json', 'X-Master-Key': BIN_KEY, 'X-Bin-Versioning': 'false' }
-  };
-  if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(BIN_URL, opts);
-  const data = await res.json();
-  return data.record || data;
-}
-
-async function dbGet()  { return await apiCall('GET'); }
-async function dbSet(d) { return await apiCall('PUT', d); }
+const API = 'https://script.google.com/macros/s/AKfycby-cYGRWvgNmYa9rrf7n_MPFKEChoynrrk1SyV8xa2TnuJy4WHvY29XbyRL7F8ui6kj/exec';
+const LS_PWD = 'khtn_pwd';
 
 // ════════════════════════════════════════════════
 // STATE
@@ -450,10 +435,29 @@ let cheatCount = 0;
 // ════════════════════════════════════════════════
 // API HELPERS
 // ════════════════════════════════════════════════
+// Các action ghi dữ liệu → dùng POST (tránh giới hạn URL + CORS)
+const POST_ACTIONS = ['setConfig','submitResult','submitCheat','deactivate'];
+
 async function apiCall(params) {
-  const url = API + '?' + new URLSearchParams(params).toString();
-  const res = await fetch(url);
-  return await res.json();
+  const action = params.action || '';
+
+  if (POST_ACTIONS.includes(action)) {
+    // POST: gửi JSON body, Apps Script nhận qua doPost(e)
+    const res = await fetch(API, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // tránh preflight CORS
+      body: JSON.stringify(params)
+    });
+    const txt = await res.text();
+    try { return JSON.parse(txt); } catch { return { ok: true }; }
+  } else {
+    // GET: chỉ dùng cho read (getConfig, getResults)
+    const url = API + '?' + new URLSearchParams(params).toString();
+    const res = await fetch(url, { redirect: 'follow' });
+    const txt = await res.text();
+    try { return JSON.parse(txt); } catch { return {}; }
+  }
 }
 
 function showLoading(txt='Đang xử lý...') {
@@ -518,10 +522,10 @@ function copyLink() {
 async function checkQuizStatus() {
   showLoading('Đang kiểm tra bài kiểm tra...');
   try {
-    const db = await dbGet();
+    const data = await apiCall({ action: 'getConfig' });
     hideLoading();
-    if (db.active && db.config) {
-      quizConfig = JSON.parse(db.config);
+    if (data.active && data.config) {
+      quizConfig = JSON.parse(data.config);
       document.getElementById('noQuizCard').style.display = 'none';
       document.getElementById('quizReadyCard').style.display = 'block';
       document.getElementById('bannerTitle').textContent = quizConfig.title;
@@ -553,9 +557,9 @@ async function sLogin() {
   // Kiểm tra đã nộp chưa
   showLoading('Đang kiểm tra...');
   try {
-    const db = await dbGet();
+    const data = await apiCall({ action: 'getResults' });
     hideLoading();
-    const submitted = db.results && db.results.find(r => r.name === match);
+    const submitted = data.results && data.results.find(r => r.name === match);
     if (submitted) { err.textContent = '⚠️ Em đã nộp bài rồi! Mỗi học sinh chỉ làm 1 lần.'; err.style.display = 'block'; return; }
   } catch(e) { hideLoading(); }
 
@@ -623,19 +627,10 @@ async function saveResult() {
   const now = new Date();
   const timeStr = `${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
 
-  showLoading('Đang gửi kết quả...');
+  showLoading('Đang gửi kết quả lên Google Sheets...');
   try {
-    const db = await dbGet();
-    if (!db.results) db.results = [];
-    if (!db.cheats) db.cheats = [];
-    const idx = db.results.findIndex(r => r.name === currentStudent);
-    const rec = {name:currentStudent, score, correct:ok, wrong:curQs.length-ok, elapsed, timeStr, submitted:true};
-    if (idx>=0) db.results[idx] = rec; else db.results.push(rec);
-    if (cheatCount > 0) {
-      const ci = db.cheats.findIndex(c => c.name === currentStudent);
-      if (ci>=0) db.cheats[ci].count = cheatCount; else db.cheats.push({name:currentStudent, count:cheatCount});
-    }
-    await dbSet(db);
+    await apiCall({ action:'submitResult', name:currentStudent, score, correct:ok, wrong:curQs.length-ok, elapsed, timeStr });
+    if (cheatCount > 0) await apiCall({ action:'submitCheat', name:currentStudent, count:cheatCount });
   } catch(e) {}
   hideLoading();
 
@@ -722,12 +717,7 @@ async function tActivate() {
 
   showLoading('Đang kích hoạt bài kiểm tra...');
   try {
-    const db = await dbGet();
-    db.active = true;
-    db.config = JSON.stringify(config);
-    db.results = [];
-    db.cheats = [];
-    await dbSet(db);
+    await apiCall({ action:'setConfig', config: JSON.stringify(config) });
     hideLoading();
     quizConfig = config;
     alert(`✅ Đã kích hoạt thành công!\n👥 ${students.length} học sinh\n❓ ${actualNum} câu\n⏱ ${timeMin} phút\n\n📤 Copy link ở trên gửi cho học sinh qua Zalo là xong!`);
@@ -735,7 +725,7 @@ async function tActivate() {
     startDashAutoRefresh();
   } catch(e) {
     hideLoading();
-    alert('❌ Lỗi kết nối JSONBin. Kiểm tra lại API Key!');
+    alert('❌ Lỗi kết nối Google Sheets. Kiểm tra lại Apps Script!');
   }
 }
 
@@ -743,9 +733,7 @@ async function deactivateQuiz() {
   if (!confirm('⏹ Kết thúc bài kiểm tra? Học sinh sẽ không làm được nữa.')) return;
   showLoading('Đang kết thúc bài...');
   try {
-    const db = await dbGet();
-    db.active = false;
-    await dbSet(db);
+    await apiCall({ action: 'deactivate' });
     hideLoading();
     alert('✅ Đã kết thúc bài kiểm tra!');
     refreshDash();
@@ -766,11 +754,11 @@ async function refreshDash() {
   const all = quizConfig.students;
 
   try {
-    const db = await dbGet();
+    const data = await apiCall({ action: 'getResults' });
     const submittedMap = {};
-    (db.results||[]).forEach(r => { submittedMap[r.name] = r; });
+    (data.results||[]).forEach(r => { submittedMap[r.name] = r; });
     const cheatMap = {};
-    (db.cheats||[]).forEach(c => { cheatMap[c.name] = c.count; });
+    (data.cheats||[]).forEach(c => { cheatMap[c.name] = c.count; });
 
     const done   = all.filter(s => submittedMap[s]);
     const absent = all.filter(s => !submittedMap[s]);
@@ -935,12 +923,7 @@ document.addEventListener('visibilitychange',()=>{
     cheatCount++;
     document.getElementById('acOverlay').style.display='flex';
     // Gửi cảnh báo lên server ngay
-    dbGet().then(db=>{
-      if(!db.cheats)db.cheats=[];
-      const ci=db.cheats.findIndex(c=>c.name===currentStudent);
-      if(ci>=0)db.cheats[ci].count=cheatCount;else db.cheats.push({name:currentStudent,count:cheatCount});
-      dbSet(db);
-    }).catch(()=>{});
+    apiCall({action:'submitCheat',name:currentStudent,count:cheatCount}).catch(()=>{});
   }
 });
 document.addEventListener('contextmenu',e=>{if(document.getElementById('sQuiz').classList.contains('active'))e.preventDefault();});
