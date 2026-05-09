@@ -206,8 +206,10 @@ tr:hover td{background:#1c2128;}
       <div style="font-weight:800;font-size:.98rem;margin-bottom:2px" id="bannerTitle"></div>
       <div style="color:var(--muted);font-size:.83rem" id="bannerMeta"></div>
     </div>
-    <label>Họ và tên của em</label>
-    <input type="text" id="sName" placeholder="Nhập đúng tên trong danh sách lớp..." onkeydown="if(event.key==='Enter')sLogin()"/>
+    <label>👤 Em chọn tên của mình</label>
+    <select id="sName" style="width:100%;background:#0d1117;border:1.5px solid var(--border);border-radius:10px;padding:10px 13px;color:var(--text);font-family:'Nunito',sans-serif;font-size:.95rem;margin-bottom:12px;cursor:pointer">
+      <option value="">-- Chọn tên của em --</option>
+    </select>
     <button class="btn btn-primary" onclick="sLogin()">🚀 Bắt đầu làm bài</button>
     <div id="sLoginErr" style="color:var(--red);margin-top:9px;font-size:.84rem;display:none"></div>
   </div>
@@ -417,7 +419,7 @@ tr:hover td{background:#1c2128;}
 // ════════════════════════════════════════════════
 // CONFIG
 // ════════════════════════════════════════════════
-const API = 'https://script.google.com/macros/s/AKfycby-cYGRWvgNmYa9rrf7n_MPFKEChoynrrk1SyV8xa2TnuJy4WHvY29XbyRL7F8ui6kj/exec';
+const API = 'https://script.google.com/macros/s/AKfycbxwoLjgbwpLt_xV_CMwzUSVDp7Pnac30zDhKxGKASQVXClCMOnLbBBkaSoBjtkG_yqt/exec';
 const LS_PWD = 'khtn_pwd';
 
 // ════════════════════════════════════════════════
@@ -531,6 +533,14 @@ async function checkQuizStatus() {
       document.getElementById('bannerTitle').textContent = quizConfig.title;
       document.getElementById('bannerMeta').textContent =
         `${quizConfig.numQ} câu • ${quizConfig.timeMin} phút • Điểm tối đa: ${quizConfig.maxScore}`;
+      // Đổ danh sách học sinh vào dropdown
+      const sel = document.getElementById('sName');
+      sel.innerHTML = '<option value="">-- Chọn tên của em --</option>';
+      (quizConfig.students || []).forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s; opt.textContent = s;
+        sel.appendChild(opt);
+      });
     } else {
       document.getElementById('noQuizCard').style.display = 'block';
       document.getElementById('quizReadyCard').style.display = 'none';
@@ -546,13 +556,14 @@ async function checkQuizStatus() {
 // STUDENT — Đăng nhập & Làm bài
 // ════════════════════════════════════════════════
 async function sLogin() {
-  const name = document.getElementById('sName').value.trim();
+  const sel = document.getElementById('sName');
+  const name = (sel.value || '').trim();
   const err = document.getElementById('sLoginErr'); err.style.display = 'none';
-  if (!name) { err.textContent = '⚠️ Em chưa nhập tên!'; err.style.display = 'block'; return; }
+  if (!name) { err.textContent = '⚠️ Em chưa chọn tên!'; err.style.display = 'block'; return; }
   if (!quizConfig) { err.textContent = '⚠️ Bài kiểm tra chưa mở!'; err.style.display = 'block'; return; }
 
-  const match = quizConfig.students.find(s => s.toLowerCase() === name.toLowerCase());
-  if (!match) { err.textContent = '❌ Tên không có trong danh sách lớp! Kiểm tra lại chính tả.'; err.style.display = 'block'; return; }
+  const match = quizConfig.students.find(s => s === name);
+  if (!match) { err.textContent = '❌ Tên không có trong danh sách!'; err.style.display = 'block'; return; }
 
   // Kiểm tra đã nộp chưa
   showLoading('Đang kiểm tra...');
