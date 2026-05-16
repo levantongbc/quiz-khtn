@@ -1,0 +1,938 @@
+{
+  "tenChuDe": "Trao đổi chất và Năng lượng – KHTN 7 (Chân Trời Sáng Tạo)",
+  "namHoc": "2024–2025",
+  "tacGia": "Lê Văn Tổng",
+  "tongCauHoi": 100,
+  "cacBai": [
+    {
+      "bai": 19,
+      "tenBai": "Quang hợp ở thực vật",
+      "cauHoi": [
+        {
+          "id": "B19_01",
+          "cauhoi": "Quá trình quang hợp xảy ra chủ yếu ở bào quan nào của tế bào thực vật?",
+          "A": "Ti thể",
+          "B": "Ribosome",
+          "C": "Lục lạp",
+          "D": "Không bào",
+          "dapan": "C",
+          "giaithich": "Lục lạp chứa sắc tố diệp lục (chlorophyll) có khả năng hấp thụ năng lượng ánh sáng để thực hiện quang hợp. Đây là bào quan đặc trưng chỉ có ở tế bào thực vật."
+        },
+        {
+          "id": "B19_02",
+          "cauhoi": "Phương trình tổng quát của quang hợp là:",
+          "A": "CO₂ + H₂O → O₂ + Glucose (ánh sáng, diệp lục)",
+          "B": "O₂ + Glucose → CO₂ + H₂O + Năng lượng",
+          "C": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (ánh sáng, diệp lục)",
+          "D": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O",
+          "dapan": "C",
+          "giaithich": "Phương trình đúng: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Thực vật dùng CO₂ và H₂O, với năng lượng ánh sáng và diệp lục, tạo ra glucose và giải phóng O₂."
+        },
+        {
+          "id": "B19_03",
+          "cauhoi": "Nguyên liệu của quang hợp gồm những chất nào?",
+          "A": "O₂ và glucose",
+          "B": "CO₂ và H₂O",
+          "C": "H₂O và O₂",
+          "D": "CO₂ và glucose",
+          "dapan": "B",
+          "giaithich": "Nguyên liệu của quang hợp là CO₂ (lấy từ không khí qua khí khổng) và H₂O (hút từ đất qua rễ). Sản phẩm là glucose và O₂."
+        },
+        {
+          "id": "B19_04",
+          "cauhoi": "Sản phẩm được tạo ra trong quá trình quang hợp là:",
+          "A": "CO₂ và H₂O",
+          "B": "O₂ và tinh bột/glucose",
+          "C": "ATP và NADPH",
+          "D": "N₂ và O₂",
+          "dapan": "B",
+          "giaithich": "Sản phẩm của quang hợp là glucose (C₆H₁₂O₆) – sau đó được chuyển thành tinh bột dự trữ – và khí O₂ giải phóng ra môi trường."
+        },
+        {
+          "id": "B19_05",
+          "cauhoi": "Yếu tố nào sau đây KHÔNG phải là yếu tố ảnh hưởng đến quang hợp?",
+          "A": "Cường độ ánh sáng",
+          "B": "Nồng độ CO₂",
+          "C": "Màu sắc của hoa",
+          "D": "Nhiệt độ môi trường",
+          "dapan": "C",
+          "giaithich": "Quang hợp bị ảnh hưởng bởi cường độ ánh sáng, nồng độ CO₂, nhiệt độ và hàm lượng nước. Màu sắc hoa không liên quan đến quá trình quang hợp diễn ra trong lá."
+        },
+        {
+          "id": "B19_06",
+          "cauhoi": "Lá cây có màu xanh lục vì:",
+          "A": "Phản chiếu ánh sáng xanh lục",
+          "B": "Diệp lục hấp thụ ánh sáng xanh lục",
+          "C": "Diệp lục hấp thụ ánh sáng đỏ và xanh tím, phản chiếu ánh sáng xanh lục",
+          "D": "Lá cây chứa nhiều nước có màu xanh",
+          "dapan": "C",
+          "giaithich": "Diệp lục hấp thụ chủ yếu ánh sáng đỏ và ánh sáng xanh tím để quang hợp, còn ánh sáng xanh lục bị phản chiếu lại – đó là lý do mắt ta nhìn thấy lá có màu xanh lục."
+        },
+        {
+          "id": "B19_07",
+          "cauhoi": "Khí O₂ thải ra trong quang hợp được lấy từ đâu?",
+          "A": "Từ CO₂",
+          "B": "Từ H₂O",
+          "C": "Từ glucose",
+          "D": "Từ không khí",
+          "dapan": "B",
+          "giaithich": "Trong quang hợp, phân tử nước (H₂O) bị phân giải bởi năng lượng ánh sáng, giải phóng O₂. Đây là nguồn gốc của O₂ thoát ra trong quang hợp."
+        },
+        {
+          "id": "B19_08",
+          "cauhoi": "Cây sẽ quang hợp mạnh nhất trong điều kiện ánh sáng nào?",
+          "A": "Ánh sáng yếu, ít mây",
+          "B": "Ánh sáng mạnh vừa phải, đủ CO₂ và nước",
+          "C": "Ánh sáng cực mạnh, nhiệt độ cao 45°C",
+          "D": "Bóng tối hoàn toàn",
+          "dapan": "B",
+          "giaithich": "Quang hợp đạt hiệu quả tối ưu khi có đủ ánh sáng (không quá yếu, không quá gắt gây hỏng diệp lục), đủ CO₂, nước và nhiệt độ phù hợp (25–30°C với hầu hết cây)."
+        },
+        {
+          "id": "B19_09",
+          "cauhoi": "Thực vật lấy CO₂ từ không khí qua cấu trúc nào?",
+          "A": "Lỗ tiết",
+          "B": "Khí khổng trên lá",
+          "C": "Lông hút ở rễ",
+          "D": "Mạch gỗ",
+          "dapan": "B",
+          "giaithich": "Khí khổng (stoma) là những lỗ nhỏ trên bề mặt lá, chủ yếu ở mặt dưới, cho phép CO₂ đi vào và O₂, hơi nước thoát ra. Mỗi lá có hàng nghìn khí khổng."
+        },
+        {
+          "id": "B19_10",
+          "cauhoi": "Ngoài ý nghĩa cung cấp thức ăn, quang hợp còn có vai trò quan trọng nào với Trái Đất?",
+          "A": "Làm nóng khí quyển",
+          "B": "Duy trì cân bằng O₂ và CO₂ trong không khí",
+          "C": "Tạo ra mưa axit",
+          "D": "Hút nước từ đại dương",
+          "dapan": "B",
+          "giaithich": "Quang hợp hấp thụ CO₂ (giảm hiệu ứng nhà kính) và giải phóng O₂ (duy trì sự sống). Nếu không có quang hợp, hàm lượng O₂ trong khí quyển sẽ cạn kiệt trong vài nghìn năm."
+        },
+        {
+          "id": "B19_11",
+          "cauhoi": "Lá cây bị vàng thiếu diệp lục sẽ ảnh hưởng thế nào đến quang hợp?",
+          "A": "Không ảnh hưởng",
+          "B": "Quang hợp tăng",
+          "C": "Quang hợp giảm vì thiếu sắc tố hấp thụ ánh sáng",
+          "D": "Quang hợp chuyển sang dùng ánh sáng tím",
+          "dapan": "C",
+          "giaithich": "Lá vàng do thiếu chất dinh dưỡng (thường là thiếu sắt, magie) dẫn đến giảm hàm lượng diệp lục. Không có diệp lục, cây không hấp thụ được năng lượng ánh sáng → quang hợp giảm mạnh."
+        },
+        {
+          "id": "B19_12",
+          "cauhoi": "Câu nào sau đây ĐÚNG về quang hợp?",
+          "A": "Quang hợp chỉ xảy ra vào ban đêm",
+          "B": "Quang hợp chỉ xảy ra ở hoa và quả",
+          "C": "Quang hợp xảy ra ở tế bào có diệp lục khi có ánh sáng",
+          "D": "Quang hợp không tạo ra glucose",
+          "dapan": "C",
+          "giaithich": "Quang hợp xảy ra ở bất kỳ tế bào nào có chứa lục lạp (diệp lục) khi có ánh sáng. Ngoài lá, thân cây non, quả xanh, vỏ cây xanh cũng có thể quang hợp."
+        },
+        {
+          "id": "B19_13",
+          "cauhoi": "Trong thực tế, người ta đặt nhiều cây xanh trong phòng làm việc vì:",
+          "A": "Cây trang trí đẹp và hút bụi",
+          "B": "Cây quang hợp tạo O₂ ban ngày, cải thiện không khí",
+          "C": "Cây hút CO₂ cả ngày lẫn đêm",
+          "D": "Cây tạo độ ẩm và giảm nhiệt độ phòng",
+          "dapan": "B",
+          "giaithich": "Ban ngày khi có ánh sáng, cây quang hợp hút CO₂ và giải phóng O₂ – giúp không khí trong lành hơn. Lưu ý: ban đêm cây chỉ hô hấp (hút O₂, thải CO₂), nên không nên đặt quá nhiều cây trong phòng ngủ kín."
+        },
+        {
+          "id": "B19_14",
+          "cauhoi": "Tốc độ quang hợp tăng lên khi nồng độ CO₂ trong không khí tăng vì:",
+          "A": "CO₂ là sản phẩm của quang hợp",
+          "B": "CO₂ là nguyên liệu của quang hợp",
+          "C": "CO₂ kích hoạt diệp lục",
+          "D": "CO₂ cung cấp năng lượng cho quang hợp",
+          "dapan": "B",
+          "giaithich": "CO₂ là một trong hai nguyên liệu chính của quang hợp (cùng với H₂O). Khi nguyên liệu tăng, phản ứng diễn ra nhanh hơn – đây là lý do nhà kính trồng rau thường bổ sung CO₂ để tăng năng suất."
+        },
+        {
+          "id": "B19_15",
+          "cauhoi": "Sắc tố nào sau đây KHÔNG tham gia trực tiếp vào quang hợp?",
+          "A": "Diệp lục a (chlorophyll a)",
+          "B": "Diệp lục b (chlorophyll b)",
+          "C": "Anthocyanin (sắc tố đỏ/tím)",
+          "D": "Carotenoid",
+          "dapan": "C",
+          "giaithich": "Anthocyanin là sắc tố tan trong dịch tế bào, tạo màu đỏ/tím cho hoa, lá mùa thu. Nó không nằm trong lục lạp và không tham gia trực tiếp vào quá trình quang hợp."
+        },
+        {
+          "id": "B19_16",
+          "cauhoi": "Nếu bịt kín lá cây bằng giấy bạc trong nhiều ngày, lá sẽ:",
+          "A": "Phát triển bình thường",
+          "B": "Chuyển vàng và héo vì không quang hợp được",
+          "C": "Quang hợp nhiều hơn",
+          "D": "Tạo nhiều O₂ hơn",
+          "dapan": "B",
+          "giaithich": "Không có ánh sáng → không quang hợp → không tạo được glucose → lá thiếu chất dinh dưỡng, diệp lục phân giải → lá vàng và chết. Đây là cơ sở của thí nghiệm chứng minh ánh sáng cần cho quang hợp."
+        },
+        {
+          "id": "B19_17",
+          "cauhoi": "Thực vật thủy sinh (rong, tảo) lấy CO₂ từ đâu để quang hợp?",
+          "A": "Từ không khí trên mặt nước",
+          "B": "Từ CO₂ hòa tan trong nước",
+          "C": "Từ đất dưới đáy hồ",
+          "D": "Từ ánh sáng mặt trời",
+          "dapan": "B",
+          "giaithich": "Thực vật thủy sinh hấp thụ CO₂ hòa tan trong nước qua toàn bộ bề mặt tế bào. Nước biển và nước ngọt đều chứa CO₂ hòa tan – đây là nguồn carbon cho quang hợp của tảo và rong."
+        },
+        {
+          "id": "B19_18",
+          "cauhoi": "Điều nào sau đây giải thích tại sao rừng nhiệt đới được gọi là 'lá phổi của Trái Đất'?",
+          "A": "Rừng tạo ra nhiều mưa",
+          "B": "Rừng quang hợp với lượng lớn, hấp thụ CO₂ và tạo O₂",
+          "C": "Rừng làm mát không khí",
+          "D": "Rừng cung cấp gỗ cho con người",
+          "dapan": "B",
+          "giaithich": "Rừng nhiệt đới chiếm ~6% diện tích Trái Đất nhưng thực hiện khoảng 40% tổng lượng quang hợp toàn cầu, hấp thụ lượng khổng lồ CO₂ và sản xuất O₂ – giống như phổi của Trái Đất."
+        },
+        {
+          "id": "B19_19",
+          "cauhoi": "Cây xương rồng sống ở sa mạc thực hiện quang hợp ở bộ phận nào?",
+          "A": "Rễ to",
+          "B": "Gai nhọn",
+          "C": "Thân mọng nước (thân cây)",
+          "D": "Hoa",
+          "dapan": "C",
+          "giaithich": "Xương rồng đã biến đổi lá thành gai để giảm thoát hơi nước. Thân mọng nước chứa lục lạp và đảm nhận chức năng quang hợp thay cho lá. Đây là ví dụ điển hình của sự thích nghi với môi trường."
+        },
+        {
+          "id": "B19_20",
+          "cauhoi": "Trong 1 giờ quang hợp, một cây trưởng thành có thể hấp thụ bao nhiêu lít CO₂?",
+          "A": "0.001 lít",
+          "B": "0.01 lít",
+          "C": "Khoảng 5–25 lít tùy loài và điều kiện",
+          "D": "1000 lít",
+          "dapan": "C",
+          "giaithich": "Tùy loài và điều kiện ánh sáng, một cây trưởng thành có thể hấp thụ 5–25 lít CO₂/giờ. Trong cả ngày (8–10 giờ sáng), lượng hấp thụ tương đương lượng CO₂ do 1–2 người thở ra trong một ngày."
+        }
+      ]
+    },
+    {
+      "bai": 20,
+      "tenBai": "Hô hấp tế bào",
+      "cauHoi": [
+        {
+          "id": "B20_01",
+          "cauhoi": "Hô hấp tế bào xảy ra ở bào quan nào?",
+          "A": "Lục lạp",
+          "B": "Ti thể",
+          "C": "Ribosome",
+          "D": "Nhân tế bào",
+          "dapan": "B",
+          "giaithich": "Ti thể (mitochondria) là 'nhà máy năng lượng' của tế bào, nơi diễn ra hô hấp hiếu khí tạo ATP. Ti thể có màng kép và chứa enzyme xúc tác các phản ứng oxy hóa glucose."
+        },
+        {
+          "id": "B20_02",
+          "cauhoi": "Phương trình tổng quát của hô hấp tế bào là:",
+          "A": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
+          "B": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Năng lượng (ATP)",
+          "C": "O₂ + Glucose → O₂ + H₂O",
+          "D": "H₂O → H₂ + O₂",
+          "dapan": "B",
+          "giaithich": "Hô hấp tế bào: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP. Đây là phản ứng ngược với quang hợp – glucose bị oxy hóa để giải phóng năng lượng dưới dạng ATP."
+        },
+        {
+          "id": "B20_03",
+          "cauhoi": "Hô hấp tế bào xảy ra ở:",
+          "A": "Chỉ ban đêm",
+          "B": "Chỉ khi có ánh sáng",
+          "C": "Liên tục cả ngày lẫn đêm",
+          "D": "Chỉ khi cơ thể vận động mạnh",
+          "dapan": "C",
+          "giaithich": "Hô hấp tế bào diễn ra liên tục 24/7 ở tất cả tế bào sống – dù đang ngủ, nghỉ ngơi hay hoạt động. Đây là quá trình cơ bản nhất duy trì sự sống, cung cấp ATP cho mọi hoạt động tế bào."
+        },
+        {
+          "id": "B20_04",
+          "cauhoi": "ATP là gì?",
+          "A": "Một loại đường đơn",
+          "B": "Đồng tiền năng lượng của tế bào",
+          "C": "Một loại protein vận chuyển",
+          "D": "Sắc tố quang hợp",
+          "dapan": "B",
+          "giaithich": "ATP (Adenosine Triphosphate) được ví như 'đồng tiền năng lượng' của tế bào. Mọi hoạt động cần năng lượng (co cơ, tổng hợp protein, dẫn truyền thần kinh...) đều tiêu thụ ATP."
+        },
+        {
+          "id": "B20_05",
+          "cauhoi": "Nguyên liệu chính của hô hấp tế bào là:",
+          "A": "CO₂ và H₂O",
+          "B": "O₂ và CO₂",
+          "C": "Glucose và O₂",
+          "D": "ATP và ADP",
+          "dapan": "C",
+          "giaithich": "Hô hấp tế bào cần glucose (nguyên liệu đốt cháy) và O₂ (chất oxy hóa). Glucose có thể từ thức ăn tiêu hóa, còn O₂ lấy từ quá trình hô hấp (thở)."
+        },
+        {
+          "id": "B20_06",
+          "cauhoi": "Vì sao sau khi chạy nhanh, người ta thở dốc và đổ mồ hôi?",
+          "A": "Do cơ thể bị mất nước",
+          "B": "Do tế bào cần nhiều O₂ hơn, tim đập nhanh hơn, nhiệt năng tỏa ra nhiều",
+          "C": "Do phổi bị tắc nghẽn",
+          "D": "Do não thiếu oxy",
+          "dapan": "B",
+          "giaithich": "Khi vận động mạnh, tế bào cơ cần nhiều ATP hơn → hô hấp tế bào tăng → cần nhiều O₂ và glucose hơn → tim đập nhanh, thở dốc. Đồng thời nhiệt năng phụ phẩm của hô hấp tỏa ra làm nóng cơ thể → mồ hôi tiết ra để hạ nhiệt."
+        },
+        {
+          "id": "B20_07",
+          "cauhoi": "So sánh hô hấp tế bào và quang hợp, điều nào ĐÚNG?",
+          "A": "Cả hai đều tạo ra O₂",
+          "B": "Cả hai đều cần ánh sáng",
+          "C": "Hô hấp là ngược chiều với quang hợp về nguyên liệu và sản phẩm",
+          "D": "Cả hai đều xảy ra trong lục lạp",
+          "dapan": "C",
+          "giaithich": "Quang hợp: CO₂ + H₂O → Glucose + O₂ (tích lũy năng lượng). Hô hấp: Glucose + O₂ → CO₂ + H₂O (giải phóng năng lượng). Hai quá trình ngược chiều nhau, cùng duy trì cân bằng vật chất trong tự nhiên."
+        },
+        {
+          "id": "B20_08",
+          "cauhoi": "Tại sao để rau trong tủ lạnh giúp rau tươi lâu hơn?",
+          "A": "Lạnh diệt vi khuẩn hoàn toàn",
+          "B": "Nhiệt độ thấp làm chậm hô hấp tế bào, giảm tiêu hao chất hữu cơ",
+          "C": "Tủ lạnh bổ sung độ ẩm cho rau",
+          "D": "Lạnh tăng quang hợp của rau",
+          "dapan": "B",
+          "giaithich": "Nhiệt độ thấp ức chế hoạt động enzyme trong hô hấp tế bào → tốc độ hô hấp giảm → chất hữu cơ trong rau tiêu hao chậm hơn → rau tươi lâu hơn. Đây là nguyên tắc bảo quản thực phẩm bằng làm lạnh."
+        },
+        {
+          "id": "B20_09",
+          "cauhoi": "Hô hấp tế bào giải phóng năng lượng dưới dạng nào?",
+          "A": "Chỉ nhiệt năng",
+          "B": "Chỉ điện năng",
+          "C": "ATP (năng lượng hóa học) và nhiệt năng",
+          "D": "Ánh sáng",
+          "dapan": "C",
+          "giaithich": "Khoảng 40% năng lượng từ glucose được chuyển thành ATP (hiệu quả), 60% còn lại tỏa ra dưới dạng nhiệt năng – đó là lý do cơ thể luôn ấm và tỏa nhiệt khi hoạt động."
+        },
+        {
+          "id": "B20_10",
+          "cauhoi": "Điều gì xảy ra với tế bào nếu hô hấp tế bào ngừng hoàn toàn?",
+          "A": "Tế bào ngủ đông",
+          "B": "Tế bào chuyển sang quang hợp",
+          "C": "Tế bào chết vì không có ATP",
+          "D": "Tế bào phân chia nhanh hơn",
+          "dapan": "C",
+          "giaithich": "Không có ATP, tế bào không thực hiện được bất kỳ hoạt động sống nào (bơm ion, tổng hợp protein, phân bào...). Một số tế bào não chết sau chỉ 4–6 phút thiếu O₂ – đó là lý do ngừng tim ngừng thở rất nguy hiểm."
+        },
+        {
+          "id": "B20_11",
+          "cauhoi": "Khi ủ cơm rượu, vi khuẩn thực hiện loại hô hấp nào?",
+          "A": "Hô hấp hiếu khí",
+          "B": "Lên men (hô hấp kỵ khí)",
+          "C": "Quang hợp",
+          "D": "Hô hấp ngoài",
+          "dapan": "B",
+          "giaithich": "Lên men rượu là hô hấp kỵ khí (không cần O₂) của nấm men: Glucose → Rượu ethanol + CO₂ + ít ATP. Đây là cơ sở sản xuất bia, rượu, bánh mì (CO₂ làm bánh nở)."
+        },
+        {
+          "id": "B20_12",
+          "cauhoi": "Tốc độ hô hấp tế bào tăng khi nào?",
+          "A": "Khi nhiệt độ cơ thể giảm xuống 10°C",
+          "B": "Khi cơ thể hoạt động mạnh, tế bào cần nhiều năng lượng",
+          "C": "Khi ngủ",
+          "D": "Khi ăn ít",
+          "dapan": "B",
+          "giaithich": "Khi hoạt động thể lực mạnh, tế bào cơ cần nhiều ATP hơn → tốc độ hô hấp tế bào tăng → tiêu thụ O₂ và glucose tăng → nhịp tim và nhịp thở tăng."
+        },
+        {
+          "id": "B20_13",
+          "cauhoi": "CO₂ thải ra trong hô hấp tế bào được đưa ra ngoài cơ thể qua con đường nào ở người?",
+          "A": "Qua da",
+          "B": "Qua nước tiểu",
+          "C": "Qua phổi khi thở ra",
+          "D": "Qua mồ hôi",
+          "dapan": "C",
+          "giaithich": "CO₂ từ tế bào → máu → phổi → thở ra. Phổi là cơ quan chính trao đổi khí ở người. Một phần nhỏ CO₂ thoát qua da nhưng không đáng kể."
+        },
+        {
+          "id": "B20_14",
+          "cauhoi": "Hạt nảy mầm hô hấp với tốc độ như thế nào so với hạt khô?",
+          "A": "Chậm hơn nhiều",
+          "B": "Bằng nhau",
+          "C": "Nhanh hơn nhiều vì tế bào đang phát triển và cần nhiều năng lượng",
+          "D": "Hạt khô không hô hấp",
+          "dapan": "C",
+          "giaithich": "Hạt nảy mầm cần năng lượng lớn để tế bào phân chia, tổng hợp protein và phát triển → hô hấp rất mạnh. Hạt khô có hô hấp rất yếu (hô hấp tiềm sinh), đủ để duy trì sự sống ở mức tối thiểu."
+        },
+        {
+          "id": "B20_15",
+          "cauhoi": "Thí nghiệm nào sau đây chứng minh hô hấp tế bào thải ra CO₂?",
+          "A": "Đặt lá cây dưới ánh sáng rồi thu khí",
+          "B": "Thổi hơi thở qua nước vôi trong, nước vôi vẩn đục",
+          "C": "Đốt cháy glucose trong không khí",
+          "D": "Nhúng cây vào nước ấm",
+          "dapan": "B",
+          "giaithich": "CO₂ tác dụng với nước vôi trong (Ca(OH)₂) tạo kết tủa CaCO₃ trắng đục: CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O. Hơi thở chứa khoảng 4% CO₂ (cao hơn nhiều so với 0.04% trong không khí)."
+        },
+        {
+          "id": "B20_16",
+          "cauhoi": "Tại sao không nên để nhiều hoa tươi trong phòng ngủ kín vào ban đêm?",
+          "A": "Hoa tỏa mùi khó chịu",
+          "B": "Ban đêm, hoa chỉ hô hấp (hút O₂, thải CO₂), làm giảm O₂ trong phòng",
+          "C": "Hoa tỏa nhiệt làm phòng nóng",
+          "D": "Hoa hút ẩm làm khô không khí",
+          "dapan": "B",
+          "giaithich": "Ban đêm không có ánh sáng, cây không quang hợp mà chỉ hô hấp → hút O₂ và thải CO₂. Trong phòng ngủ kín, nhiều cây/hoa có thể làm giảm đáng kể nồng độ O₂, ảnh hưởng đến giấc ngủ và sức khỏe."
+        },
+        {
+          "id": "B20_17",
+          "cauhoi": "Mối quan hệ giữa quang hợp và hô hấp tế bào trong tự nhiên là:",
+          "A": "Cạnh tranh nhau",
+          "B": "Không liên quan",
+          "C": "Bổ sung và duy trì vòng tuần hoàn carbon và oxygen trong tự nhiên",
+          "D": "Quang hợp thay thế hô hấp ở thực vật",
+          "dapan": "C",
+          "giaithich": "Quang hợp hấp thụ CO₂, giải phóng O₂ và tích lũy glucose. Hô hấp tiêu thụ O₂, giải phóng CO₂ và phân giải glucose. Hai quá trình tạo thành vòng tuần hoàn C và O, duy trì cân bằng khí quyển Trái Đất."
+        },
+        {
+          "id": "B20_18",
+          "cauhoi": "Hô hấp kỵ khí ở cơ người khi thiếu O₂ tạo ra chất gì gây mỏi cơ?",
+          "A": "Rượu ethanol",
+          "B": "Acid lactic (axit lactic)",
+          "C": "CO₂",
+          "D": "Glucose",
+          "dapan": "B",
+          "giaithich": "Khi hoạt động cường độ cao vượt quá khả năng cung cấp O₂, tế bào cơ chuyển sang lên men lactic: Glucose → Acid lactic + ATP. Acid lactic tích lũy làm pH tế bào giảm → cảm giác mỏi, đau cơ."
+        },
+        {
+          "id": "B20_19",
+          "cauhoi": "Một người bình thường thở khoảng 15 lần/phút và mỗi lần hít vào 0.5 lít không khí. Lượng O₂ (21%) hấp thụ mỗi phút là bao nhiêu?",
+          "A": "Khoảng 0.3 lít O₂/phút",
+          "B": "Khoảng 1.6 lít O₂/phút",
+          "C": "Khoảng 0.16 lít O₂/phút (15 × 0.5 × 21% ≈ 1.575 lít, cơ thể hấp thụ ~1/4)",
+          "D": "Khoảng 5 lít O₂/phút",
+          "dapan": "A",
+          "giaithich": "15 lần × 0.5 lít = 7.5 lít/phút. Không khí có 21% O₂ → 1.575 lít O₂ đi vào phổi. Cơ thể hấp thụ khoảng 20–25% lượng O₂ này → ~0.3 lít O₂/phút khi nghỉ ngơi. Khi vận động mạnh, con số này tăng gấp 10–20 lần."
+        },
+        {
+          "id": "B20_20",
+          "cauhoi": "Câu nào ĐÚNG về hô hấp tế bào?",
+          "A": "Hô hấp tế bào và hô hấp ngoài (thở) là một quá trình",
+          "B": "Hô hấp tế bào chỉ xảy ra ở động vật",
+          "C": "Hô hấp tế bào là quá trình phân giải hữu cơ tạo năng lượng ATP, xảy ra ở mọi tế bào sống",
+          "D": "Hô hấp tế bào không thải ra CO₂",
+          "dapan": "C",
+          "giaithich": "Hô hấp tế bào là quá trình sinh hóa xảy ra bên trong tế bào, khác với hô hấp ngoài (thở). Nó xảy ra ở mọi tế bào sống (thực vật, động vật, nấm, vi khuẩn) và tạo ra ATP từ glucose."
+        }
+      ]
+    },
+    {
+      "bai": 21,
+      "tenBai": "Trao đổi nước và khoáng ở thực vật",
+      "cauHoi": [
+        {
+          "id": "B21_01",
+          "cauhoi": "Nước và khoáng chất được hút từ đất vào cây qua cấu trúc nào?",
+          "A": "Lá cây",
+          "B": "Thân cây",
+          "C": "Lông hút ở rễ",
+          "D": "Hoa",
+          "dapan": "C",
+          "giaithich": "Lông hút là những tế bào biểu bì kéo dài của rễ, tăng diện tích tiếp xúc với đất. Chúng hút nước và khoáng theo cơ chế thẩm thấu (nước) và vận chuyển chủ động (khoáng)."
+        },
+        {
+          "id": "B21_02",
+          "cauhoi": "Nước được vận chuyển từ rễ lên lá qua:",
+          "A": "Mạch rây (libe)",
+          "B": "Mạch gỗ (xylem)",
+          "C": "Tế bào biểu bì",
+          "D": "Khí khổng",
+          "dapan": "B",
+          "giaithich": "Mạch gỗ (xylem) vận chuyển nước và khoáng từ rễ lên thân và lá. Mạch rây (phloem) vận chuyển chất hữu cơ (glucose) từ lá xuống các bộ phận khác."
+        },
+        {
+          "id": "B21_03",
+          "cauhoi": "Quá trình thoát hơi nước qua lá có vai trò gì?",
+          "A": "Làm lá héo nhanh hơn",
+          "B": "Tạo lực kéo hút nước từ rễ lên, đồng thời điều hòa nhiệt độ cây",
+          "C": "Cung cấp H₂O cho quang hợp trực tiếp",
+          "D": "Không có vai trò quan trọng",
+          "dapan": "B",
+          "giaithich": "Thoát hơi nước tạo 'lực kéo' (lực hút ở trên) giúp kéo cột nước từ rễ lên tận ngọn cây cao hàng chục mét. Đồng thời giúp làm mát lá khi nhiệt độ cao (như mồ hôi làm mát người)."
+        },
+        {
+          "id": "B21_04",
+          "cauhoi": "Câu nào sau đây ĐÚNG về vai trò của chất khoáng với thực vật?",
+          "A": "Khoáng chỉ cần thiết để cây có màu sắc đẹp",
+          "B": "Khoáng tham gia cấu tạo tế bào và điều hòa hoạt động sống",
+          "C": "Cây có thể sống bình thường mà không cần chất khoáng",
+          "D": "Khoáng chỉ cần cho quá trình hô hấp",
+          "dapan": "B",
+          "giaithich": "Các chất khoáng đa lượng (N, P, K, Ca, Mg) và vi lượng (Fe, Mn, Zn...) tham gia cấu tạo tế bào (vách tế bào, diệp lục, protein) và điều hòa các phản ứng enzyme. Thiếu khoáng gây bệnh đặc trưng cho cây."
+        },
+        {
+          "id": "B21_05",
+          "cauhoi": "Tại sao cây trồng trong chậu cần được tưới nước thường xuyên hơn cây ngoài đất?",
+          "A": "Cây trong chậu hô hấp nhiều hơn",
+          "B": "Lượng đất ít, nước bốc hơi nhanh, rễ không lan rộng tìm nước được",
+          "C": "Ánh sáng trong nhà yếu làm cây cần nhiều nước hơn",
+          "D": "Chậu ngăn nước thấm vào",
+          "dapan": "B",
+          "giaithich": "Cây trong chậu có đất giới hạn, lượng nước dự trữ ít hơn, rễ không thể lan rộng tìm nguồn nước mới. Đồng thời đất trong chậu thoát nước nhanh hơn → cần tưới thường xuyên hơn."
+        },
+        {
+          "id": "B21_06",
+          "cauhoi": "Hiện tượng gì xảy ra khi bón quá nhiều phân hóa học vào đất?",
+          "A": "Cây hút được nhiều dinh dưỡng hơn, phát triển tốt",
+          "B": "Nồng độ muối trong đất tăng, cây bị mất nước (héo do thẩm thấu ngược)",
+          "C": "Đất trở nên màu mỡ hơn",
+          "D": "Không có ảnh hưởng gì",
+          "dapan": "B",
+          "giaithich": "Bón phân quá liều làm nồng độ dung dịch đất cao hơn trong tế bào rễ → nước trong rễ bị kéo ra ngoài theo thẩm thấu → cây bị 'chột phân', héo rũ dù đất đủ ẩm. Đây là lý do cần bón phân đúng liều lượng."
+        },
+        {
+          "id": "B21_07",
+          "cauhoi": "Nitơ (N) có vai trò đặc biệt quan trọng với cây vì:",
+          "A": "Nitơ là thành phần của diệp lục và protein",
+          "B": "Nitơ tạo màu sắc cho hoa",
+          "C": "Nitơ cứng hóa vách tế bào",
+          "D": "Nitơ là nguyên liệu của quang hợp",
+          "dapan": "A",
+          "giaithich": "Nitơ là nguyên tố không thể thiếu để tổng hợp amino acid, protein và diệp lục. Thiếu N: lá vàng từ lá già lên lá non, sinh trưởng còi cọc. Đây là lý do phân đạm (chứa N) là loại phân bón phổ biến nhất."
+        },
+        {
+          "id": "B21_08",
+          "cauhoi": "Phốt pho (P) đặc biệt quan trọng cho quá trình nào?",
+          "A": "Tổng hợp diệp lục",
+          "B": "Tổng hợp ATP và axit nucleic (DNA, RNA)",
+          "C": "Tạo màu sắc quả",
+          "D": "Hình thành rễ",
+          "dapan": "B",
+          "giaithich": "Phốt pho là thành phần của ATP (phân tử năng lượng), DNA, RNA và màng tế bào (phospholipid). Thiếu P: lá có màu tím đỏ, rễ kém phát triển, quả ít và chín chậm."
+        },
+        {
+          "id": "B21_09",
+          "cauhoi": "Tại sao lá cây bị vàng khi thiếu sắt (Fe)?",
+          "A": "Sắt là sắc tố diệp lục",
+          "B": "Sắt cần cho tổng hợp diệp lục",
+          "C": "Sắt là nguyên liệu của quang hợp",
+          "D": "Sắt điều hòa lỗ khí khổng",
+          "dapan": "B",
+          "giaithich": "Sắt là vi lượng cần thiết cho quá trình tổng hợp diệp lục (dù không phải thành phần của diệp lục). Thiếu Fe → diệp lục không được tổng hợp đủ → lá vàng (thiếu máu lá). Bón phân có Fe hoặc phun sắt chelate sẽ cải thiện tình trạng này."
+        },
+        {
+          "id": "B21_10",
+          "cauhoi": "Nước chiếm bao nhiêu phần trăm khối lượng tươi của một tế bào thực vật điển hình?",
+          "A": "10–20%",
+          "B": "30–40%",
+          "C": "70–90%",
+          "D": "99%",
+          "dapan": "C",
+          "giaithich": "Nước chiếm 70–90% khối lượng tươi của tế bào thực vật. Nước đóng vai trò dung môi, tham gia phản ứng sinh hóa, tạo áp suất thẩm thấu và duy trì hình dạng tế bào (sức căng)."
+        },
+        {
+          "id": "B21_11",
+          "cauhoi": "Tại sao cây sống ở vùng khô hạn thường có lá nhỏ, dày, hoặc biến thành gai?",
+          "A": "Để hấp thụ nhiều ánh sáng hơn",
+          "B": "Để giảm thoát hơi nước, thích nghi với môi trường thiếu nước",
+          "C": "Để tự vệ chống động vật ăn cỏ",
+          "D": "Để tăng diện tích quang hợp",
+          "dapan": "B",
+          "giaithich": "Lá nhỏ hoặc biến thành gai → giảm diện tích bề mặt → giảm thoát hơi nước. Lớp biểu bì dày, phủ sáp cũng giúp hạn chế bay hơi. Đây là ví dụ điển hình của tiến hóa thích nghi với môi trường khô hạn."
+        },
+        {
+          "id": "B21_12",
+          "cauhoi": "Kali (K) có vai trò gì trong cơ chế đóng mở khí khổng?",
+          "A": "K xúc tác quang hợp",
+          "B": "K+ tích lũy trong tế bào khí khổng làm tăng áp suất thẩm thấu, kéo nước vào → khí khổng mở",
+          "C": "K làm cứng vách tế bào khí khổng",
+          "D": "K không liên quan đến khí khổng",
+          "dapan": "B",
+          "giaithich": "Khi ánh sáng kích hoạt bơm proton, K+ chủ động đi vào tế bào đóng khí khổng → tăng áp suất thẩm thấu → nước thẩm thấu vào → tế bào no nước → khí khổng mở. Ban đêm quá trình ngược lại → khí khổng đóng."
+        },
+        {
+          "id": "B21_13",
+          "cauhoi": "Một cây ngô trong 1 ngày có thể thoát bao nhiêu lít nước qua lá?",
+          "A": "0.001 lít",
+          "B": "0.1 lít",
+          "C": "Khoảng 2–4 lít",
+          "D": "100 lít",
+          "dapan": "C",
+          "giaithich": "Một cây ngô trưởng thành thoát khoảng 2–4 lít nước/ngày qua thoát hơi nước. Để tạo ra 1 gram chất khô, cây cần thoát đi khoảng 300–500 gram nước – đây là lý do nông nghiệp cần lượng nước tưới rất lớn."
+        },
+        {
+          "id": "B21_14",
+          "cauhoi": "Rễ thở (rễ nổi lên khỏi mặt nước/đất) ở cây đước, bần có chức năng gì?",
+          "A": "Hút nước từ không khí",
+          "B": "Lấy O₂ từ không khí cho hô hấp tế bào của rễ bị ngập trong đất yếm khí",
+          "C": "Quang hợp thêm",
+          "D": "Tự vệ chống sóng biển",
+          "dapan": "B",
+          "giaithich": "Đất ngập mặn rất ít O₂. Cây đước, bần tiến hóa có rễ nổi lên khỏi mặt bùn để hấp thụ O₂ từ không khí cho hô hấp tế bào của toàn bộ hệ rễ. Đây là thích nghi đặc sắc của cây rừng ngập mặn."
+        },
+        {
+          "id": "B21_15",
+          "cauhoi": "Tại sao cần bón phân hữu cơ (phân xanh, phân chuồng) thay vì chỉ bón phân hóa học?",
+          "A": "Phân hữu cơ rẻ hơn",
+          "B": "Phân hữu cơ cải tạo cấu trúc đất, tăng khả năng giữ nước và cung cấp khoáng từ từ, bền vững",
+          "C": "Phân hóa học độc hại hoàn toàn",
+          "D": "Phân hữu cơ nhanh tác dụng hơn",
+          "dapan": "B",
+          "giaithich": "Phân hữu cơ phân giải chậm, cung cấp khoáng ổn định, cải thiện cấu trúc đất (tơi xốp, giữ nước tốt hơn) và tăng vi sinh vật có ích. Chỉ dùng phân hóa học lâu dài làm đất chai cứng và mất cân bằng sinh học."
+        },
+        {
+          "id": "B21_16",
+          "cauhoi": "Hiện tượng ứ giọt (nước nhỏ giọt ở mép lá vào sáng sớm) xảy ra khi nào?",
+          "A": "Khi cây thiếu nước",
+          "B": "Khi độ ẩm không khí cao, cây hút nhiều nước nhưng thoát hơi nước bị ức chế",
+          "C": "Khi nhiệt độ quá cao",
+          "D": "Chỉ xảy ra ở cây sống dưới nước",
+          "dapan": "B",
+          "giaithich": "Sáng sớm, độ ẩm không khí gần 100% nên hơi nước không thoát được → áp suất rễ đẩy nước lên → nước tích tụ và ứ thành giọt ở mép lá (qua lỗ nước). Không phải sương – đây là nước đến từ rễ."
+        },
+        {
+          "id": "B21_17",
+          "cauhoi": "Trong nông nghiệp, kỹ thuật 'tưới nhỏ giọt' tiết kiệm nước vì:",
+          "A": "Cây chỉ cần ít nước",
+          "B": "Nước được đưa trực tiếp vào vùng rễ, giảm bay hơi và thấm lãng phí",
+          "C": "Tưới nhỏ giọt tạo áp lực cao hơn",
+          "D": "Hệ thống này tự lọc nước",
+          "dapan": "B",
+          "giaithich": "Tưới nhỏ giọt (drip irrigation) đưa nước trực tiếp vào vùng rễ với lượng vừa đủ, giảm 30–50% lượng nước so với tưới truyền thống. Israel đã phát triển kỹ thuật này biến sa mạc thành đất canh tác màu mỡ."
+        },
+        {
+          "id": "B21_18",
+          "cauhoi": "Đất bị nhiễm phèn (acid) ảnh hưởng thế nào đến sự hấp thụ khoáng của cây?",
+          "A": "Cây hút được nhiều khoáng hơn",
+          "B": "Một số khoáng bị kết tủa, không tan được, cây không hút được",
+          "C": "Đất phèn giàu dinh dưỡng nên cây phát triển tốt",
+          "D": "Không ảnh hưởng gì",
+          "dapan": "B",
+          "giaithich": "Trong đất phèn (pH thấp), nhiều khoáng bị kết tủa hoặc chuyển thành dạng không tan → cây không hấp thụ được dù đất có đủ lượng khoáng đó. Ví dụ: phospho kết tủa với sắt và nhôm ở pH thấp. Cải tạo đất phèn bằng bón vôi để tăng pH."
+        },
+        {
+          "id": "B21_19",
+          "cauhoi": "Cây hoa phong lan sống bám (phong lan rừng) lấy nước từ đâu?",
+          "A": "Từ cây chủ (ký sinh)",
+          "B": "Từ hơi ẩm không khí và nước mưa qua rễ khí sinh",
+          "C": "Tự tổng hợp nước từ quang hợp",
+          "D": "Từ đất qua rễ bình thường",
+          "dapan": "B",
+          "giaithich": "Phong lan là thực vật bì sinh (epiphyte) – sống bám trên cây khác nhưng KHÔNG ký sinh. Rễ khí sinh phủ lớp velamen (xốp, hút ẩm tốt) để hấp thụ hơi ẩm và nước mưa từ không khí. Chúng tự quang hợp, không lấy dinh dưỡng từ cây chủ."
+        },
+        {
+          "id": "B21_20",
+          "cauhoi": "Câu nào ĐÚNG về vai trò của canxi (Ca) với thực vật?",
+          "A": "Ca là thành phần chính của diệp lục",
+          "B": "Ca tham gia cấu tạo vách tế bào (pectin calcium) và điều hòa enzyme",
+          "C": "Ca cung cấp năng lượng cho quang hợp",
+          "D": "Ca chỉ cần thiết cho cây lúa",
+          "dapan": "B",
+          "giaithich": "Canxi (Ca²⁺) là thành phần của canxi pectate – chất gắn kết vách tế bào, giúp tế bào cứng chắc. Thiếu Ca: chóp rễ và đỉnh sinh trưởng bị hoại tử. Ca cũng là 'sứ giả thứ hai' trong tín hiệu tế bào."
+        }
+      ]
+    },
+    {
+      "bai": 22,
+      "tenBai": "Trao đổi chất và chuyển hóa năng lượng ở động vật",
+      "cauHoi": [
+        {
+          "id": "B22_01",
+          "cauhoi": "Quá trình tiêu hóa thức ăn ở người diễn ra theo trình tự nào?",
+          "A": "Miệng → Ruột non → Dạ dày → Ruột già",
+          "B": "Miệng → Thực quản → Dạ dày → Ruột non → Ruột già",
+          "C": "Dạ dày → Miệng → Ruột non → Ruột già",
+          "D": "Miệng → Dạ dày → Thực quản → Ruột non",
+          "dapan": "B",
+          "giaithich": "Đường tiêu hóa theo thứ tự: Miệng (nghiền + amylase nước bọt) → Thực quản → Dạ dày (pepsin, HCl) → Ruột non (hấp thụ chính) → Ruột già (hấp thụ nước) → Hậu môn. Ruột non dài 6–7m là nơi tiêu hóa và hấp thụ chủ yếu."
+        },
+        {
+          "id": "B22_02",
+          "cauhoi": "Chất nào trong dạ dày giúp tiêu hóa protein?",
+          "A": "Amylase và maltase",
+          "B": "Lipase và trypsin",
+          "C": "Pepsin và HCl",
+          "D": "Bile (mật) và insulin",
+          "dapan": "C",
+          "giaithich": "Dạ dày tiết pepsinogen (hoạt hóa thành pepsin nhờ HCl) → phân cắt protein thành peptide ngắn. HCl tạo môi trường acid (pH 1.5–3.5) cần thiết cho pepsin hoạt động và diệt khuẩn trong thức ăn."
+        },
+        {
+          "id": "B22_03",
+          "cauhoi": "Cơ quan nào đóng vai trò trung tâm của trao đổi chất ở người?",
+          "A": "Tim",
+          "B": "Phổi",
+          "C": "Gan",
+          "D": "Thận",
+          "dapan": "C",
+          "giaithich": "Gan là 'nhà máy hóa học' của cơ thể: tổng hợp protein huyết tương, chuyển hóa glucose (glycogen), phân giải độc tố, sản xuất mật tiêu hóa lipid, chuyển hóa amino acid... Gan nhận 1/4 lượng máu tim bơm mỗi phút."
+        },
+        {
+          "id": "B22_04",
+          "cauhoi": "Tại sao ruột non có nhiều nếp gấp và lông nhung?",
+          "A": "Để tăng chiều dài đường tiêu hóa",
+          "B": "Để tăng diện tích hấp thụ chất dinh dưỡng lên gấp nhiều lần",
+          "C": "Để chứa được nhiều thức ăn hơn",
+          "D": "Để tiết enzyme tiêu hóa",
+          "dapan": "B",
+          "giaithich": "Ruột non dài 6–7m, có nếp gấp Kerckring, lông nhung (villi) và vi lông nhung (microvilli) → tổng diện tích hấp thụ đạt ~250–300 m² – tương đương một sân tennis! Nhờ đó hấp thụ tối đa chất dinh dưỡng."
+        },
+        {
+          "id": "B22_05",
+          "cauhoi": "Chất béo (lipid) sau khi tiêu hóa được hấp thụ vào:",
+          "A": "Mạch máu trực tiếp",
+          "B": "Mạch bạch huyết (lacteal) trong lông nhung",
+          "C": "Tế bào gan",
+          "D": "Dịch tụy",
+          "dapan": "B",
+          "giaithich": "Sau khi lipid được mật nhũ hóa và lipase tụy phân cắt thành acid béo + glycerol → tái tổng hợp thành triglycerid trong tế bào ruột → vào mạch bạch huyết (lacteal) → ống ngực → tĩnh mạch dưới đòn. Đây là lý do chất béo đi vào máu chậm hơn glucose."
+        },
+        {
+          "id": "B22_06",
+          "cauhoi": "Khi đường huyết tăng sau bữa ăn, tuyến tụy tiết hormone nào để điều hòa?",
+          "A": "Glucagon",
+          "B": "Adrenalin",
+          "C": "Insulin",
+          "D": "Cortisol",
+          "dapan": "C",
+          "giaithich": "Insulin (do tế bào β tụy tiết) kích thích tế bào hấp thụ glucose, chuyển glucose thành glycogen (gan, cơ) và lipid (mô mỡ) → đường huyết giảm. Thiếu insulin hoặc kháng insulin gây đái tháo đường type 1 hoặc type 2."
+        },
+        {
+          "id": "B22_07",
+          "cauhoi": "Tại sao động vật nhai lại (bò, trâu, dê) có dạ dày 4 ngăn?",
+          "A": "Để tiêu hóa được nhiều loại thức ăn hơn",
+          "B": "Để vi khuẩn trong dạ cỏ phân giải cellulose của cỏ mà enzyme động vật không làm được",
+          "C": "Để tích trữ nước",
+          "D": "Để lọc độc tố từ cỏ",
+          "dapan": "B",
+          "giaithich": "Động vật nhai lại không tự tiết enzyme cellulase. Dạ cỏ (rumen) chứa hàng tỷ vi khuẩn và nguyên sinh vật tiết cellulase phân giải cellulose của cỏ → tạo acid béo ngắn mạch cho vật chủ hấp thụ. Đây là cộng sinh vi sinh vật điển hình."
+        },
+        {
+          "id": "B22_08",
+          "cauhoi": "BMR (Basal Metabolic Rate – chuyển hóa cơ sở) là gì?",
+          "A": "Lượng calo đốt cháy khi chạy bộ 1km",
+          "B": "Năng lượng tối thiểu cơ thể cần khi nghỉ ngơi hoàn toàn để duy trì sự sống",
+          "C": "Tốc độ tiêu hóa thức ăn",
+          "D": "Lượng glucose trong máu lúc đói",
+          "dapan": "B",
+          "giaithich": "BMR là năng lượng cần cho tim đập, phổi thở, não hoạt động... khi cơ thể hoàn toàn nghỉ ngơi. Người trưởng thành có BMR khoảng 1400–1800 kcal/ngày. BMR phụ thuộc vào giới tính, tuổi, khối lượng cơ thể và khối lượng cơ."
+        },
+        {
+          "id": "B22_09",
+          "cauhoi": "Thức ăn nào cung cấp nhiều năng lượng nhất trên mỗi gram?",
+          "A": "Tinh bột (4 kcal/g)",
+          "B": "Protein (4 kcal/g)",
+          "C": "Chất béo (9 kcal/g)",
+          "D": "Chất xơ (0 kcal/g)",
+          "dapan": "C",
+          "giaithich": "Chất béo cung cấp 9 kcal/gram – gấp đôi so với tinh bột và protein (4 kcal/g). Đây là lý do chất béo là dạng dự trữ năng lượng hiệu quả nhất của cơ thể, và tại sao 1kg mỡ thừa tương đương ~7700 kcal."
+        },
+        {
+          "id": "B22_10",
+          "cauhoi": "Vitamin C có vai trò gì và thiếu vitamin C gây bệnh gì?",
+          "A": "Cần cho thị lực – thiếu gây quáng gà",
+          "B": "Cần cho tổng hợp collagen và miễn dịch – thiếu gây bệnh scurvy (hoại huyết)",
+          "C": "Cần cho đông máu – thiếu gây chảy máu không cầm",
+          "D": "Cần cho hấp thụ canxi – thiếu gây còi xương",
+          "dapan": "B",
+          "giaithich": "Vitamin C cần cho tổng hợp collagen (protein cấu trúc da, xương, mạch máu) và tăng cường miễn dịch. Thiếu Vitamin C → bệnh scurvy: lợi răng chảy máu, vết thương lâu lành, mệt mỏi. Thủy thủ thế kỷ 17–18 thường mắc bệnh này trong các chuyến đi dài."
+        },
+        {
+          "id": "B22_11",
+          "cauhoi": "Tại sao người hoạt động thể lực nhiều cần ăn nhiều tinh bột hơn người ít vận động?",
+          "A": "Tinh bột làm tăng cơ bắp",
+          "B": "Tinh bột là nguồn glucose chính, cung cấp ATP cho hoạt động cơ",
+          "C": "Tinh bột ngăn ngừa mất nước",
+          "D": "Tinh bột cần cho quang hợp",
+          "dapan": "B",
+          "giaithich": "Tinh bột được tiêu hóa thành glucose → hô hấp tế bào tạo ATP. Người lao động thể lực tiêu thụ 3000–5000 kcal/ngày, phần lớn từ tinh bột. Vận động viên marathon cần khoảng 600–800g tinh bột/ngày để duy trì năng lượng."
+        },
+        {
+          "id": "B22_12",
+          "cauhoi": "Cholesterol: câu nào ĐÚNG?",
+          "A": "Cholesterol hoàn toàn có hại, cần loại bỏ khỏi cơ thể",
+          "B": "Cholesterol cần thiết cho cấu tạo màng tế bào và tổng hợp hormone steroid, nhưng dư thừa LDL gây hại tim mạch",
+          "C": "Cholesterol chỉ có trong thức ăn động vật",
+          "D": "Cholesterol là loại vitamin",
+          "dapan": "B",
+          "giaithich": "Cholesterol là thành phần thiết yếu của màng tế bào và tiền chất tổng hợp hormone giới tính, cortisol, vitamin D. HDL-cholesterol ('tốt') vận chuyển cholesterol về gan xử lý; LDL-cholesterol ('xấu') dư thừa lắng đọng trong mạch máu gây xơ vữa."
+        },
+        {
+          "id": "B22_13",
+          "cauhoi": "Tại sao cần uống đủ nước mỗi ngày (khoảng 2 lít)?",
+          "A": "Nước pha loãng acid dạ dày",
+          "B": "Nước là dung môi của mọi phản ứng sinh hóa, điều hòa thân nhiệt và bài tiết chất thải",
+          "C": "Nước cung cấp O₂ cho tế bào",
+          "D": "Nước tăng cường quang hợp",
+          "dapan": "B",
+          "giaithich": "Nước chiếm 60–70% khối lượng cơ thể người. Nước tham gia mọi phản ứng sinh hóa (dung môi), vận chuyển chất dinh dưỡng qua máu, điều hòa thân nhiệt (mồ hôi), và đào thải chất thải qua nước tiểu. Mất 2% nước đã gây giảm hiệu suất hoạt động thể chất và trí tuệ."
+        },
+        {
+          "id": "B22_14",
+          "cauhoi": "Thận có vai trò gì trong trao đổi chất?",
+          "A": "Sản xuất hormone tiêu hóa",
+          "B": "Lọc máu, loại bỏ chất thải (urea, uric acid) và điều hòa cân bằng nước-muối",
+          "C": "Tiêu hóa protein",
+          "D": "Tổng hợp glucose mới",
+          "dapan": "B",
+          "giaithich": "Mỗi ngày, thận lọc khoảng 180 lít máu, tạo ra ~1.5 lít nước tiểu chứa urea, uric acid, creatinin và các chất thải khác. Thận cũng điều chỉnh nồng độ Na+, K+, pH máu và tiết renin điều hòa huyết áp."
+        },
+        {
+          "id": "B22_15",
+          "cauhoi": "Sự khác biệt chính giữa tiêu hóa ngoại bào và nội bào là:",
+          "A": "Tiêu hóa ngoại bào nhanh hơn",
+          "B": "Tiêu hóa ngoại bào diễn ra trong ống tiêu hóa bên ngoài tế bào; nội bào diễn ra bên trong tế bào (lysosome)",
+          "C": "Chỉ động vật bậc cao mới có tiêu hóa ngoại bào",
+          "D": "Tiêu hóa nội bào cần enzyme đặc biệt hơn",
+          "dapan": "B",
+          "giaithich": "Tiêu hóa nội bào: amip, trùng roi nuốt con mồi vào không bào tiêu hóa, enzyme từ lysosome phân giải bên trong tế bào. Tiêu hóa ngoại bào: tiết enzyme ra khoang tiêu hóa (ruột) phân giải thức ăn trước khi hấp thụ – hiệu quả hơn với thức ăn lớn."
+        },
+        {
+          "id": "B22_16",
+          "cauhoi": "Chất xơ (cellulose) trong rau quả không được tiêu hóa, vậy nó có ích gì?",
+          "A": "Cung cấp nhiều calo",
+          "B": "Kích thích nhu động ruột, nuôi vi khuẩn có ích và làm chậm hấp thụ đường",
+          "C": "Cung cấp vitamin",
+          "D": "Không có tác dụng gì, chỉ tạo cảm giác no",
+          "dapan": "B",
+          "giaithich": "Chất xơ không bị tiêu hóa nhưng: (1) kích thích nhu động ruột già, ngừa táo bón; (2) nuôi vi khuẩn có ích (microbiome); (3) làm chậm hấp thụ glucose, ổn định đường huyết; (4) giảm hấp thụ cholesterol. WHO khuyến nghị 25–38g chất xơ/ngày."
+        },
+        {
+          "id": "B22_17",
+          "cauhoi": "Động vật biến nhiệt (cá, ếch, rắn) có trao đổi chất như thế nào vào mùa đông lạnh?",
+          "A": "Trao đổi chất tăng mạnh để tạo nhiệt",
+          "B": "Trao đổi chất giảm mạnh, nhiều loài ngủ đông để tiết kiệm năng lượng",
+          "C": "Trao đổi chất không thay đổi",
+          "D": "Trao đổi chất chuyển sang dùng ánh sáng",
+          "dapan": "B",
+          "giaithich": "Động vật biến nhiệt không điều hòa thân nhiệt – nhiệt độ cơ thể theo môi trường → enzyme hoạt động chậm lại khi lạnh → trao đổi chất giảm mạnh → ngủ đông (hibernation). Một số loài như cóc đồng gần như 'đóng băng' hoàn toàn và sống sót nhờ chất chống đông trong tế bào."
+        },
+        {
+          "id": "B22_18",
+          "cauhoi": "Tại sao trẻ em đang lớn cần ăn nhiều protein hơn người già cùng cân nặng?",
+          "A": "Trẻ em tiêu hóa kém hơn người già",
+          "B": "Protein cần để xây dựng tế bào mới cho sự phát triển của cơ, xương và cơ quan",
+          "C": "Trẻ em có dạ dày nhỏ hơn",
+          "D": "Protein cung cấp nhiều năng lượng hơn cho trẻ",
+          "dapan": "B",
+          "giaithich": "Trong giai đoạn phát triển, cơ thể cần protein để tổng hợp tế bào mới cho cơ, xương, não và các cơ quan đang tăng trưởng. Trẻ 1–3 tuổi cần 1.1g protein/kg/ngày, trong khi người già chỉ cần 0.8g/kg/ngày (dù thực ra cũng cần nhiều hơn để chống teo cơ)."
+        },
+        {
+          "id": "B22_19",
+          "cauhoi": "Tại sao người đái tháo đường type 1 phải tiêm insulin thay vì uống?",
+          "A": "Insulin tan trong máu tốt hơn",
+          "B": "Insulin là protein, uống vào sẽ bị enzyme tiêu hóa phân giải trước khi vào máu",
+          "C": "Insulin không thể hấp thụ qua ruột",
+          "D": "Uống insulin gây tác dụng phụ",
+          "dapan": "B",
+          "giaithich": "Insulin là protein (51 amino acid) – nếu uống, protease trong dạ dày và ruột sẽ phân cắt thành amino acid → mất hoạt tính. Hiện nghiên cứu insulin dạng hít (inhaler) và patch dán da đang được phát triển để thay thế kim tiêm."
+        },
+        {
+          "id": "B22_20",
+          "cauhoi": "Suy dinh dưỡng protein-năng lượng (kwashiorkor) đặc trưng bởi triệu chứng gì?",
+          "A": "Da xanh và tóc rụng",
+          "B": "Bụng phình to do thiếu protein gây giảm áp suất thẩm thấu máu, nước thoát ra mô",
+          "C": "Xương cong và răng yếu",
+          "D": "Mù màu và da bong tróc",
+          "dapan": "B",
+          "giaithich": "Thiếu protein → giảm albumin huyết tương → giảm áp suất keo của máu → nước không được giữ trong mạch, thấm ra gian bào → phù (edema), đặc biệt là bụng phình to. Đây là bệnh phổ biến ở trẻ em vùng thiếu ăn ở châu Phi."
+        }
+      ]
+    },
+    {
+      "bai": 23,
+      "tenBai": "Trao đổi khí ở sinh vật",
+      "cauHoi": [
+        {
+          "id": "B23_01",
+          "cauhoi": "Cơ quan trao đổi khí ở cá là:",
+          "A": "Phổi",
+          "B": "Mang (gill)",
+          "C": "Da",
+          "D": "Khí quản",
+          "dapan": "B",
+          "giaithich": "Mang cá có nhiều phiến mang giàu mao mạch, tăng diện tích tiếp xúc với nước. O₂ hòa tan trong nước khuếch tán vào máu; CO₂ khuếch tán từ máu ra nước theo gradient nồng độ."
+        },
+        {
+          "id": "B23_02",
+          "cauhoi": "Côn trùng trao đổi khí qua hệ thống nào?",
+          "A": "Phổi nhỏ",
+          "B": "Mang",
+          "C": "Hệ thống khí quản (trachea)",
+          "D": "Da",
+          "dapan": "C",
+          "giaithich": "Côn trùng có hệ thống ống khí quản (trachea) phân nhánh khắp cơ thể, mở ra ngoài qua lỗ thở (spiracle) ở thành bụng và ngực. Khí đi trực tiếp đến tế bào, không qua máu – giải thích tại sao côn trùng không có hệ tuần hoàn vận chuyển O₂."
+        },
+        {
+          "id": "B23_03",
+          "cauhoi": "Diện tích phế nang trong phổi người xấp xỉ:",
+          "A": "1 m²",
+          "B": "10 m²",
+          "C": "70–100 m²",
+          "D": "1000 m²",
+          "dapan": "C",
+          "giaithich": "Phổi người có khoảng 300–500 triệu phế nang, tổng diện tích 70–100 m² – gần bằng một sân tennis! Diện tích khổng lồ này đảm bảo trao đổi khí nhanh và hiệu quả, đáp ứng nhu cầu O₂ của ~37 nghìn tỷ tế bào."
+        },
+        {
+          "id": "B23_04",
+          "cauhoi": "Khí CO₂ được vận chuyển trong máu chủ yếu dưới dạng nào?",
+          "A": "CO₂ tự do hòa tan",
+          "B": "Gắn với hemoglobin (carboxyhemoglobin)",
+          "C": "Ion bicarbonate HCO₃⁻",
+          "D": "Gắn với albumin",
+          "dapan": "C",
+          "giaithich": "Khoảng 70% CO₂ trong máu ở dạng HCO₃⁻ (bicarbonate), 20–25% gắn với hemoglobin (carbaminohemoglobin), ~5–10% hòa tan. Sự chuyển đổi CO₂ ↔ HCO₃⁻ nhờ enzyme carbonic anhydrase trong hồng cầu."
+        },
+        {
+          "id": "B23_05",
+          "cauhoi": "Ếch có thể trao đổi khí qua da vì:",
+          "A": "Da ếch rất dày và cứng",
+          "B": "Da ếch ẩm ướt, mỏng, nhiều mao mạch – O₂ và CO₂ khuếch tán trực tiếp",
+          "C": "Da ếch có lỗ thở đặc biệt",
+          "D": "Da ếch chứa enzyme hô hấp",
+          "dapan": "B",
+          "giaithich": "Da ếch ẩm, mỏng (chỉ vài lớp tế bào), có mạng mao mạch dày đặc ngay dưới da → O₂ và CO₂ khuếch tán trực tiếp qua da. Khoảng 25–30% trao đổi khí của ếch diễn ra qua da, đặc biệt quan trọng khi ếch ngủ đông dưới nước."
+        },
+        {
+          "id": "B23_06",
+          "cauhoi": "Hemoglobin trong hồng cầu có chức năng gì?",
+          "A": "Tiêu hóa glucose",
+          "B": "Vận chuyển O₂ và CO₂ trong máu",
+          "C": "Sản xuất kháng thể",
+          "D": "Điều hòa đường huyết",
+          "dapan": "B",
+          "giaithich": "Hemoglobin (Hb) là protein màu đỏ chứa ion Fe²⁺ trong nhân hem. Mỗi phân tử Hb gắn được 4 phân tử O₂. Hb gắn O₂ ở phổi (oxyhemoglobin – đỏ tươi) và nhả O₂ ở tế bào (deoxyhemoglobin – đỏ thẫm)."
+        },
+        {
+          "id": "B23_07",
+          "cauhoi": "Tại sao hít phải khí CO có thể gây chết người?",
+          "A": "CO là chất độc phá hủy tế bào phổi",
+          "B": "CO gắn với hemoglobin mạnh hơn O₂ 200–250 lần, ngăn vận chuyển O₂",
+          "C": "CO phá hủy hồng cầu",
+          "D": "CO làm đông đặc máu",
+          "dapan": "B",
+          "giaithich": "CO gắn với Fe²⁺ trong hemoglobin tạo carboxyhemoglobin (HbCO) – bền gấp 200–250 lần so với HbO₂. Hb bị 'chiếm chỗ' → không vận chuyển được O₂ → tế bào thiếu O₂ → chết. Ngộ độc CO từ khói than, khí thải xe trong không gian kín là nguyên nhân tử vong phổ biến."
+        },
+        {
+          "id": "B23_08",
+          "cauhoi": "Tại sao vận động viên leo núi cao cần thời gian thích nghi trước khi lên đỉnh?",
+          "A": "Không khí lạnh làm phổi co lại",
+          "B": "Áp suất O₂ thấp ở độ cao → cơ thể cần thời gian tăng sản xuất hồng cầu",
+          "C": "Tia UV mạnh hơn gây hại phổi",
+          "D": "Không khí loãng làm giảm nhiệt độ cơ thể",
+          "dapan": "B",
+          "giaithich": "Ở độ cao >3000m, áp suất O₂ giảm → ít O₂ vào máu. Thận tiết EPO (erythropoietin) kích thích tủy xương tạo thêm hồng cầu → tăng khả năng vận chuyển O₂. Quá trình này cần 2–4 tuần. Đây là lý do vận động viên thường tập luyện ở cao nguyên để cải thiện thể lực."
+        },
+        {
+          "id": "B23_09",
+          "cauhoi": "Thực vật trao đổi khí qua:",
+          "A": "Chỉ qua khí khổng ban ngày",
+          "B": "Khí khổng (chủ yếu) và lenticels (bì khổng ở thân)",
+          "C": "Chỉ qua rễ",
+          "D": "Qua toàn bộ bề mặt lá",
+          "dapan": "B",
+          "giaithich": "Thực vật trao đổi khí qua: (1) khí khổng ở lá – chủ yếu, điều chỉnh được; (2) lenticels (bì khổng) ở thân gỗ – cấu trúc xốp cho phép trao đổi khí với bần cứng; (3) lông hút ở rễ cũng trao đổi khí với không khí trong đất."
+        },
+        {
+          "id": "B23_10",
+          "cauhoi": "Một người thở ra, không khí thở ra chứa bao nhiêu % CO₂ so với không khí hít vào?",
+          "A": "Bằng nhau (~0.04%)",
+          "B": "Thở ra chứa ~4% CO₂ (tăng 100 lần)",
+          "C": "Thở ra chứa 21% CO₂",
+          "D": "Thở ra không có CO₂",
+          "dapan": "B",
+          "giaithich": "Không khí hít vào: 21% O₂, 0.04% CO₂. Không khí thở ra: ~17% O₂, ~4% CO₂, ~4% H₂O. CO₂ tăng 100 lần từ 0.04% lên 4% – đây là lý do CPR (thổi ngạt) vẫn hiệu quả dù không khí thở ra ít O₂ hơn không khí tươi."
+        }
+      ]
+    }
+  ]
+}
