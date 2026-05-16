@@ -170,13 +170,11 @@ tr:hover td{background:#1c2128;}
 </head>
 <body>
 
-<!-- LOADING -->
 <div class="loading-overlay" id="loadingOverlay">
   <div class="spin-big"></div>
   <span style="color:var(--muted);font-size:.9rem" id="loadingTxt">Đang tải...</span>
 </div>
 
-<!-- ANTI-CHEAT -->
 <div class="ac-overlay" id="acOverlay">
   <div class="ac-box">
     <div style="font-size:2.5rem;margin-bottom:9px">⚠️</div>
@@ -188,11 +186,6 @@ tr:hover td{background:#1c2128;}
 
 <canvas id="cvs" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100;"></canvas>
 
-<!-- ═══════════════════════════════════════
-     GIAO DIỆN HỌC SINH (mặc định, không #gv)
-════════════════════════════════════════ -->
-
-<!-- S0: Chờ / Đăng nhập -->
 <div class="screen active" id="sWait">
   <div class="logo">🔬 Quiz KHTN 7</div>
   <div class="card" id="noQuizCard" style="text-align:center">
@@ -215,7 +208,6 @@ tr:hover td{background:#1c2128;}
   </div>
 </div>
 
-<!-- S1: Làm bài -->
 <div class="screen top" id="sQuiz" style="align-items:center">
   <div class="quiz-hdr">
     <span class="qnum" id="qNum">Câu 1 / 10</span>
@@ -234,7 +226,6 @@ tr:hover td{background:#1c2128;}
   </div>
 </div>
 
-<!-- S2: Kết quả -->
 <div class="screen" id="sResult">
   <div class="logo">🎉 Kết quả</div>
   <div class="card" style="text-align:center">
@@ -252,11 +243,6 @@ tr:hover td{background:#1c2128;}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     GIAO DIỆN GIÁO VIÊN (#gv)
-════════════════════════════════════════ -->
-
-<!-- T0: Đăng nhập -->
 <div class="screen" id="tLogin">
   <div class="logo">👩‍🏫 Giáo viên</div>
   <div class="card">
@@ -267,13 +253,11 @@ tr:hover td{background:#1c2128;}
   </div>
 </div>
 
-<!-- T1: Thiết lập -->
 <div class="screen top" id="tSetup">
   <div class="logo" style="margin-bottom:3px">⚙️ Thiết lập bài kiểm tra</div>
   <p class="subtitle">Điền thông tin → Kích hoạt → Gửi link cho học sinh</p>
   <div class="card card-wide">
 
-    <!-- QR + Link chia sẻ -->
     <div style="background:#070e1a;border:1.5px solid #1a3a6a;border-radius:13px;padding:16px;margin-bottom:14px">
       <div style="font-weight:800;color:var(--accent);font-size:.92rem;margin-bottom:10px">📤 Link & QR gửi cho học sinh</div>
       <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center">
@@ -290,9 +274,8 @@ tr:hover td{background:#1c2128;}
       </div>
     </div>
 
-    <!-- Thông tin bài -->
     <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:9px">
-      <div><label>Tên bài kiểm tra</label><input type="text" id="cfgTitle" value="Kiểm tra KHTN 7 – Tập tính ở động vật"/></div>
+      <div><label>Tên bài kiểm tra</label><input type="text" id="cfgTitle" value="Kiểm tra KHTN 7 – Trao đổi chất và Năng lượng"/></div>
       <div><label>Thời gian (phút)</label><input type="number" id="cfgTime" value="15" min="1"/></div>
       <div><label>Điểm tối đa</label><input type="number" id="cfgMax" value="10" min="1"/></div>
     </div>
@@ -306,7 +289,6 @@ tr:hover td{background:#1c2128;}
 
     <hr class="divider">
 
-    <!-- ĐỔI MẬT KHẨU -->
     <div style="background:#1c2128;border:1px solid var(--border);border-radius:11px;padding:14px;margin-bottom:14px">
       <div style="font-weight:800;font-size:.88rem;margin-bottom:10px">🔑 Đổi mật khẩu giáo viên</div>
       <div class="pwd-row">
@@ -319,7 +301,6 @@ tr:hover td{background:#1c2128;}
 
     <hr class="divider">
 
-    <!-- AI -->
     <div class="ai-box">
       <div class="ai-title">✨ AI Soạn Câu Hỏi Tự Động</div>
       <div class="ai-sub">Nhập yêu cầu cần đạt → AI tự soạn câu hỏi chuẩn KHTN 7 (tối đa 20 câu)</div>
@@ -342,10 +323,9 @@ tr:hover td{background:#1c2128;}
       </div>
     </div>
 
-    <!-- NGÂN HÀNG -->
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px">
       <div><label style="display:inline;margin:0">Ngân hàng câu hỏi</label><span class="q-cnt" id="qCnt">0 câu</span></div>
-      <div class="btn-row" style="margin:0;gap:6px"><button class="btn btn-purple btn-sm" onclick="loadBai32()">📚 Nạp đề Bài 32</button><button class="btn btn-outline btn-sm" onclick="qAddManual()">+ Thêm tay</button></div>
+      <div class="btn-row" style="margin:0;gap:6px"><button class="btn btn-outline btn-sm" onclick="qAddManual()">+ Thêm tay</button></div>
     </div>
     <div id="qList"></div>
 
@@ -358,12 +338,10 @@ tr:hover td{background:#1c2128;}
   </div>
 </div>
 
-<!-- T2: Dashboard -->
 <div class="screen top" id="tDash">
   <div class="logo" style="margin-bottom:3px">📊 Bảng điểm lớp</div>
   <p class="subtitle" id="dashTitle">–</p>
   <div class="card card-wide">
-
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;flex-wrap:wrap;gap:6px">
       <span style="font-size:.78rem;color:var(--muted)"><span class="dot-green"></span>Tự động cập nhật từ Google Sheets</span>
       <div class="btn-row" style="margin:0">
@@ -379,7 +357,6 @@ tr:hover td{background:#1c2128;}
       <div class="stat-box"><div class="stat-num" style="color:var(--accent)" id="dAvg">–</div><div class="stat-txt">ĐTB lớp</div></div>
     </div>
 
-    <!-- ABSENT PANEL -->
     <div class="absent-panel">
       <div class="absent-hdr">
         <span class="absent-title">❌ Học sinh CHƯA làm bài</span>
@@ -417,13 +394,130 @@ tr:hover td{background:#1c2128;}
 
 <script>
 // ════════════════════════════════════════════════
-// CONFIG
+// CONFIG & NGÂN HÀNG CÂU HỎI TÍCH HỢP TRỰC TIẾP (100 CÂU)
 // ════════════════════════════════════════════════
 const API = 'https://script.google.com/macros/s/AKfycbyK1g_-KnmFOBqaG3j7PTfcXslFlqs8EGFNxu2PxayECqRBV2WfnAOG8Da_qlFYhsx2/exec';
 const LS_PWD = 'khtn_pwd';
 
+// Đã tích hợp gọn gàng dữ liệu 100 câu từ file JSON của thầy
+const NGAN_HANG_100_CAU = [
+  {"id":"B19_01","cauhoi":"Quá trình quang hợp xảy ra chủ yếu ở bào quan nào của tế bào thực vật?","A":"Ti thể","B":"Ribosome","C":"Lục lạp","D":"Không bào","dapan":"C","giaithich":"Lục lạp chứa sắc tố diệp lục (chlorophyll) có khả năng hấp thụ năng lượng ánh sáng để thực hiện quang hợp. Đây là bào quan đặc trưng chỉ có ở thực vật."},
+  {"id":"B19_02","cauhoi":"Sắc tố nào sau đây có vai trò chủ yếu trong việc hấp thụ năng lượng ánh sáng để quang hợp?","A":"Carotenoid","B":"Diệp lục (Chlorophyll)","C":"Anthocyanin","D":"Xanthophyll","dapan":"B","giaithich":"Diệp lục là sắc tố chính tạo nên màu xanh của lá và trực tiếp tham gia hấp thụ, chuyển hóa năng lượng ánh sáng thành năng lượng hóa học."},
+  {"id":"B19_03","cauhoi":"Nguyên liệu đầu vào của quá trình quang hợp bao gồm những chất nào?","A":"Khí oxygen và nước","B":"Khí carbon dioxide và nước","C":"Chất hữu cơ và oxygen","D":"Khí carbon dioxide và oxygen","dapan":"B","giaithich":"Phương trình chữ của quang hợp: Nước + Carbon dioxide + Ánh sáng -> Chất hữu cơ + Oxygen. Do đó nguyên liệu đầu vào là carbon dioxide và nước."},
+  {"id":"B19_04","cauhoi":"Sản phẩm của quá trình quang hợp ở thực vật bao gồm:","A":"Khí carbon dioxide và nước","B":"Glucose (chất hữu cơ) và khí oxygen","C":"Chất hữu cơ và khí carbon dioxide","D":"Muối khoáng và khí oxygen","dapan":"B","giaithich":"Quang hợp tổng hợp ra chất hữu cơ (đặc trưng là glucose hoặc tinh bột) và giải phóng khí oxygen ra môi trường."},
+  {"id":"B19_05","cauhoi":"Cơ quan chính thực hiện chức năng quang hợp ở cây xanh là cơ quan nào?","A":"Rễ cây","B":"Thân cây","C":"Lá cây","D":"Hoa","dapan":"C","giaithich":"Lá cây là cơ quan có cấu tạo hình thái giải phẫu thích nghi tối ưu cho chức năng quang hợp (bề mặt rộng, chứa nhiều lục lạp, có khí khổng)."},
+  {"id":"B19_06","cauhoi":"Năng lượng ánh sáng trong quang hợp được chuyển hóa thành dạng năng lượng nào sau đây?","A":"Cơ năng tích lũy trong thân cây","B":"Hóa năng tích lũy trong các hợp chất hữu cơ","C":"Nhiệt năng tỏa ra môi trường","D":"Điện năng truyền trong mạch dẫn","dapan":"B","giaithich":"Bản chất của quang hợp là chuyển hóa quang năng (năng lượng ánh sáng) thành hóa năng (năng lượng liên kết hóa học trong chất hữu cơ)."},
+  {"id":"B19_07","cauhoi":"Cấu tạo nào của lá giúp khí carbon dioxide và oxygen khuếch tán dễ dàng vào và ra khỏi lá?","A":"Hệ gân lá","B":"Tế bào thịt lá","C":"Lớp cutin bên ngoài","D":"Các khí khổng","dapan":"D","giaithich":"Khí khổng là những khe hở nhỏ nằm chủ yếu ở biểu bì mặt dưới của lá, cho phép các phân tử khí (CO2, O2, hơi nước) trao đổi với môi trường."},
+  {"id":"B19_08","cauhoi":"Phần lớn các loài cây có lá màu xanh lục là do nguyên nhân nào?","A":"Diệp lục hấp thụ mạnh nhất ánh sáng màu xanh lục","B":"Diệp lục không hấp thụ ánh sáng màu xanh lục và phản xạ lại mắt ta","C":"Môi trường đất cung cấp nhiều chất khoáng màu xanh","D":"Tế bào lá tự tổng hợp ra chất màu xanh lục khi gặp ánh sáng","dapan":"B","giaithich":"Sắc tố diệp lục hấp thụ các vùng ánh sáng khác (như đỏ, xanh tím) nhưng không hấp thụ vùng ánh sáng xanh lục, tia sáng này phản xạ lại vào mắt người quan sát làm ta thấy lá có màu xanh."},
+  {"id":"B19_09","cauhoi":"Quang hợp có vai trò quyết định nào đối với sự sống trên Trái Đất?","A":"Cung cấp chất hữu cơ, năng lượng và oxygen cho hầu hết các sinh vật","B":"Làm tăng lượng khí carbon dioxide trong khí quyển","C":"Cung cấp nhiệt độ và độ ẩm ấm áp cho Trái Đất","D":"Chuyển hóa chất hữu cơ thành chất vô cơ bổ sung cho đất","dapan":"A","giaithich":"Quang hợp tạo ra nguồn thức ăn hữu cơ cho chuỗi thức ăn, cung cấp oxygen cho hô hấp của sinh vật và giúp cân bằng khí quyển."},
+  {"id":"B19_10","cauhoi":"Ở những loài cây có lá màu đỏ hoặc tím (như rau dền đỏ, cây huyết dụ), cây có tiến hành quang hợp không?","A":"Không, vì chúng không có chất diệp lục","B":"Có, nhưng chúng sử dụng năng lượng nhiệt thay vì ánh sáng","C":"Có, vì chúng vẫn có diệp lục nhưng bị che khuất bởi sắc tố khác","D":"Không, chúng sống dị dưỡng nhờ hút chất hữu cơ từ đất","dapan":"C","giaithich":"Các cây này vẫn chứa diệp lục để quang hợp bình thường, tuy nhiên hàm lượng sắc tố anthocyanin hoặc carotenoid quá cao đã che lấp đi màu xanh của diệp lục."},
+  {"id":"B20_01","cauhoi":"Yếu tố nào sau đây là điều kiện tiên quyết (bắt buộc phải có) để quá trình quang hợp diễn ra?","A":"Nhiệt độ đóng băng","B":"Ánh sáng","C":"Khí nitrogen tự do","D":"Phân bón hóa học","dapan":"B","giaithich":"Quang hợp là quá trình sử dụng năng lượng ánh sáng, nếu không có ánh sáng (tự nhiên hoặc nhân tạo), phản ứng quang hợp không thể xảy ra."},
+  {"id":"B20_02","cauhoi":"Khi hàm lượng khí carbon dioxide trong không khí tăng quá cao vượt mức chịu đựng của cây thì sẽ dẫn đến hiện tượng gì?","A":"Quang hợp tăng mạnh không ngừng","B":"Cây bị ngộ độc, quá trình quang hợp bị ức chế hoặc giảm mạnh","C":"Cây sinh trưởng nhanh hơn gấp đôi","D":"Cây ngừng thoát hơi nước hoàn toàn","dapan":"B","giaithich":"Nồng độ CO2 vừa phải sẽ kích thích quang hợp, nhưng nếu nồng độ tăng quá cao (vượt ngưỡng bão hòa và gây độc) sẽ làm tổn thương tế bào và ức chế quang hợp."},
+  {"id":"B20_03","cauhoi":"Nhiệt độ thuận lợi nhất cho quá trình quang hợp của đại đa số cây xanh thuộc vùng nhiệt đới thường nằm trong khoảng nào?","A":"$0^\circ C$ đến $10^\circ C$","B":"$25^\circ C$ đến $35^\circ C$","C":"$45^\circ C$ đến $55^\circ C$","D":"Trên $60^\circ C$","dapan":"B","giaithich":"Đại đa số thực vật nhiệt đới quang hợp tốt nhất ở điều kiện ấm áp từ $25^\circ C - 35^\circ C$. Nhiệt độ quá thấp hoặc quá cao đều làm giảm hoạt tính các enzyme quang hợp."},
+  {"id":"B20_04","cauhoi":"Nước đóng vai trò gì trực tiếp trong cơ chế của quá trình quang hợp?","A":"Chỉ làm mát cho lá cây không bị cháy nắng","B":"Là nguyên liệu trực tiếp tham gia vào phản ứng tổng hợp chất hữu cơ","C":"Là chất xúc tác không bị biến đổi sau phản ứng","D":"Là sản phẩm giải phóng ra môi trường qua khí khổng","dapan":"B","giaithich":"Nước vừa là dung môi, vừa là nguyên liệu trực tiếp (cùng với CO2) tham gia phản ứng hóa học để tạo thành glucose dưới tác động của ánh sáng."},
+  {"id":"B20_05","cauhoi":"Trồng cây với mật độ quá dày đặc sẽ ảnh hưởng tiêu cực như thế nào đến năng suất quang hợp?","A":"Làm tăng nồng độ oxygen quanh lá","B":"Khiến các cây che khuất ánh sáng của nhau và thiếu khí carbon dioxide","C":"Làm bộ rễ phát triển quá mức gây tốn năng lượng","D":"Kích thích cây ra hoa sớm làm giảm năng suất lá","dapan":"B","giaithich":"Mật độ quá dày làm giảm lượng ánh sáng nhận được ở các tầng lá dưới và làm giảm sự lưu thông không khí, dẫn đến thiếu CO2 cục bộ, giảm hiệu suất quang hợp."},
+  {"id":"B20_06","cauhoi":"Tại sao trong nông nghiệp người ta thường thắp đèn ban đêm cho một số loại cây như thanh long, hoa cúc?","A":"Để xua đuổi các loài côn trùng gây hại lá","B":"Để sưởi ấm cho cây không bị rét ban đêm","C":"Để kéo dài thời gian chiếu sáng, kích thích quang hợp và điều tiết sự ra hoa","D":"Để giúp cây tăng cường quá trình hô hấp tế bào","dapan":"C","giaithich":"Thắp đèn nhân tạo cung cấp thêm năng lượng ánh sáng giúp cây tăng cường thời gian quang hợp hoặc điều khiển chu kỳ sinh trưởng, ra hoa theo ý muốn kinh tế."},
+  {"id":"B20_07","cauhoi":"Mối quan hệ giữa cường độ ánh sáng và cường độ quang hợp được mô tả như thế nào?","A":"Ánh sáng càng mạnh thì quang hợp càng tăng liên tục không giới hạn","B":"Ánh sáng tăng thì quang hợp tăng, nhưng tăng quá mức bão hòa thì quang hợp sẽ giảm hoặc ngừng trệ","C":"Ánh sáng không ảnh hưởng gì đến tốc độ quang hợp","D":"Ánh sáng càng yếu thì cây quang hợp càng nhanh để bù đắp năng lượng","dapan":"B","giaithich":"Trong giới hạn nhất định, ánh sáng tăng làm tăng quang hợp. Nhưng khi vượt qua điểm bão hòa ánh sáng, nếu cường độ tiếp tục tăng quá mạnh sẽ làm thiêu hủy bộ máy quang hợp, khiến quang hợp giảm."},
+  {"id":"B20_08","cauhoi":"Vì sao việc tưới nước đầy đủ lại giúp cây duy trì được hiệu suất quang hợp tốt?","A":"Nước giúp mở khí khổng để hấp thụ khí carbon dioxide vào lá","B":"Nước làm tăng độ dày của lớp cutin bảo vệ lá","C":"Nước trực tiếp tiêu thụ lượng khí oxygen thừa trong tế bào","D":"Nước chuyển hóa ánh sáng thành nhiệt độ thích hợp cho lá","dapan":"A","giaithich":"Khi đủ nước, tế bào khí khổng trương nước sẽ mở ra, giúp khí CO2 (nguyên liệu quang hợp) khuếch tán vào thịt lá. Nếu thiếu nước, khí khổng đóng lại, cây thiếu CO2 dẫn đến ngừng quang hợp."},
+  {"id":"B20_09","cauhoi":"Nhóm cây nào sau đây thường có nhu cầu ánh sáng mạnh và thích hợp trồng ở nơi quang đãng (cây ưa sáng)?","A":"Cây lúa nước, cây ngô, cây mía","B":"Cây lá lốt, cây rêu, cây lan ý","C":"Cây gừng, cây sâm ngọc linh, cây dương xỉ","D":"Cây cà phê, cây trầu bà, cây phát tài","dapan":"A","giaithich":"Lúa, ngô, mía là những cây ưa sáng mạnh, cần trồng nơi không bị che bóng để đạt hiệu suất quang hợp tối đa. Các nhóm còn lại thuộc nhóm cây ưa bóng."},
+  {"id":"B20_10","cauhoi":"Biện pháp nào sau đây KHÔNG phải là ứng dụng thực tiễn nhằm nâng cao năng suất cây trồng dựa vào quang hợp?","A":"Tưới nước và bón phân hợp lý theo nhu cầu từng giai đoạn","B":"Trồng cây với mật độ tối đa có thể để tận dụng diện tích đất","C":"Tuyển chọn và lai tạo các giống cây có diện tích lá tối ưu","D":"Cắt tỉa các cành già, lá bị sâu bệnh để tạo độ thông thoáng","dapan":"B","giaithich":"Trồng mật độ quá dày (tối đa) sẽ phản tác dụng do các cây che bóng nhau. M mật độ phải 'hợp lý' mới là biện pháp khoa học."},
+  {"id":"B21_01","cauhoi":"Hô hấp tế bào là quá trình phân giải chất nào sau đây để giải phóng năng lượng cung cấp cho cơ thể?","A":"Chất vô cơ và nước","B":"Chất hữu cơ (chủ yếu là glucose)","C":"Khí carbon dioxide và muối khoáng","D":"Sắc tố diệp lục và vitamin","dapan":"B","giaithich":"Hô hấp tế bào là quá trình phân giải các hợp chất hữu cơ (giàu năng lượng), phổ biến nhất là glucose, thành các chất đơn giản hơn nhằm giải phóng năng lượng."},
+  {"id":"B21_02","cauhoi":"Năng lượng giải phóng ra từ quá trình hô hấp tế bào được tích lũy chủ yếu dưới dạng phân tử nào?","A":"Glucose","B":"Diệp lục","C":"ATP","D":"DNA","dapan":"C","giaithich":"Năng lượng hóa năng trong chất hữu cơ khi phân giải được chuyển sang dạng dễ sử dụng chứa trong các phân tử ATP (Adenosine triphosphate) - nguồn năng lượng của tế bào."},
+  {"id":"B21_03","cauhoi":"Bào quan nào được ví là 'nhà máy năng lượng' - nơi diễn ra chủ yếu quá trình hô hấp tế bào?","A":"Lục lạp","B":"Ti thể","C":"Không bào","D":"Lưới nội chất","dapan":"B","giaithich":"Ti thể là bào quan chứa hệ thống enzyme hô hấp phong phú, nơi thực hiện các phản ứng oxy hóa chất hữu cơ để tạo ra phần lớn ATP cho tế bào sinh vật nhân thực."},
+  {"id":"B21_04","cauhoi":"Nguyên liệu tham gia trực tiếp vào quá trình hô hấp tế bào hiếu khí gồm có:","A":"Khí carbon dioxide và nước","B":"Chất hữu cơ và khí oxygen","C":"Chất hữu cơ và khí carbon dioxide","D":"Nước và năng lượng ATP","dapan":"B","giaithich":"Phương trình chữ của hô hấp tế bào: Chất hữu cơ + Oxygen -> Carbon dioxide + Nước + Năng lượng (ATP + Nhiệt). Vậy nguyên liệu là chất hữu cơ và oxygen."},
+  {"id":"B21_05","cauhoi":"Sản phẩm của quá trình hô hấp tế bào hoàn toàn bao gồm những gì?","A":"Ánh sáng, nước và chất hữu cơ","B":"Khí carbon dioxide, nước và năng lượng (ATP + nhiệt)","C":"Khí oxygen, glucose và nhiệt lượng","D":"Khí carbon dioxide, khí oxygen và nước","dapan":"B","giaithich":"Hô hấp phân giải hoàn toàn chất hữu cơ giải phóng ra chất vô cơ (CO2, H2O) và giải phóng năng lượng hóa năng (ATP) cùng năng lượng hao phí dưới dạng nhiệt."},
+  {"id":"B21_06","cauhoi":"Mối quan hệ giữa quang hợp và hô hấp tế bào ở thực vật được mô tả là gì?","A":"Hai quá trình hoàn toàn độc lập, không liên quan đến nhau","B":"Hai quá trình trái ngược nhau nhưng phụ thuộc lẫn nhau, tạo thành chu trình khép kín về vật chất","C":"Hô hấp tế bào tạo ra nguyên liệu cung cấp trực tiếp cho lục lạp tổng hợp ánh sáng","D":"Quang hợp phá hủy các sản phẩm năng lượng do hô hấp tế bào tạo ra","dapan":"B","giaithich":"Quang hợp tổng hợp chất hữu cơ và giải phóng O2 (là nguyên liệu cho hô hấp). Hô hấp phân giải chất hữu cơ tạo CO2 và H2O (là nguyên liệu cho quang hợp). Chúng là hai mặt đối lập thống nhất."},
+  {"id":"B21_07","cauhoi":"Hô hấp tế bào diễn ra ở những loại sinh vật nào sau đây?","A":"Chỉ diễn ra ở động vật, không diễn ra ở thực vật","B":"Chỉ diễn ra ở thực vật vào ban đêm","C":"Diễn ra ở tất cả các sinh vật sống (thực vật, động vật, con người, nấm, vi khuẩn...)","D":"Chỉ diễn ra ở các loài vi sinh vật ký sinh","dapan":"C","giaithich":"Mọi tế bào sống của mọi sinh vật đều cần năng lượng để duy trì hoạt động sống, do đó hô hấp tế bào là đặc trưng bắt buộc diễn ra liên tục ở tất cả các sinh vật."},
+  {"id":"B21_08","cauhoi":"Tại sao khi hoạt động thể thao mạnh (chạy bộ, đá bóng), nhịp hô hấp (thở) của con người lại tăng lên?","A":"Để cơ thể giải bớt lượng nước thừa qua đường phổi","B":"Để lấy thêm nhiều khí oxygen cung cấp cho quá trình hô hấp tế bào tạo năng lượng và thải khí CO2","C":"Để làm giảm nhiệt độ của máu đang lưu thông","D":"Để ngăn chặn tế bào cơ sử dụng chất hữu cơ","dapan":"B","giaithich":"Cơ bắp hoạt động mạnh cần nhiều năng lượng ATP, đòi hỏi tốc độ hô hấp tế bào tăng cao. Do đó cơ thể phải thở nhanh và mạnh hơn để cung cấp đủ O2 kịp thời và đào thải nhanh khí CO2 ra ngoài."},
+  {"id":"B21_09","cauhoi":"Nếu một tế bào sinh vật bị mất hoàn toàn khả năng hô hấp tế bào thì điều gì sẽ xảy ra?","A":"Tế bào sẽ chuyển sang tự dưỡng quang hợp","B":"Tế bào không thể tạo ra năng lượng ATP và sẽ bị chết nhanh chóng","C":"Tế bào sẽ phân chia nhanh hơn bình quanh","D":"Tế bào biến đổi cấu trúc để sống không cần năng lượng","dapan":"B","giaithich":"Không có hô hấp tế bào, chuỗi cung ứng năng lượng ATP bị cắt đứt hoàn toàn, các hoạt động sống cơ bản như vận chuyển chất, tổng hợp cấu trúc sẽ dừng lại, dẫn đến cái chết của tế bào."},
+  {"id":"B21_10","cauhoi":"Trong các nhận định sau về năng lượng nhiệt tỏa ra trong hô hấp tế bào, nhận định nào ĐÚNG?","A":"Nhiệt lượng tỏa ra là hoàn toàn lãng phí, không có tác dụng gì","B":"Nhiệt lượng tỏa ra giúp duy trì thân nhiệt ổn định cho các động vật hằng nhiệt và con người","C":"Nhiệt lượng này được cây xanh hấp thụ lại để biến thành ánh sáng","D":"Nhiệt lượng tỏa ra làm đóng băng các dịch bào xung quanh ti thể","dapan":"B","giaithich":"Một phần năng lượng hô hấp giải phóng dưới dạng nhiệt, phần nhiệt này rất quan trọng đối với động vật hằng nhiệt giúp duy trì nhiệt độ cơ thể ổn định bất chấp môi trường ngoài thay đổi."},
+  {"id":"B22_01","cauhoi":"Yếu tố môi trường nào sau đây ảnh hưởng trực tiếp và mạnh mẽ nhất đến tốc độ của quá trình hô hấp tế bào?","A":"Hàm lượng khí nitrogen trong không khí","B":"Nhiệt độ môi trường, hàm lượng nước, nồng độ oxygen và carbon dioxide","C":"Cường độ ánh sáng mặt trời chiếu trực tiếp vào ti thể","D":"Độ phì nhiêu và độ ẩm sâu của tầng đất cái","dapan":"B","giaithich":"Các yếu tố ảnh hưởng trực tiếp đến enzyme và cơ chế hô hấp gồm: Nhiệt độ, hàm lượng nước (dung môi và chất tham gia), nồng độ O2 (nguyên liệu) và nồng độ CO2 (chất thải)."},
+  {"id":"B22_02","cauhoi":"Hàm lượng nước trong tế bào/mô ảnh hưởng như thế nào đến cường độ hô hấp tế bào?","A":"Hàm lượng nước càng giảm thì hô hấp tế bào càng tăng mạnh","B":"Nước là dung môi và môi trường cho các phản ứng, hàm lượng nước tỉ lệ thuận với cường độ hô hấp trong giới hạn sinh lý","C":"Nước đóng băng hoàn toàn mới kích thích hô hấp tối đa","D":"Nước không có bất kỳ ảnh hưởng nào đến tốc độ hô hấp","dapan":"B","giaithich":"Nước tham gia trực tiếp vào một số phản ứng thủy phân và là dung môi hòa tan enzyme, cơ chất. Cơ quan có hàm lượng nước cao (hạt đang nảy mầm) có hô hấp rất mạnh; cơ quan khô (hạt khô) có hô hấp rất yếu."},
+  {"id":"B22_03","cauhoi":"Mục đích cốt lõi của các biện pháp bảo quản nông sản (hạt, củ, quả) sau thu hoạch là gì?","A":"Kích thích quá trình hô hấp tế bào diễn ra nhanh nhất có thể","B":"Đưa cường độ hô hấp tế bào về mức tối thiểu (thấp nhất) để giảm hao phí chất hữu cơ","C":"Tiêu diệt toàn bộ các tế bào sống của nông sản","D":"Làm tăng hàm lượng nước bên trong hạt và quả","dapan":"B","giaithich":"Nông sản sau thu hoạch vẫn gồm các tế bào sống đang hô hấp. Hô hấp làm tiêu hao chất hữu cơ, giảm chất lượng và sinh nhiệt gây thối. Do đó phải hạn chế hô hấp về mức tối thiểu để bảo quản được lâu."},
+  {"id":"B22_04","cauhoi":"Tại sao trước khi cất giữ các loại hạt như lúa, ngô, đậu vào kho, người nông dân phải phơi hoặc sấy thật khô?","A":"Để làm chết phôi bên trong hạt không cho mọc mầm","B":"Để giảm hàm lượng nước, từ đó hạ thấp cường độ hô hấp tế bào của hạt giúp bảo quản lâu hơn","C":"Để làm tăng trọng lượng của hạt khi bán","D":"Để hạt hấp thụ thêm nhiều khí oxygen từ ánh nắng","dapan":"B","giaithich":"Phơi khô hạ độ ẩm hạt xuống mức an toàn (thường dưới 14%), khiến cường độ hô hấp của hạt giảm sâu xuống mức tối thiểu, ngăn hạt nảy mầm tự phát và hạn chế nấm mốc phát triển."},
+  {"id":"B22_05","cauhoi":"Phương pháp bảo quản nông sản trong kho lạnh hoặc tủ lạnh dựa trên cơ sở khoa học nào?","A":"Nhiệt độ thấp ức chế hoạt tính của các enzyme tham gia vào quá trình hô hấp tế bào","B":"Nhiệt độ thấp làm tăng lượng khí oxygen trong kho","C":"Nhiệt độ thấp biến đổi chất hữu cơ thành chất vô cơ bảo quản được lâu hơn","D":"Nhiệt độ thấp kích thích nông sản quang hợp ngược","dapan":"A","giaithich":"Nhiệt độ thấp làm giảm hoạt động của các enzyme hô hấp, do đó làm chậm quá trình phân giải chất hữu cơ của nông sản, giúp nông sản tươi lâu hơn."},
+  {"id":"B22_06","cauhoi":"Bảo quản nông sản bằng biện pháp nồng độ carbon dioxide ($CO_2$) cao hoặc hút chân không có tác dụng gì?","A":"Cung cấp thêm nguyên liệu cho nông sản quang hợp","B":"Ức chế quá trình hô hấp tế bào do thiếu oxygen hoặc do nồng độ sản phẩm thải $CO_2$ quá cao","C":"Làm tăng độ ẩm trong các túi đóng gói","D":"Giúp nông sản giải phóng năng lượng ATP nhanh hơn","dapan":"B","giaithich":"Hô hấp hiếu khí cần O2 và thải ra CO2. Khi hút chân không (thiếu O2) hoặc chủ động tăng nồng độ CO2 cao trong kho kín sẽ làm ức chế phản ứng hô hấp, khiến quá trình này bị đình trệ, bảo vệ được nông sản."},
+  {"id":"B22_07","cauhoi":"Tại sao khi bảo quản rau xanh và trái cây tươi, người ta KHÔNG nên phơi khô hoặc sấy khô như bảo quản hạt?","A":"Vì phơi khô làm rau quả mất nước, héo úa, mất đi cấu trúc tế bào và giá trị dinh dưỡng/thương phẩm","B":"Vì rau quả phơi khô sẽ hô hấp mạnh hơn gấp nhiều lần","C":"Vì phơi khô làm tăng hàm lượng độc tố bên trong quả","D":"Vì tế bào rau quả không có khả năng mất nước","dapan":"A","giaithich":"Rau quả tươi có giá trị sử dụng nằm ở độ tươi ngon, mọng nước và vitamin. Nếu phơi sấy khô biến chất hoàn toàn cấu trúc thương phẩm (trừ một số loại làm mứt, quả khô đặc biệt), không còn là bảo quản rau quả tươi."},
+  {"id":"B22_08","cauhoi":"Hiện tượng đất bị ngập úng lâu ngày do mưa lớn sẽ gây hại như thế nào đến rễ cây trồng cạn?","A":"Làm tăng lượng nước cung cấp khiến rễ cây bị quá tải năng lượng","B":"Đất ngập nước làm thiếu oxygen, rễ cây không thể hô hấp tế bào, dẫn đến thiếu ATP, rễ bị thối và chết","C":"Kích thích các loài vi khuẩn có lợi phân hủy rễ nhanh hơn","D":"Làm cho rễ cây quang hợp tạo ra chất độc tự hại chính mình","dapan":"B","giaithich":"Cây cạn cần không khí trong các khe đất để rễ hô hấp hiếu khí. Ngập úng đẩy hết không khí ra ngoài, rễ bị thiếu O2 nên phải hô hấp kị khí kéo dài, sinh ra các chất độc (như ethanol) làm thối rễ, cây bị héo và chết."},
+  {"id":"B22_09","cauhoi":"Biện pháp kỹ thuật nào sau đây giúp rễ cây trồng thoáng khí và hô hấp tốt nhất trong trồng trọt?","A":"Bón thật nhiều phân đạm hóa học bề mặt","B":"Cày sâu, cuốc bẫm, xới đất thường xuyên và làm cỏ, khơi thông kênh mương thoát nước","C":"Tưới nước liên tục kể cả khi trời đang mưa lớn","D":"Nén chặt đất xung quanh gốc cây để giữ ấm cho rễ","dapan":"B","giaithich":"Xới xáo đất làm đất tơi xốp, tạo nhiều khoảng trống chứa không khí giúp rễ dễ dàng lấy O2 để hô hấp tế bào; khơi thông kênh mương ngăn ngập úng."},
+  {"id":"B22_10","cauhoi":"Tại sao không nên để quá nhiều hoa tươi hoặc cây xanh trong phòng ngủ đóng kín cửa vào ban đêm?","A":"Vì ban đêm cây xanh ngừng hoàn toàn mọi quá trình trao đổi chất","B":"Vì ban đêm cây xanh thực hiện hô hấp tế bào, lấy khí oxygen của phòng và thải ra nhiều khí carbon dioxide gây ngạt","C":"Vì hoa tươi tỏa ra các chất độc phá hủy tế bào da người","D":"Vì ban đêm cây xanh quang hợp mạnh tạo ra khí độc","dapan":"B","giaithich":"Ban đêm không có ánh sáng, cây không quang hợp mà chỉ hô hấp tế bào. Trong phòng kín, cây xanh và hoa sẽ tranh chấp O2 với người và thải ra khí CO2, có thể gây thiếu oxy, ngạt thở nguy hiểm cho tính mạng."},
+  {"id":"B23_01","cauhoi":"Trao đổi chất ở sinh vật là quá trình bao gồm các hoạt động cơ bản nào?","A":"Chỉ là việc sinh vật tìm kiếm thức ăn từ môi trường ngoài","B":"Cơ thể lấy các chất từ môi trường, biến đổi chúng trong tế bào và thải các chất cặn bã ra ngoài","C":"Sự tăng lên về kích thước và khối lượng của cơ thể sinh vật","D":"Sự sinh sản tạo ra thế hệ con cháu giống mình","dapan":"B","giaithich":"Trao đổi chất gồm 2 giai đoạn gắn liền: trao đổi chất giữa cơ thể với môi trường (lấy vào, thải ra) và chuyển hóa các chất bên trong tế bào."},
+  {"id":"B23_02","cauhoi":"Chuyển hóa năng lượng trong cơ thể sinh vật luôn gắn liền với quá trình nào?","A":"Quá trình sinh sản và di truyền","B":"Quá trình trao đổi chất của tế bào","C":"Quá trình di chuyển vị trí trong không gian","D":"Quá trình tiếp nhận các kích thích từ các giác quan","dapan":"B","giaithich":"Mọi phản ứng hóa học trong trao đổi chất (tổng hợp hay phân giải) đều kèm theo sự tích lũy hoặc giải phóng năng lượng liên kết hóa học, do đó trao đổi chất luôn đi đôi với chuyển hóa năng lượng."},
+  {"id":"B23_03","cauhoi":"Sinh vật tự dưỡng là nhóm sinh vật có khả năng đặc biệt nào sau đây?","A":"Tự di chuyển tìm kiếm con mồi từ khoảng cách rất xa","B":"Tự tổng hợp được chất hữu cơ từ các chất vô cơ nhờ sử dụng năng lượng ánh sáng hoặc hóa học","C":"Sống ký sinh hoàn toàn vào cơ thể sinh vật khác để lấy năng lượng","D":"Tự phân đôi cơ thể không cần qua giảm phân","dapan":"B","giaithich":"Sinh vật tự dưỡng (như cây xanh, tảo, một số vi khuẩn) tự chế tạo được chất hữu cơ nuôi sống chính nó và cung cấp cho chuỗi thức ăn từ nguyên liệu vô cơ (CO2, H2O)."},
+  {"id":"B23_04","cauhoi":"Nhóm sinh vật nào sau đây thuộc nhóm sinh vật dị dưỡng?","A":"Cây lúa, cây ngô, tảo lục đơn bào","B":"Con hổ, con người, nấm rơm, vi khuẩn hoại sinh","C":"Cây mía, rêu bám tường, vi khuẩn lam quang hợp","D":"Cây bàng, cây thông, tất cả các loài tảo biển","dapan":"B","giaithich":"Sinh vật dị dưỡng không thể tự tổng hợp chất hữu cơ từ chất vô cơ mà phải lấy chất hữu cơ sẵn có bằng cách ăn, ký sinh hoặc hoại sinh (động vật, nấm, nhiều loại vi khuẩn)."},
+  {"id":"B23_05","cauhoi":"Phương thức dinh dưỡng của cây xanh và phương thức dinh dưỡng của động vật khác nhau căn bản ở điểm nào?","A":"Cây xanh dinh dưỡng dị dưỡng, động vật dinh dưỡng tự dưỡng","B":"Cây xanh dinh dưỡng tự dưỡng (quang tự dưỡng), động vật dinh dưỡng dị dưỡng","C":"Cây xanh không cần chất dinh dưỡng, động vật mới cần","D":"Cây xanh lấy chất hữu cơ từ đất, động vật lấy chất hữu cơ từ không khí","dapan":"B","giaithich":"Cây xanh là sinh vật quang tự dưỡng nhờ có diệp lục hấp thụ ánh sáng. Động vật không có diệp lục, bắt buộc phải ăn sinh vật khác nên gọi là dị dưỡng."},
+  {"id":"B23_06","cauhoi":"Năng lượng chủ yếu bước vào thế giới sống xuất phát từ nguồn nào và thông qua quá trình nào đầu tiên?","A":"Năng lượng địa nhiệt thông qua quá trình núi lửa phun trào","B":"Năng lượng ánh sáng mặt trời thông qua quá trình quang hợp của sinh vật tự dưỡng","C":"Năng lượng hạt nhân thông qua sự phóng xạ tự nhiên của lòng đất","D":"Năng lượng gió thông qua sự phát tán của các hạt phấn hoa","dapan":"B","giaithich":"Ánh sáng mặt trời là nguồn năng lượng khởi đầu, được thực vật và các sinh vật quang hợp 'bắt giữ' và chuyển hóa vào chất hữu cơ, từ đó nuôi sống toàn bộ thế giới sinh vật dị dưỡng."},
+  {"id":"B23_07","cauhoi":"Vai trò nào sau đây KHÔNG phải của quá trình trao đổi chất và chuyển hóa năng lượng đối với sinh vật?","A":"Cung cấp nguyên liệu để xây dựng cấu trúc tế bào và cơ thể","B":"Cung cấp năng lượng ATP cho các hoạt động sống diễn ra bình thường","C":"Giúp sinh vật bài tiết các chất độc hại tích tụ ra ngoài cơ thể","D":"Thay đổi hoàn toàn bộ thông tin di truyền (DNA) của loài qua các thế hệ","dapan":"D","giaithich":"Trao đổi chất và chuyển hóa năng lượng duy trì sự sống, sinh trưởng, sinh sản thông thường chứ không làm thay đổi thông tin di truyền cốt lõi của loài."},
+  {"id":"B23_08","cauhoi":"Khi một sinh vật ngừng hoàn toàn các hoạt động trao đổi chất và chuyển hóa năng lượng với môi trường thì điều gì xảy ra?","A":"Sinh vật sẽ rơi vào trạng thái ngủ đông vô hạn","B":"Sinh vật sẽ bị chết","C":"Sinh vật tiến hóa thành một loài mới có sức bền cao hơn","D":"Sinh vật tự động phân đôi thành nhiều cá thể con","dapan":"B","giaithich":"Trao đổi chất và chuyển hóa năng lượng là biểu hiện cơ bản nhất của sự sống. Ngừng quá trình này nghĩa là sự sống chấm dứt, sinh vật sẽ chết."},
+  {"id":"B23_09","cauhoi":"Chất nào sau đây là chất thải nguy hiểm của quá trình chuyển hóa protein cần được bài tiết ra khỏi cơ thể động vật?","A":"Khí oxygen ($O_2$)","B":"Hợp chất chứa nitrogen (như urea, uric acid, ammonia)","C":"Tinh bột dư thừa","D":"Sắc tố diệp lục hòa tan","dapan":"B","giaithich":"Phân giải protein sinh ra nhóm chất chứa nitrogen độc hại (đặc biệt là ammonia). Cơ thể động vật phải chuyển hóa chúng thành urea hoặc uric acid ít độc hơn và bài tiết qua hệ bài tiết ra ngoài."},
+  {"id":"B23_10","cauhoi":"Quá trình tổng hợp các chất hữu cơ phức tạp từ các chất đơn giản trong tế bào tích lũy năng lượng được gọi là gì?","A":"Quá trình đồng hóa (tổng hợp)","B":"Quá trình dị hóa (phân giải)","C":"Quá trình bài tiết chất thải","D":"Quá trình khuếch tán thụ động","dapan":"A","giaithich":"Chuyển hóa vật chất gồm đồng hóa (tổng hợp chất phức tạp, tích lũy năng lượng) và dị hóa (phân giải chất phức tạp thành đơn giản, giải phóng năng lượng)."},
+  {"id":"B24_01","cauhoi":"Cây xanh hấp thụ nước và các chất khoáng từ đất chủ yếu nhờ cơ quan nào sau đây?","A":"Tế bào biểu bì của thân cây","B":"Các lỗ khí khổng trên bề mặt lá","C":"Các tế bào lông hút của rễ","D":"Hệ gân lá ở mặt trên","dapan":"C","giaithich":"Rễ là cơ quan hấp thụ nước và khoáng. Tại vùng hút của rễ, các tế bào biểu bì kéo dài ra tạo thành lông hút, làm tăng diện tích tiếp xúc với đất giúp hút nước và khoáng hiệu quả."},
+  {"id":"B24_02","cauhoi":"Nước được vận chuyển từ rễ lên thân và lá cây theo một chiều duy nhất qua hệ mạch nào?","A":"Mạch rây (Phloem)","B":"Mạch gỗ (Xylem)","C":"Mạch rây và mạch gỗ trộn lẫn","D":"Hệ thống ống nội bào của thịt vỏ","dapan":"B","giaithich":"Mạch gỗ gồm các tế bào chết (quản bào và mạch ống) nối liền nhau, chuyên chở nước và ion khoáng đi từ rễ ngược lên ngọn cây."},
+  {"id":"B24_03","cauhoi":"Các chất hữu cơ do lá cây quang hợp tổng hợp được vận chuyển đến các cơ quan lưu trữ hoặc tiêu thụ (rễ, củ, quả) qua hệ mạch nào?","A":"Mạch gỗ (Xylem)","B":"Mạch rây (Phloem)","C":"Khí khổng dòng dọc","D":"Kênh vận chuyển khí của vỏ thân","dapan":"B","giaithich":"Mạch rây gồm các tế bào sống (tế bào ống rây và tế bào kèm), vận chuyển các chất hữu cơ (dòng luyện) đi từ lá đến các nơi cần sử dụng hoặc dự trữ."},
+  {"id":"B24_04","cauhoi":"Động lực nào sau đây đóng vai trò chủ yếu 'kéo' dòng nước từ rễ lên tận ngọn của các cây gỗ cao hàng chục mét?","A":"Lực đẩy từ rễ (áp suất rễ)","B":"Lực liên kết giữa các phân tử nước với nhau","C":"Quá trình thoát hơi nước qua khí khổng của lá cây","D":"Trọng lực của Trái Đất tác động vào mạch gỗ","dapan":"C","giaithich":"Thoát hơi nước ở lá tạo ra một lực kéo đầu trên rất lớn. Đây là động lực chính, mạnh mẽ nhất kéo cột nước liên tục từ rễ lên lá cây."},
+  {"id":"B24_05","cauhoi":"Cơ chế chủ yếu giúp nước di chuyển từ dung dịch đất (nơi có nồng độ chất tan thấp) vào trong tế bào lông hút (nơi có nồng độ chất tan cao) là gì?","A":"Cơ chế thẩm thấu (vận chuyển thụ động từ nơi có thế nước cao vào nơi có thế nước thấp)","B":"Cơ chế vận chuyển chủ động tiêu tốn nhiều ATP","C":"Cơ chế thực bào của màng tế bào rễ","D":"Nước tự bốc hơi ngược vào trong rễ cây","dapan":"A","giaithich":"Dịch tế bào lông hút luôn ưu trương (đậm đặc) hơn dịch đất, do đó nước tự động thẩm thấu từ đất vào lông hút qua màng bán thấm mà không tốn năng lượng."},
+  {"id":"B24_06","cauhoi":"Sự mở của khí khổng phụ thuộc chủ yếu vào yếu tố sinh lý nào của hai tế bào hình hạt đậu cấu tạo nên nó?","A":"Hàm lượng tinh bột tích lũy trong nhân tế bào","B":"Độ trương nước (hàm lượng nước) của hai tế bào hình hạt đậu","C":"Độ dày của lớp cutin trên bề mặt tế bào hạt đậu","D":"Tốc độ phân chia của tế bào biểu bì bên cạnh","dapan":"B","giaithich":"Khi hai tế bào hình hạt đậu hút đầy nước, thành mỏng phía ngoài căng ra làm thành dày phía trong cong theo, làm mở khe khí khổng. Khi mất nước, tế bào xẹp xuống, khí khổng đóng lại."},
+  {"id":"B24_07","cauhoi":"Thành phần chính có trong dịch mạch gỗ (dòng đi lên) bao gồm những chất nào?","A":"Chất hữu cơ phức tạp, hormone và vitamin","B":"Nước, các ion khoáng hòa tan và một số chất hữu cơ tổng hợp từ rễ","C":"Đường sucrose đậm đặc và amino acid","D":"Khí oxygen và tinh bột dạng hòa tan","dapan":"B","giaithich":"Dịch mạch gỗ vận chuyển sản phẩm hấp thụ từ đất, nên thành phần chính luôn là nước và các muối khoáng (ion khoáng) hòa tan."},
+  {"id":"B24_08","cauhoi":"Thành phần chính có trong dịch mạch rây (dòng đi xuống) chủ yếu là chất nào?","A":"Các ion khoáng như $K^+$, $Na^+$, $Ca^{2+}$","B":"Đường sucrose, các amino acid, hormone thực vật do lá tổng hợp hoặc biến đổi","C":"Nước nguyên chất không chứa bất kỳ chất tan nào","D":"Khí carbon dioxide hòa tan trong dịch bào","dapan":"B","giaithich":"Mạch rây vận chuyển sản phẩm quang hợp, do đó thành phần chính là đường hữu cơ (chủ yếu là sucrose) cùng các chất hữu cơ sinh học khác."},
+  {"id":"B24_09","cauhoi":"Hiện tượng 'ứ giọt' (xuất hiện các giọt nước nhỏ ở mép lá vào buổi sáng ẩm ướt) chứng minh cho lực nào sau đây?","A":"Lực kéo vô cùng mạnh mẽ của quá trình thoát hơi nước","B":"Lực đẩy của áp suất rễ hoạt động khi độ ẩm không khí quá cao không thể thoát hơi nước","C":"Nước mưa đọng lại từ đêm hôm trước","D":"Lá cây tự tổng hợp ra nước từ khí oxygen","dapan":"B","giaithich":"Khi độ ẩm không khí quá cao (bão hòa), lá không thể thoát hơi nước. Lúc này áp suất rễ vẫn đẩy nước lên, nước bị đẩy ra ngoài qua các lỗ thủy khổng ở mép lá tạo thành các giọt nước."},
+  {"id":"B24_10","cauhoi":"Sự thoát hơi nước ở lá cây có ý nghĩa sinh lý vô cùng quan trọng nào đối với cây xanh?","A":"Tạo lực kéo dòng mạch gỗ, giúp khí khổng mở để lấy khí $CO_2$ cho quang hợp và làm mát bề mặt lá","B":"Làm tăng trọng lượng cơ thể cây nhanh chóng","C":"Giúp cây giữ lại toàn bộ lượng nước quý giá không bị thất thoát","D":"Ức chế quá trình xâm nhập của các ion khoáng độc hại","dapan":"A","giaithich":"Thoát hơi nước tạo động lực kéo nước/khoáng, hạ nhiệt độ lá tránh cháy nắng và đồng thời mở đường (mở khí khổng) cho $CO_2$ đi vào lá cung cấp cho quang hợp."},
+  {"id":"B25_01","cauhoi":"Nước chiếm khoảng bao nhiêu phần trăm khối lượng cơ thể của đa số các sinh vật sống?","A":"$5\%$ đến $10\%$","B":"$20\%$ đến $30\%$","C":"$70\%$ đến $90\%$","D":"Gần như $100\%$ không chứa chất nào khác","dapan":"C","giaithich":"Nước là thành phần cấu tạo chủ yếu của chất tế bào, chiếm phần lớn khối lượng cơ thể sinh vật (trung bình từ $70\% - 90\%$, ở một số loài như sứa biển lên tới trên $95\%$)."},
+  {"id":"B25_02","cauhoi":"Tính chất hóa học đặc trưng nào của phân tử nước quy định các vai trò sinh học kỳ diệu của nó?","A":"Tính chất phân cực (đầu oxygen mang điện âm nhẹ, đầu hydrogen mang điện dương nhẹ)","B":"Tính chất trơ hóa học không phản ứng với chất nào","C":"Tính chất dễ bị phân hủy thành khí gas ở nhiệt độ phòng","D":"Khối lượng riêng cực lớn tương đương với kim loại khối","dapan":"A","giaithich":"Phân tử nước có tính phân cực, tạo ra liên kết hydrogen giữa các phân tử nước và giúp nước dễ dàng hòa tan các chất phân cực khác, biến nước thành dung môi vạn năng."},
+  {"id":"B25_03","cauhoi":"Vai trò nào sau đây KHÔNG phải là vai trò trực tiếp của nước đối với cơ thể sinh vật?","A":"Là thành phần cấu tạo nên tế bào và cơ thể sinh vật","B":"Là dung môi hòa tan và vận chuyển các chất dinh dưỡng, chất thải","C":"Là nguyên liệu và môi trường cho các phản ứng chuyển hóa vật chất trong cơ thể","D":"Lưu trữ và truyền đạt thông tin di truyền qua các đời","dapan":"D","giaithich":"Lưu trữ và truyền đạt thông tin di truyền là vai trò độc quyền của các nucleic acid (DNA, RNA), nước không đảm nhận chức năng mã hóa di truyền này."},
+  {"id":"B25_04","cauhoi":"Nước giúp sinh vật ổn định nhiệt độ cơ thể (điều hòa thân nhiệt) dựa trên cơ chế vật lý nào?","A":"Nước có nhiệt dung riêng lớn, hấp thụ và giải phóng nhiệt chậm, và thông qua sự bay hơi nước","B":"Nước tự động đóng băng khi cơ thể bị sốt cao","C":"Nước biến đổi thành năng lượng cơ năng làm mát cơ thể","D":"Nước dẫn nhiệt nhanh hơn tất cả các khối kim loại nặng","dapan":"A","giaithich":"Nước có nhiệt dung riêng cao giúp cơ thể không bị thay đổi nhiệt độ đột ngột khi môi trường biến đổi. Đồng thời, khi bay hơi (đổ mồ hôi, thoát hơi nước), nước mang theo một lượng nhiệt lớn làm mát cơ thể."},
+  {"id":"B25_05","cauhoi":"Các chất khoáng (ion khoáng) có vai trò cốt lõi nào đối với hoạt động sống của sinh vật?","A":"Cung cấp phần lớn năng lượng calo hàng ngày cho cơ thể","B":"Là thành phần cấu tạo cấu trúc (xương, răng, màng) và điều hòa, xúc tác các hoạt động sinh lý, enzyme","C":"Hòa tan hoàn toàn lớp cutin bảo vệ tế bào khỏi mất nước","D":"Thay thế hoàn toàn vai trò của chất hữu cơ trong tế bào","dapan":"B","giaithich":"Khoáng chất không sinh năng lượng nhưng là thành phần cấu tạo bắt buộc của nhiều cấu trúc (như Calcium trong xương, Iron trong hồng cầu) và tham gia hoạt hóa các enzyme, cân bằng áp suất thẩm thấu."},
+  {"id":"B25_06","cauhoi":"Nguyên tố khoáng nào sau đây là thành phần bắt buộc cấu tạo nên phân tử diệp lục của cây xanh?","A":"Iron (Sắt - Fe)","B":"Magnesium (Ma-nhê - Mg)","C":"Calcium (Can-xi - Ca)","D":"Sodium (Natri - Na)","dapan":"B","giaithich":"Magnesium (Mg) là nguyên tố trung tâm cấu tạo nên nhân phân tử diệp lục. Thiếu Mg, cây không thể tổng hợp được diệp lục, lá cây sẽ bị vàng và giảm quang hợp."},
+  {"id":"B25_07","cauhoi":"Hậu quả nghiêm trọng nào xảy ra đối với cơ thể người nếu bị thiếu nước kéo dài (mất nước cấp tính)?","A":"Máu bị loãng ra khiến huyết áp tăng cao đột ngột","B":"Rối loạn chuyển hóa tế bào, máu bị cô đặc, giảm tuần hoàn, có thể gây tử vong nhanh chóng","C":"Cơ bắp phát triển nhanh hơn do giảm áp lực nước","D":"Hệ thần kinh trở nên minh mẫn và phản xạ nhanh hơn","dapan":"B","giaithich":"Mất nước làm giảm thể tích máu (máu đặc lại), tim đập nhanh nhưng không đủ tuần hoàn, các chất độc không được đào thải qua thận, tế bào bị teo nhỏ dẫn đến suy đa tạng và tử vong."},
+  {"id":"B25_08","cauhoi":"Học sinh được khuyên nên uống khoảng bao nhiêu nước mỗi ngày để đảm bảo sức khỏe tốt?","A":"Chỉ cần uống dưới $0,5$ lít nước mỗi ngày","B":"Khoảng $1,5$ đến $2$ lít nước (hoặc tùy thuộc vào cân nặng và mức độ vận động)","C":"Tối thiểu $10$ lít nước mỗi ngày không kể ăn uống","D":"Chỉ uống nước khi nào thấy cơ thể hoàn toàn kiệt sức","dapan":"B","giaithich":"Mức khuyến nghị trung bình cho thanh thiếu niên và người trưởng thành là khoảng $1,5 - 2$ lít nước/ngày từ tất cả các nguồn (nước uống, canh, sữa...) để bù đắp lượng nước mất đi qua mồ hôi, nước tiểu, hơi thở."},
+  {"id":"B25_09","cauhoi":"Nguyên tố khoáng nào đóng vai trò cốt lõi cấu tạo nên xương và răng của con người và động vật có xương sống?","A":"Potassium (K)","B":"Calcium (Ca)","C":"Coper (Cu)","D":"Iodine (I)","dapan":"B","giaithich":"Calcium (Ca) cùng với Phosphorus (P) là thành phần khoáng chất chính tạo nên độ cứng chắc của khung xương và men răng ở động vật và con người."},
+  {"id":"B25_10","cauhoi":"Tại sao khi bị tiêu chảy hoặc sốt cao, bác sĩ thường yêu cầu bệnh nhân uống dung dịch Oresol?","A":"Để cung cấp thêm chất dinh dưỡng tinh bột đường cho cơ thể","B":"Dung dịch Oresol giúp bù lại đồng thời cả nước và các ion khoáng đã mất qua phân hoặc mồ hôi","C":"Để tiêu diệt trực tiếp các vi khuẩn gây bệnh trong đường ruột","D":"Để hạ nhiệt độ cơ thể xuống dưới mức đóng băng sinh lý","dapan":"B","giaithich":"Oresol chứa tỷ lệ nước, đường glucose và các muối khoáng ($NaCl, KCl...$) một cách khoa học, giúp cơ thể hấp thụ nước và ion khoáng vào máu nhanh nhất để chống lại tình trạng mất nước nguy hiểm."},
+  {"id":"B26_01","cauhoi":"Quá trình dinh dưỡng ở động vật bao gồm chuỗi các hoạt động theo thứ tự chuẩn nào sau đây?","A":"Tiêu hóa thức ăn -> Thải bã -> Thu nhận thức ăn -> Hấp thu chất dinh dưỡng","B":"Thu nhận thức ăn -> Tiêu hóa thức ăn -> Hấp thu chất dinh dưỡng -> Đồng hóa và Thải bã","C":"Hấp thu chất dinh dưỡng -> Thu nhận thức ăn -> Đồng hóa chất hữu cơ","D":"Thải bã -> Tiêu hóa thức ăn -> Thu nhận thức ăn -> Hấp thu chất khoáng","dapan":"B","giaithich":"Dinh dưỡng động vật đi theo chu trình: Lấy thức ăn vào (thu nhận) -> Biến đổi thức ăn thành chất đơn giản (tiêu hóa) -> Đưa chất dinh dưỡng vào máu (hấp thu) -> Sử dụng ở tế bào (đồng hóa) và loại bỏ chất không tiêu hóa được (thải bã)."},
+  {"id":"B26_02","cauhoi":"Ở người, cơ quan nào sau đây đảm nhận vai trò chính trong việc hấp thu các chất dinh dưỡng vào máu?","A":"Dạ dày","B":"Ruột non","C":"Ruột già","D":"Thực quản","dapan":"B","giaithich":"Ruột non là cơ quan dài nhất, bề mặt có hàng triệu lông ruột và lông cực nhỏ tạo diện tích hấp thu khổng lồ, là nơi hấp thu hầu hết chất dinh dưỡng của thức ăn."},
+  {"id":"B26_03","cauhoi":"Chức năng chủ yếu của ruột già trong hệ tiêu hóa của con người là gì?","A":"Tiêu hóa toàn bộ các phân tử protein phức tạp","B":"Hấp thu lại nước từ chất bã thức ăn và cô đặc chất thải để tạo phân","C":"Tiết ra hệ enzyme tiêu hóa tinh bột đường","D":"Nghiền nát thức ăn bằng cơ học co bóp mạnh","dapan":"B","giaithich":"Ruột già không tham gia tiêu hóa hóa học mà chủ yếu hấp thu lại nước, một số ion khoáng còn sót lại, chuyển chất bã thức ăn thành phân để thải ra ngoài."},
+  {"id":"B26_04","cauhoi":"Tuyến tiêu hóa nào lớn nhất cơ thể, tiết ra dịch mật giúp nhũ tương hóa (phân nhỏ) chất béo?","A":"Tuyến nước bọt","B":"Tuyến vị ở dạ dày","C":"Gan","D":"Tuyến ruột","dapan":"C","giaithich":"Gan là tuyến tiêu hóa lớn nhất, sản xuất ra dịch mật tích trữ ở túi mật. Dịch mật đổ vào ruột non giúp phân nhỏ chất béo thành các giọt li ti, tạo điều kiện cho enzyme lipase tiêu hóa."},
+  {"id":"B26_05","cauhoi":"Biện pháp nào sau đây giúp hệ tiêu hóa của con người luôn khỏe mạnh và hoạt động hiệu quả?","A":"Ăn thật nhanh, thật nhiều chất béo cùng một lúc ban đêm","B":"Ăn chín uống sôi, nhai kỹ, ăn đúng giờ, khẩu phần ăn cân đối, nhiều rau xanh và uống đủ nước","C":"Thường xuyên bỏ bữa sáng và ăn bù gấp ba vào bữa tối trước khi ngủ","D":"Sử dụng liên tục các chất kích thích mạnh để tăng tốc co bóp dạ dày","dapan":"B","giaithich":"Nhai kỹ giúp giảm gánh nặng cơ học cho dạ dày; chất xơ trong rau xanh ngăn táo bón, ăn đúng giờ tạo phản xạ tiết dịch vị chuẩn, bảo vệ niêm mạc hệ tiêu hóa."},
+  {"id":"B26_06","cauhoi":"Chất dinh dưỡng nào bắt đầu được tiêu hóa hóa học ngay tại khoang miệng nhờ enzyme amylase của tuyến nước bọt?","A":"Protein (Chất đạm)","B":"Lipid (Chất béo)","C":"Glucid (Tinh bột chín)","D":"Vitamin và Khoáng chất","dapan":"C","giaithich":"Enzyme amylase có trong nước bọt có khả năng biến đổi một phần tinh bột chín trong thức ăn thành đường maltose, khởi đầu cho quá trình tiêu hóa hóa học."},
+  {"id":"B26_07","cauhoi":"Dạ dày có cấu tạo cơ bắp rất dày và khỏe phù hợp chủ yếu cho chức năng tiêu hóa nào?","A":"Tiêu hóa hóa học hoàn toàn tất cả các loại chất dinh dưỡng","B":"Tiêu hóa cơ học (co bóp, nghiền nát, nhào trộn thức ăn với dịch vị) và tiêu hóa một phần protein","C":"Hấp thu trực tiếp các amino acid vào mạch bạch huyết","D":"Chứa không khí bổ sung cho hệ hô hấp của cơ thể","dapan":"B","giaithich":"Dạ dày co bóp mạnh mẽ thực hiện tiêu hóa cơ học là chính, ngoài ra môi trường acid $HCl$ cùng enzyme pepsin tại đây giúp cắt các chuỗi protein dài thành chuỗi ngắn hơn."},
+  {"id":"B26_08","cauhoi":"Vì sao thói quen ăn uống vội vàng, nhai không kỹ lại dễ dẫn đến bệnh đau dạ dày?","A":"Vì nước bọt tiết ra quá nhiều phá hủy lớp niêm mạc dạ dày","B":"Vì thức ăn còn kích thước lớn buộc dạ dày phải co bóp và tiết nhiều acid hơn để tiêu hóa, gây tổn thương niêm mạc","C":"Vì làm giảm lượng oxygen đi vào ruột non","D":"Vì thức ăn lớn làm đóng băng các tuyến tiết dịch vị","dapan":"B","giaithich":"Nhai không kỹ khiến dạ dày phải hoạt động quá công suất, co bóp cơ học nặng nề và tiết nhiều dịch vị acid $HCl$ kéo dài, dễ làm bào mòn và loét niêm mạc dạ dày."},
+  {"id":"B26_09","cauhoi":"Bệnh béo phì ở con người chủ yếu xuất phát từ nguyên nhân dinh dưỡng nào sau đây?","A":"Ăn quá nhiều rau xanh và uống nước lọc vượt mức quy định","B":"Năng lượng từ thức ăn nạp vào cơ thể lớn hơn rất nhiều so với năng lượng tiêu hao qua vận động, gây tích lũy mỡ thừa","C":"Do cơ thể không có khả năng hô hấp tế bào","D":"Thiếu hụt hoàn toàn chất béo trong khẩu phần ăn hàng ngày","dapan":"B","giaithich":"Béo phì là hậu quả của sự mất cân bằng năng lượng: Calo nạp vào > Calo tiêu hao. Phần năng lượng dư thừa được cơ thể chuyển hóa thành lipid dự trữ dưới da và các cơ quan gây béo phì."},
+  {"id":"B26_10","cauhoi":"Nguyên tắc nào sau đây đảm bảo việc xây dựng một chế độ ăn uống hợp lý, khoa học?","A":"Chỉ ăn duy nhất một loại thức ăn yêu thích từ ngày này qua ngày khác","B":"Đủ năng lượng, đủ các nhóm chất dinh dưỡng (đạm, béo, đường, vitamin, khoáng) theo tỷ lệ cân đối và phù hợp đối tượng","C":"Nhịn ăn hoàn toàn các chất béo và chất đường bột để giảm cân cấp tốc","D":"Ăn càng nhiều thực phẩm chứa chất bảo quản hóa học càng tốt","dapan":"B","giaithich":"Một tháp dinh dưỡng hợp lý phải đảm bảo tính đa dạng (đầy đủ các nhóm chất), cân đối (tỷ lệ chuẩn giữa đạm - béo - đường) và phù hợp với độ tuổi, giới tính, cường độ lao động của từng người."},
+  {"id":"B27_01","cauhoi":"Yếu tố nào sau đây kích thích mạnh mẽ nhất và điều khiển tốc độ sinh trưởng của cây xanh?","A":"Các hormone thực vật (Phytohormone) tự nhiên bên trong cây và các yếu tố môi trường (ánh sáng, nhiệt độ, nước)","B":"Tốc độ gió và dòng chảy của nước ngầm sâu","C":"Sự di chuyển của các loài động vật xung quanh gốc cây","D":"Hàm lượng khí nitrogen tự do trong tầng khí quyển cao","dapan":"A","giaithich":"Sinh trưởng ở thực vật được điều tiết bởi sự tương tác giữa các hormone sinh trưởng (như auxin, gibberellin, cytokinin) và các điều kiện ngoại cảnh (nước, ánh sáng, nhiệt độ)."},
+  {"id":"B27_02","cauhoi":"Thực vật một lá mầm (như lúa, ngô, tre) có hình thức sinh trưởng nào là chủ yếu?","A":"Chỉ sinh trưởng chiều ngang nhờ mạch rây phát triển","B":"Sinh trưởng sơ cấp (làm tăng chiều dài của thân và rễ do hoạt động của mô phân sinh đỉnh)","C":"Sinh trưởng thứ cấp tạo ra lớp gỗ dày cứng chắc","D":"Cây tự động tiêu giảm chiều cao theo thời gian","dapan":"B","giaithich":"Thực vật Một lá mầm không có mô phân sinh bên (tầng sinh vỏ, tầng sinh mạch) nên không có sinh trưởng thứ cấp tạo gỗ, chúng chỉ tăng chiều dài nhờ mô phân sinh đỉnh và mô phân sinh lóng (sinh trưởng sơ cấp)."},
+  {"id":"B27_03","cauhoi":"Sự sinh trưởng thứ cấp ở thực vật Hai lá mầm (như cây xoài, cây mít, cây bàng) có tác dụng gì?","A":"Làm cho cây nhanh chóng rụng bớt lá già","B":"Làm cho thân và rễ cây phát triển to ra về bề ngang (tăng đường kính) nhờ hoạt động của mô phân sinh bên","C":"Giúp cây kéo dài các lóng thân một cách đột biến","D":"Kích thích cây ra hoa mà không cần qua giai đoạn hạt","dapan":"B","giaithich":"Sinh trưởng thứ cấp là kết quả phân chia của mô phân sinh bên, tạo ra mạch gỗ thứ cấp và mạch rây thứ cấp, làm thân và rễ cây gỗ to ra, hình thành các vòng gỗ năm."},
+  {"id":"B27_04","cauhoi":"Vòng gỗ năm xuất hiện trên mặt cắt ngang của thân các cây gỗ lớn cho biết thông tin gì quý giá?","A":"Cho biết lượng nước mưa chính xác của ngày hôm trước","B":"Cho biết tuổi của cây và đặc điểm khí hậu (thuận lợi hay khắc nghiệt) của từng năm đó","C":"Cho biết hàm lượng phân bón còn dư thừa trong thân cây","D":"Cho biết số lượng cành đã bị cắt bỏ của cây","dapan":"B","giaithich":"Mỗi năm cây gỗ tạo ra một vòng gỗ (gồm vùng gỗ sáng sinh trưởng mùa mưa thuận lợi và vùng gỗ tối sinh trưởng mùa khô hạn). Đếm số vòng gỗ ta biết tuổi cây, nhìn độ rộng hẹp của vòng biết khí hậu năm đó."},
+  {"id":"B27_05","cauhoi":"Nhóm yếu tố môi trường nào ảnh hưởng trực tiếp đến sự phát triển (ra hoa, kết quả) của thực vật?","A":"Độ sâu của mực nước biển và áp suất khí quyển","B":"Nhiệt độ, chế độ chiếu sáng (quang chu kỳ), hàm lượng nước và chất dinh dưỡng khoáng","C":"Màu sắc của các chậu trồng cây nhân tạo","D":"Sự xuất hiện của các thiết bị phát sóng vô tuyến điện","dapan":"B","giaithich":"Sự ra hoa của thực vật chịu tác động mạnh của nhiệt độ (hiện tượng xuân hóa), thời gian chiếu sáng trong ngày (quang chu kỳ) và sự cân đối dinh dưỡng (tỷ lệ C/N)."},
+  {"id":"B27_06","cauhoi":"Trong trồng trọt, biện pháp bấm ngọn (ngắt ngọn chính) ở một số loài cây như cà chua, dưa leo có mục đích gì?","A":"Làm cho cây ngừng sinh trưởng hoàn toàn để thu hoạch","B":"Phá bỏ ưu thế ngọn, kích thích cây ra nhiều cành bên, tăng số lượng hoa và quả","C":"Giúp cây tập trung kéo dài thân chính cao hơn nữa","D":"Để hạn chế cây hấp thụ nước từ rễ lên","dapan":"B","giaithich":"Ngọn thân chính là nơi sản xuất auxin gây ưu thế ngọn (ức chế cành bên). Bấm ngọn giúp loại bỏ nguồn auxin này, kích thích các chồi bên phát triển thành cành, giúp tăng năng suất quả."},
+  {"id":"B27_07","cauhoi":"Ứng dụng chất điều hòa sinh trưởng thực vật nào sau đây được dùng để kích thích hạt giống nảy mầm nhanh và đồng đều?","A":"Sử dụng chất ức chế sinh trưởng như Abscisic acid","B":"Sử dụng hormone kích thích nhóm Gibberellin hoặc Auxin ở nồng độ phù hợp","C":"Tưới nước muối đậm đặc vào khay ủ hạt","D":"Để hạt giống hoàn toàn trong bóng tối không có không khí","dapan":"B","giaithich":"Gibberellin ($GA$) có vai trò phá bỏ trạng thái ngủ nghỉ của hạt, kích thích sự thủy phân tinh bột thành đường để nuôi phôi, giúp hạt nảy mầm nhanh chóng."},
+  {"id":"B27_08","cauhoi":"Tại sao người ta thường dùng biện pháp thắp đèn ban đêm (cắt đêm) đối với hoa cúc vào mùa thu đông?","A":"Để kích thích hoa cúc ra hoa sớm nhất có thể","B":"Để kìm hãm sự ra hoa sớm, giúp cây cúc tiếp tục sinh trưởng thân lá dài hơn, hoa to và đẹp hơn khi thu hoạch","C":"Để tiêu diệt toàn bộ hệ thống lá của cây cúc","D":"Để cây cúc không thực hiện hô hấp tế bào ban đêm","dapan":"B","giaithich":"Hoa cúc là cây ngày ngắn, ra hoa vào mùa thu đông khi đêm dài. Thắp đèn đêm giúp chia đêm dài thành hai đêm ngắn (phá chu kỳ đêm), khiến cây cúc không ra hoa sớm khi còn lùn, giúp tăng chiều cao thân và chất lượng hoa."},
+  {"id":"B27_09","cauhoi":"Hiện tượng cây mọc trong bóng râm hoặc trong nhà có xu hướng thân dài ra, mảnh khảnh và hướng về phía cửa sổ gọi là gì?","A":"Hiện tượng hướng sáng của thân cây (sinh trưởng hướng động)","B":"Hiện tượng hướng hóa tiêu cực của lá cây","C":"Hiện tượng cây bị đột biến gen do thiếu không khí","D":"Hiện tượng hướng trọng lực đảo ngược của rễ cây","dapan":"A","giaithich":"Do ánh sáng chiếu một phía, hormone auxin di chuyển sang phía tối làm phía tối sinh trưởng nhanh hơn phía sáng, kết quả là thân cây uốn cong về phía nguồn sáng (hướng sáng dương)."},
+  {"id":"B27_10","cauhoi":"Hiểu biết về nhu cầu ánh sáng của từng loài thực vật giúp người nông dân ứng dụng biện pháp xen canh nào hiệu quả?","A":"Trồng xen các cây ưa sáng mạnh chung với nhau ở mật độ dày đặc nhất","B":"Trồng xen cây ưa sáng cao ở tầng trên và cây ưa bóng khéo léo ở tầng dưới (như trồng tiêu xen cà phê, ngô xen đỗ)","C":"Chỉ trồng các cây ưa bóng ngoài đồng hoang nắng gắt","D":"Trồng các cây gỗ lớn đè lên toàn bộ diện tích cây rau màu","dapan":"B","giaithich":"Xen canh cây ưa sáng tầng trên và cây ưa bóng tầng dưới giúp tận dụng tối đa năng lượng ánh sáng mặt trời trên cùng một diện tích đất, nâng cao tổng năng suất nông nghiệp."},
+  {"id":"B28_01","cauhoi":"Sinh trưởng ở sinh vật là quá trình biến đổi cơ thể biểu hiện chủ yếu ở đặc điểm nào?","A":"Sự phát sinh các cơ quan mới như hoa, quả, cánh, sừng","B":"Sự tăng lên về kích thước và khối lượng của tế bào, mô, cơ quan và toàn bộ cơ thể","C":"Sự thay đổi về chức năng sinh lý của các hệ cơ quan nội tạng","D":"Sự suy giảm kích thước tế bào khi cơ thể về già","dapan":"B","giaithich":"Sinh trưởng là quá trình tăng lên về kích thước và khối lượng của cơ thể do sự tăng về số lượng và kích thước tế bào."},
+  {"id":"B28_02","cauhoi":"Phát triển ở sinh vật là quá trình bao gồm chuỗi các biến đổi nào sau đây trong đời sống?","A":"Chỉ là việc tăng cân nặng liên tục theo từng tháng","B":"Sinh trưởng, phân hóa tế bào, phát sinh hình thái cơ quan và chức năng sinh lý mới diễn ra trong đời sống","C":"Sự tích lũy chất béo thừa dưới da của các loài động vật","D":"Quá trình di chuyển từ môi trường này sang môi trường khác","dapan":"B","giaithich":"Phát triển là quá trình biến đổi bao gồm ba quá trình liên quan mật thiết: sinh trưởng, phân hóa tế bào và phát sinh hình thái cơ quan, chức năng mới (như ra hoa, dậy thì)."},
+  {"id":"B28_03","cauhoi":"Chu kỳ sinh trưởng và phát triển của một sinh vật được tính từ thời điểm nào đến thời điểm nào?","A":"Từ khi sinh vật trưởng thành đến khi nó bắt đầu già yếu","B":"Từ khi hợp tử được hình thành (hoặc cơ thể ban đầu) qua các giai đoạn đến khi cơ thể già, chết hoặc tạo thế hệ mới","C":"Chỉ tính trong giai đoạn sinh vật ở trong trứng hoặc trong bụng mẹ","D":"Từ khi sinh vật sinh sản lần đầu tiên đến lần cuối cùng","dapan":"B","giaithich":"Chu kỳ sống của sinh vật là khoảng thời gian tính từ khi hợp tử/cá thể ban đầu được hình thành, trải qua các giai đoạn biến đổi cho đến khi trưởng thành, sinh sản tạo thế hệ mới hoặc chết."},
+  {"id":"B28_04","cauhoi":"Nhóm động vật nào sau đây có chu kỳ phát triển trải qua giai đoạn biến thái hoàn toàn (hình thái con non khác hoàn toàn con trưởng thành)?","A":"Con thạch sùng, con gà, con chó, con mèo","B":"Con bướm, con muỗi, con ruồi, con ếch","C":"Con châu chấu, con gián, con tôm, con cua","D":"Con cá chép, con lợn, con bò, con người","dapan":"B","giaithich":"Bướm, muỗi, ruồi, ếch có vòng đời biến thái hoàn toàn. Ví dụ bướm: Trứng -> Sâu bướm (ấu trùng) -> Nhộng -> Bướm trưởng thành. Hình thái các giai đoạn khác hẳn nhau."},
+  {"id":"B28_05","cauhoi":"Sự phát triển của nhóm động vật nào sau đây KHÔNG qua biến thái (con non sinh ra có hình thái tương tự con trưởng thành)?","A":"Con muỗi, con bướm cải, con ngài","B":"Động vật có xương sống bậc cao (như thú, chim, bò sát) và con người","C":"Con ếch đồng, con cóc nhà, con cá dơi","D":"Con tằm ăn lá dâu, con ong mật","dapan":"B","giaithich":"Ở người, chim, thú... con non sinh ra đã có hình thái cấu tạo tương tự người trưởng thành, sinh trưởng chỉ là sự tăng kích thước, khối lượng và hoàn thiện chức năng cơ quan (phát triển không qua biến thái)."},
+  {"id":"B28_06","cauhoi":"Mô phân sinh ở thực vật là nhóm tế bào có đặc điểm sinh học vô cùng quan trọng nào?","A":"Là các tế bào chết đã hóa gỗ hoàn toàn giúp bảo vệ cây","B":"Gồm các tế bào chưa phân hóa, có khả năng phân chia (nguyên phân) liên tục để tạo tế bào mới giúp cây sinh trưởng","C":"Là các tế bào chuyên thực hiện chức năng quang hợp ở lá","D":"Chỉ xuất hiện ở quả chín giúp quả tự rụng xuống đất","dapan":"B","giaithich":"Mô phân sinh là tổ chức các tế bào chưa phân hóa, duy trì được khả năng phân chia nguyên phân mạnh mẽ suốt đời đời cây để tạo ra các tế bào mới cho quá trình sinh trưởng."},
+  {"id":"B28_07","cauhoi":"Yếu tố bên trong nào đóng vai trò quyết định, quy định giới hạn kích thước và tốc độ sinh trưởng của mỗi loài sinh vật?","A":"Độ ẩm của không khí xung quanh","B":"Nhân tố di truyền (Hệ Gen của loài)","C":"Chế độ dinh dưỡng do con người cung cấp","D":"Cường độ ánh sáng nhân tạo ban đêm","dapan":"B","giaithich":"Mặc dù môi trường ảnh hưởng lớn, nhưng nhân tố di truyền (Gen) mới là yếu tố quyết định tối cao giới hạn sinh trưởng của loài (ví dụ: gen quy định con chuột không thể sinh trưởng to bằng con voi dù nuôi tốt đến đâu)."},
+  {"id":"B28_08","cauhoi":"Chất dinh dưỡng (thức ăn) có ảnh hưởng như thế nào đến sự sinh trưởng và phát triển của động vật?","A":"Thức ăn chỉ làm tăng mỡ thừa chứ không làm tăng chiều cao cây hoặc động vật","B":"Là nguồn cung cấp nguyên liệu cấu tạo tế bào và năng lượng, thiếu dinh dưỡng sinh vật sẽ còi cọc, chậm phát triển","C":"Động vật có thể sinh trưởng bình quanh mà không cần bất kỳ chất dinh dưỡng nào","D":"Thức ăn làm giảm hoạt động phân chia của mô phân sinh đỉnh rễ","dapan":"B","giaithich":"Chất dinh dưỡng là điều kiện vật chất bắt buộc cho sinh trưởng. Thiếu ăn cơ thể không có nguyên liệu cấu trúc tế bào mới và thiếu năng lượng hoạt động, dẫn đến còi cọc, suy dinh dưỡng."},
+  {"id":"B28_09","cauhete":"Nhiệt độ môi trường xuống quá thấp (trời rét đậm) ảnh hưởng tiêu cực như thế nào đến động vật biến nhiệt (như ếch, rắn, côn trùng)?","A":"Kích thích động vật di chuyển nhanh hơn để tìm mồi","B":"Làm giảm hoạt tính enzyme, giảm tốc độ các phản ứng chuyển hóa, khiến động vật sinh trưởng chậm hoặc phải ngủ đông","C":"Làm tăng nhịp tim và tốc độ tuần hoàn máu của động vật","D":"Giúp động vật đẻ trứng nhiều hơn bình quanh","dapan":"B","giaithich":"Động vật biến nhiệt có nhiệt độ cơ thể phụ thuộc môi trường. Trời quá lạnh làm enzyme trong cơ thể mất hoạt tính, các phản ứng trao đổi chất giảm sâu, sinh vật bị đình trệ sinh trưởng, phải trốn rét/ngủ đông."},
+  {"id":"B28_10","cauhoi":"Hiểu biết về chu kỳ đời sống của các loài côn trùng gây hại (như muỗi, sâu bướm) giúp con người ứng dụng điều gì?","A":"Nuôi dưỡng chúng phát triển số lượng lớn hơn","B":"Áp dụng các biện pháp tiêu diệt hiệu quả vào giai đoạn nhạy cảm nhất (như diệt bọ gậy để ngăn muỗi, diệt sâu non)","C":"Thay đổi thông tin gen của chúng thành có lợi hoàn toàn","D":"Kéo dài giai đoạn nhộng của chúng vô hạn","dapan":"B","giaithich":"Biết vòng đời giúp ta cắt đứt chuỗi sinh sản của chúng ở giai đoạn dễ tổn thương nhất. Ví dụ: thả cá diệt lăng quăng/bọ gậy (ấu trùng muỗi) là biện pháp hiệu quả tận gốc để phòng dịch sốt xuất huyết."},
+  {"id":"B29_01","cauhoi":"Cảm ứng ở sinh vật là khả năng của cơ thể sống thực hiện hoạt động nào sau đây?","A":"Tự tổng hợp chất hữu cơ khi có kích thích từ ánh sáng","B":"Tiếp nhận và phản ứng lại các kích thích từ môi trường bên trong hoặc bên ngoài cơ thể để tồn tại và thích nghi","C":"Sự phân chia liên tục của các tế bào mô phân sinh bên","D":"Sự bài tiết chất vã ra ngoài môi trường qua da","dapan":"B","giaithich":"Cảm ứng là đặc tính cơ bản của sự sống, giúp sinh vật nhận biết các thay đổi của môi trường (kích thích) và đưa ra phản ứng trả lời phù hợp để bảo vệ cơ thể."},
+  {"id":"B29_02","cauhoi":"Đặc điểm đặc trưng của hiện tượng cảm ứng ở thực vật (so với động vật) là gì?","A":"Phản ứng diễn ra vô cùng nhanh chóng, có thể quan sát bằng mắt thường ngay lập tức trong 1 giây","B":"Phản ứng thường diễn ra chậm, khó nhận biết bằng mắt thường trong thời gian ngắn, không có hệ thần kinh điều khiển","C":"Thực vật phản ứng thông qua các cung phản xạ phức tạp của não bộ","D":"Thực vật không có khả năng cảm ứng trước môi trường","dapan":"B","giaithich":"Do không có hệ thần kinh và hệ cơ, cảm ứng ở thực vật chủ yếu dựa trên cơ chế nồng độ hormone và sự chuyển dịch nước giữa các tế bào nên tốc độ phản ứng thường chậm (trừ một số phản ứng đặc biệt như cây trinh nữ)."},
+  {"id":"B29_03","cauhoi":"Hiện tượng rễ cây luôn sinh trưởng hướng về nguồn nước và nguồn phân bón trong đất được gọi là gì?","A":"Hướng sáng dương và hướng trọng lực âm","B":"Hướng nước dương và hướng hóa dương (các hình thức sinh trưởng hướng động)","C":"Hướng tiếp xúc tiêu cực của biểu bì rễ","D":"Ứng động không sinh trưởng của tế bào lông hút","dapan":"B","giaithich":"Rễ cây sinh trưởng uốn cong về phía có nước (hướng nước dương) và phía có chất dinh dưỡng/phân bón (hướng hóa dương) nhằm tìm kiếm nguồn sống cho cây."},
+  {"id":"B29_04","cauhoi":"Hiện tượng rễ cây luôn sinh trưởng hướng xuống lòng đất (theo chiều trọng lực) còn thân cây mọc ngược lên trên gọi là gì?","A":"Rễ hướng trọng lực dương, thân hướng trọng lực âm","B":"Rễ hướng trọng lực âm, thân hướng trọng lực dương","C":"Cả rễ và thân đều hướng trọng lực dương mạnh mẽ","D":"Hiện tượng hướng tiếp xúc cơ học của mô phân sinh","dapan":"A","giaithich":"Rễ mọc hướng xuôi theo lực hút Trái Đất (hướng trọng lực dương) để bám sâu vào đất. Thân mọc ngược lên trên (hướng trọng lực âm) để vươn lên không trung đón ánh sáng."},
+  {"id":"B29_05","cauhoi":"Các tua cuốn của các cây leo (như mướp, bầu, bí, bầu) khi chạm vào giàn sẽ quấn chặt lấy giàn là minh họa cho:","A":"Hướng sáng âm của thân cây","B":"Hướng tiếp xúc dương","C":"Hướng hóa học tiêu cực","D":"Ứng động sinh trưởng ban đêm","dapan":"B","giaithich":"Khi tua cuốn tiếp xúc với vật cứng (giàn), kích thích cơ học làm các tế bào phía không tiếp xúc sinh trưởng nhanh hơn, khiến tua uốn cong quấn quanh vật tiếp xúc, giúp cây leo vươn cao."},
+  {"id":"B29_06","cauhoi":"Cảm ứng ở động vật có hệ thần kinh thường diễn ra nhanh và chính xác nhờ hoạt động của cơ chế nào?","A":"Cơ chế thẩm thấu nước qua màng tế bào da","B":"Cơ chế phản xạ (nhận kích thích qua cơ quan thụ cảm, truyền qua hệ thần kinh và trả lời qua cơ quan phản ứng)","C":"Sự co giãn tự động của các không bào co bóp","D":"Sự thay đổi màu sắc sắc tố trên bề mặt biểu bì","dapan":"B","giaithich":"Động vật có hệ thần kinh và hệ cơ phản ứng theo cơ chế phản xạ, xung thần kinh dẫn truyền cực nhanh giúp đưa ra câu trả lời lập tức và chính xác trước kích thích."},
+  {"id":"B29_07","cauhoi":"Phản xạ nào sau đây là phản xạ không điều kiện (bẩm sinh, có tính di truyền bền vững của loài)?","A":"Học sinh nghe tiếng trống trường điểm giờ ra chơi liền chạy ra sân","B":"Rụt tay lại lập tức khi vô tình chạm vào ngọn lửa nóng hoặc vật sắc nhọn","C":"Người đi đường dừng xe lại khi nhìn thấy đèn tín hiệu giao thông chuyển sang màu đỏ","D":"Chó chạy lại gần khi chủ gọi tên của nó","dapan":"B","giaithich":"Rụt tay khi gặp nóng là phản xạ bẩm sinh, không cần học tập, mang tính chất bảo vệ cơ thể tức thì, do tủy sống điều khiển (phản xạ không điều kiện). Các ví dụ còn lại đều là phản xạ có điều kiện qua học tập."},
+  {"id":"B29_08","cauhoi":"Phản xạ nào sau đây là phản xạ có điều kiện (hình thành trong đời sống qua học tập và rèn luyện)?","A":"Em bé vừa sinh ra đã biết khóc và biết tìm vú mẹ để bú","B":"Tiết nước bọt khi lưỡi tiếp xúc trực tiếp với vị chua của quả chanh","C":"Nghe nhắc đến từ 'quả khế chua' hoặc 'quả chanh' liền tiết nước bọt dù không ăn","D":"Chớp mắt khi có một hạt bụi bay sát vào mắt","dapan":"C","giaithich":"Tiết nước bọt khi 'nghe nhắc' là phản xạ có điều kiện, được hình thành do bộ não đã liên kết từ ngữ với trải nghiệm vị chua trước đó. Trẻ sơ sinh chưa từng ăn chanh sẽ không có phản xạ này."},
+  {"id":"B29_09","cauhoi":"Ứng dụng hiểu biết về hiện tượng hướng sáng của cây xanh, người ta thường khuyên điều gì khi trồng cây trong chậu để nhà?","A":"Tưới nước muối vào đất chậu hàng tuần","B":"Thường xuyên xoay hướng chậu cây hoặc đặt ở ban công, gần cửa sổ để cây nhận đủ ánh sáng đều các phía, tránh bị lệch tán","C":"Đóng kín toàn bộ rèm cửa không cho ánh sáng lọt vào","D":"Sơn màu đen lên toàn bộ các lá cây","dapan":"B","giaithich":"Cây trong nhà dễ bị lệch tán, thân uốn cong ra ngoài cửa sổ do hướng sáng một phía. Xoay chậu cây giúp các phía nhận sáng đều, giữ dáng cây thẳng và đẹp."},
+  {"id":"B29_10","cauhoi":"Trong chăn nuôi, việc gõ mõ kết hợp cho cá ăn vào một giờ cố định hàng ngày là ứng dụng của việc:","A":"Kích thích sinh trưởng sơ cấp của vây cá","B":"Thành lập phản xạ có điều kiện (nghe tiếng mõ là bơi lại ăn), giúp dễ quản lý và cho ăn tập trung","C":"Làm cho cá bị điếc tai để không sợ tiếng động ngoài","D":"Thay đổi tập tính bẩm sinh của loài cá","dapan":"B","giaithich":"Gõ mõ lâu ngày trước khi cho ăn tạo ra mối liên kết thần kinh giữa tiếng động và thức ăn, hình thành phản xạ có điều kiện bầy cá bơi lên khi nghe tiếng gõ mõ, giúp ích cho việc chăm sóc nuôi trồng."}
+];
+
+// Thầy có thể bổ sung hoặc xóa câu hỏi tùy ý, hệ thống tự đếm số lượng
+let NGAN_HANG_CAU_HOI = [...NGAN_HANG_100_CAU];
+
 // ════════════════════════════════════════════════
-// STATE
+// STATE VARIABLE
 // ════════════════════════════════════════════════
 let TEACHER_PWD   = localStorage.getItem(LS_PWD) || 'khtn2025';
 let quizConfig    = null;   // được load từ API
@@ -437,24 +531,21 @@ let cheatCount = 0;
 // ════════════════════════════════════════════════
 // API HELPERS
 // ════════════════════════════════════════════════
-// Các action ghi dữ liệu → dùng POST (tránh giới hạn URL + CORS)
 const POST_ACTIONS = ['setConfig','submitResult','submitCheat','deactivate'];
 
 async function apiCall(params) {
   const action = params.action || '';
 
   if (POST_ACTIONS.includes(action)) {
-    // POST: gửi JSON body, Apps Script nhận qua doPost(e)
     const res = await fetch(API, {
       method: 'POST',
       redirect: 'follow',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // tránh preflight CORS
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(params)
     });
     const txt = await res.text();
     try { return JSON.parse(txt); } catch { return { ok: true }; }
   } else {
-    // GET: chỉ dùng cho read (getConfig, getResults)
     const url = API + '?' + new URLSearchParams(params).toString();
     const res = await fetch(url, { redirect: 'follow' });
     const txt = await res.text();
@@ -480,6 +571,7 @@ function route() {
     isTeacher = true;
     document.getElementById('tLogin').classList.add('active');
     buildShareLink();
+    initTeacherView();
   } else {
     isTeacher = false;
     document.getElementById('sWait').classList.add('active');
@@ -487,16 +579,18 @@ function route() {
   }
 }
 window.addEventListener('hashchange', route);
+window.addEventListener('DOMContentLoaded', () => {
+  renderQuestionBank();
+  route();
+});
 
 // ════════════════════════════════════════════════
 // SHARE LINK & QR
 // ════════════════════════════════════════════════
 function buildShareLink() {
-  // Link không có #gv → học sinh thấy giao diện làm bài
   const url = window.location.href.replace('#gv','').replace(/#.*/,'');
   document.getElementById('shareLinkBox').textContent = url;
 
-  // Tạo QR
   document.getElementById('qrCode').innerHTML = '';
   try {
     new QRCode(document.getElementById('qrCode'), {
@@ -527,7 +621,6 @@ async function checkQuizStatus() {
     const data = await apiCall({ action: 'getConfig' });
     hideLoading();
 
-    // FIX 1: parse config an toàn, tránh crash khi data.config lỗi
     let cfg = null;
     if (data.active && data.config) {
       try {
@@ -545,12 +638,11 @@ async function checkQuizStatus() {
       document.getElementById('bannerTitle').textContent = quizConfig.title || 'Bài kiểm tra KHTN 7';
       document.getElementById('bannerMeta').textContent =
         `${quizConfig.numQ} câu • ${quizConfig.timeMin} phút • Điểm tối đa: ${quizConfig.maxScore}`;
-      // Đổ danh sách học sinh vào dropdown
+      
       const sel = document.getElementById('sName');
       sel.innerHTML = '<option value="">-- Chọn tên của em --</option>';
       (quizConfig.students || []).forEach(s => {
         const opt = document.createElement('option');
-        // FIX 2: trim tên ngay khi đổ vào dropdown để tránh lỗi so khớp
         opt.value = s.trim(); opt.textContent = s.trim();
         sel.appendChild(opt);
       });
@@ -563,7 +655,6 @@ async function checkQuizStatus() {
     console.warn('checkQuizStatus lỗi:', e);
     document.getElementById('noQuizCard').style.display = 'block';
     document.getElementById('quizReadyCard').style.display = 'none';
-    // Hiện thông báo lỗi kết nối để học sinh biết nguyên nhân
     const card = document.getElementById('noQuizCard');
     const msg = card.querySelector('p:last-of-type');
     if (msg) msg.textContent = '⚠️ Không kết nối được máy chủ. Kiểm tra mạng và thử lại.';
@@ -576,558 +667,519 @@ async function checkQuizStatus() {
 async function sLogin() {
   const sel = document.getElementById('sName');
   const name = (sel.value || '').trim();
-  const err = document.getElementById('sLoginErr'); err.style.display = 'none';
-  if (!name) { err.textContent = '⚠️ Em chưa chọn tên!'; err.style.display = 'block'; return; }
-  if (!quizConfig) { err.textContent = '⚠️ Bài kiểm tra chưa mở!'; err.style.display = 'block'; return; }
+  const err = document.getElementById('sLoginErr');
+  err.style.display = 'none';
 
-  // FIX 2: trim cả hai phía khi so khớp tên → tránh lỗi khoảng trắng ẩn
-  const match = quizConfig.students.find(s => s.trim() === name.trim());
-  if (!match) { err.textContent = '❌ Tên không có trong danh sách!'; err.style.display = 'block'; return; }
+  if (!name) {
+    err.textContent = '⚠️ Vui lòng chọn đúng họ tên của em!';
+    err.style.display = 'block';
+    return;
+  }
 
-  // Kiểm tra đã nộp chưa
-  showLoading('Đang kiểm tra...');
+  showLoading('Đang kiểm tra thông tin đăng nhập...');
   try {
-    const data = await apiCall({ action: 'getResults' });
+    const check = await apiCall({ action: 'getResults' });
+    const records = check.results || [];
+    const matched = records.find(r => r.name.trim().toLowerCase() === name.toLowerCase());
+
+    if (matched) {
+      hideLoading();
+      err.textContent = '❌ Em đã nộp bài hệ thống trước đó rồi! Không thể làm lại.';
+      err.style.display = 'block';
+      return;
+    }
+
+    currentStudent = name;
+    generateStudentQuiz();
     hideLoading();
-    const submitted = data.results && data.results.find(r => r.name === match);
-    if (submitted) { err.textContent = '⚠️ Em đã nộp bài rồi! Mỗi học sinh chỉ làm 1 lần.'; err.style.display = 'block'; return; }
-  } catch(e) { hideLoading(); }
 
-  currentStudent = match;
+    // Chuyển màn hình làm bài
+    document.getElementById('sWait').classList.remove('active');
+    document.getElementById('sQuiz').classList.add('active');
+
+    // Khởi chạy bộ đếm thời gian & chống gian lận
+    startTime = new Date();
+    timeLeft = quizConfig.timeMin * 60;
+    startTimer();
+    initAntiCheat();
+
+  } catch(e) {
+    hideLoading();
+    err.textContent = '⚠️ Lỗi kết nối mạng. Vui lòng bấm thử lại.';
+    err.style.display = 'block';
+  }
+}
+
+function generateStudentQuiz() {
+  let bank = [];
+  if (quizConfig.questions && quizConfig.questions.length > 0) {
+    bank = [...quizConfig.questions];
+  } else {
+    bank = [...NGAN_HANG_CAU_HOI];
+  }
+
+  // Trộn câu hỏi ngẫu nhiên dựa theo cấu hình mã gv
+  const shuffled = bank.sort(() => 0.5 - Math.random());
+  curQs = shuffled.slice(0, Math.min(quizConfig.numQ, shuffled.length));
+  curIdx = 0;
+  answers = {};
   cheatCount = 0;
-  startQuiz();
+  renderQuestion();
 }
 
-// ════════════════════════════════════════════════
-// QUIZ LOGIC
-// ════════════════════════════════════════════════
-function startQuiz() {
-  const pool = [...quizConfig.questions].sort(() => Math.random() - .5).slice(0, quizConfig.numQ);
-  curQs = pool.map(q => {
-    const opts = q.opts.map((o,i) => ({t:o, orig:i})).sort(() => Math.random() - .5);
-    return { q: q.q, opts: opts.map(o=>o.t), ans: opts.findIndex(o=>o.orig===q.ans), explain: q.explain };
-  });
-  curIdx = 0; answers = {};
-  timeLeft = quizConfig.timeMin * 60;
-  startTime = Date.now();
-  goS('sQuiz'); renderQ(); startTimer();
-}
+function renderQuestion() {
+  if (curQs.length === 0) return;
+  const q = curQs[curIdx];
+  
+  document.getElementById('qNum').textContent = `Câu ${curIdx + 1} / ${curQs.length}`;
+  document.getElementById('pFill').style.width = `${((curIdx + 1) / curQs.length) * 100}%`;
+  document.getElementById('qText').textContent = q.cauhoi;
 
-function renderQ() {
-  const q = curQs[curIdx], tot = curQs.length;
-  document.getElementById('qNum').textContent = `Câu ${curIdx+1} / ${tot}`;
-  document.getElementById('pFill').style.width = `${(curIdx/tot)*100}%`;
-  document.getElementById('qText').textContent = q.q;
-  const box = document.getElementById('optsBox'); box.innerHTML = '';
-  const keys = ['A','B','C','D'], ans = answers[curIdx];
-  q.opts.forEach((o,i) => {
-    const btn = document.createElement('button'); btn.className = 'opt-btn';
-    if (ans !== undefined) { btn.disabled = true; if (i===q.ans) btn.classList.add('ok'); else if (i===ans) btn.classList.add('ng'); }
-    else if (ans === i) btn.classList.add('sel');
-    // FIX: Tự động xóa prefix "A.", "B.", "C.", "D." hoặc "A)", "B)"... ở đầu đáp án để tránh bị trùng với badge
-    const cleanOpt = o.replace(/^[A-Da-d][.)]\s*/,'');
-    btn.innerHTML = `<span class="okey">${keys[i]}</span><span>${cleanOpt}</span>`;
-    if (ans === undefined) btn.onclick = () => pickAns(i);
+  const box = document.getElementById('optsBox');
+  box.innerHTML = '';
+
+  const options = [
+    { key: 'A', text: q.A },
+    { key: 'B', text: q.B },
+    { key: 'C', text: q.C },
+    { key: 'D', text: q.D }
+  ];
+
+  options.forEach(opt => {
+    if (!opt.text) return;
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    if (answers[curIdx] === opt.key) btn.classList.add('sel');
+    
+    btn.innerHTML = `<div class="okey">${opt.key}</div><div style="padding-top:2px">${opt.text}</div>`;
+    btn.onclick = () => selectOption(opt.key);
     box.appendChild(btn);
   });
-  const ex = document.getElementById('explBox');
-  if (ans !== undefined) { ex.textContent = q.explain; ex.classList.add('show'); }
-  else { ex.textContent = ''; ex.classList.remove('show'); }
-  const last = curIdx === tot - 1;
-  document.getElementById('btnPrev').style.display = curIdx === 0 ? 'none' : 'flex';
-  document.getElementById('btnNext').style.display = last ? 'none' : 'flex';
-  document.getElementById('btnSubmit').style.display = last ? 'flex' : 'none';
+
+  document.getElementById('btnPrev').disabled = (curIdx === 0);
+  if (curIdx === curQs.length - 1) {
+    document.getElementById('btnNext').style.display = 'none';
+    document.getElementById('btnSubmit').style.display = 'block';
+  } else {
+    document.getElementById('btnNext').style.display = 'block';
+    document.getElementById('btnSubmit').style.display = 'none';
+  }
+  
+  document.getElementById('explBox').classList.remove('show');
 }
 
-function pickAns(i) { if (answers[curIdx] !== undefined) return; answers[curIdx] = i; renderQ(); }
-function prevQ() { if (curIdx > 0) { curIdx--; renderQ(); } }
-function nextQ() { if (curIdx < curQs.length-1) { curIdx++; renderQ(); } }
-
-async function submitQuiz() {
-  const left = curQs.length - Object.keys(answers).length;
-  if (left > 0 && !confirm(`⚠️ Còn ${left} câu chưa trả lời. Vẫn nộp?`)) return;
-  clearInterval(timer);
-  await saveResult();
-  goS('sResult'); showResult(); confetti();
+function selectOption(key) {
+  answers[curIdx] = key;
+  const btns = document.querySelectorAll('#optsBox .opt-btn');
+  btns.forEach((btn, index) => {
+    const oKey = ['A','B','C','D'][index];
+    if (oKey === key) btn.classList.add('sel');
+    else btn.classList.remove('sel');
+  });
 }
 
-async function saveResult() {
-  let ok = 0;
-  curQs.forEach((q,i) => { if (answers[i] === q.ans) ok++; });
-  const score = parseFloat(((ok/curQs.length)*quizConfig.maxScore).toFixed(1));
-  const elapsed = Math.max(1, Math.floor((Date.now()-startTime)/60000));
-  const now = new Date();
-  const timeStr = `${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
-
-  showLoading('Đang gửi kết quả lên Google Sheets...');
-  try {
-    await apiCall({ action:'submitResult', name:currentStudent, score, correct:ok, wrong:curQs.length-ok, elapsed, timeStr });
-    if (cheatCount > 0) await apiCall({ action:'submitCheat', name:currentStudent, count:cheatCount });
-  } catch(e) {}
-  hideLoading();
-
-  // Lưu vào bộ nhớ để hiển thị kết quả
-  window._lastResult = { score, correct:ok, wrong:curQs.length-ok, elapsed };
-}
-
-function showResult() {
-  const r = window._lastResult, max = quizConfig.maxScore, pct = r.score/max;
-  document.getElementById('sScoreNum').textContent = r.score;
-  document.getElementById('sScoreMax').textContent = max;
-  document.getElementById('rCorrect').textContent = r.correct;
-  document.getElementById('rWrong').textContent = r.wrong;
-  document.getElementById('rTime').textContent = r.elapsed;
-  document.getElementById('sStudentName').textContent = currentStudent;
-  document.getElementById('scoreRing').style.setProperty('--p', `${pct*360}deg`);
-  document.getElementById('sScoreMsg').textContent =
-    pct>=.9 ? '🌟 Xuất sắc! Em làm rất tốt!' :
-    pct>=.7 ? '😊 Khá! Tiếp tục phát huy!' :
-    pct>=.5 ? '🙂 Trung bình. Cố gắng hơn!' : '😓 Cần cố gắng hơn! Đừng bỏ cuộc!';
-}
+function prevQ() { if (curIdx > 0) { curIdx--; renderQuestion(); } }
+function nextQ() { if (curIdx < curQs.length - 1) { curIdx++; renderQuestion(); } }
 
 function startTimer() {
+  clearInterval(timer);
   timer = setInterval(() => {
     timeLeft--;
-    const m = Math.floor(timeLeft/60), s = timeLeft%60;
-    document.getElementById('timerTxt').textContent = `${m}:${String(s).padStart(2,'0')}`;
-    const b = document.getElementById('timerBox');
-    b.className = timeLeft<=60 ? 'timer danger' : timeLeft<=180 ? 'timer warn' : 'timer';
-    if (timeLeft <= 0) { clearInterval(timer); alert('⏰ Hết giờ! Bài tự động nộp.'); saveResult().then(()=>{goS('sResult');showResult();}); }
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      document.getElementById('timerTxt').textContent = "00:00";
+      autoSubmit();
+    } else {
+      const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+      const s = (timeLeft % 60).toString().padStart(2, '0');
+      document.getElementById('timerTxt').textContent = `${m}:${s}`;
+      
+      const box = document.getElementById('timerBox');
+      if (timeLeft < 60) box.className = "timer danger";
+      else if (timeLeft < 180) box.className = "timer warn";
+      else box.className = "timer";
+    }
   }, 1000);
 }
 
+function initAntiCheat() {
+  document.addEventListener('visibilitychange', handleCheatDetection);
+  window.addEventListener('blur', handleCheatDetection);
+}
+function stopAntiCheat() {
+  document.removeEventListener('visibilitychange', handleCheatDetection);
+  window.removeEventListener('blur', handleCheatDetection);
+}
+
+function handleCheatDetection() {
+  if (document.hidden || !document.hasFocus()) {
+    cheatCount++;
+    document.getElementById('acOverlay').style.display = 'flex';
+    apiCall({
+      action: 'submitCheat',
+      name: currentStudent,
+      type: 'Thoát màn hình làm bài',
+      count: cheatCount
+    });
+  }
+}
+function closeAC() {
+  document.getElementById('acOverlay').style.display = 'none';
+}
+
+async function submitQuiz() {
+  const answeredCount = Object.keys(answers).length;
+  if (answeredCount < curQs.length) {
+    if (!confirm(`Em mới trả lời ${answeredCount}/${curQs.length} câu. Vẫn muốn nộp bài chứ?`)) return;
+  } else {
+    if (!confirm('Em chắc chắn muốn nộp bài kiểm tra?')) return;
+  }
+  await executeSubmit();
+}
+
+async function autoSubmit() {
+  alert('⏱ Đã hết thời gian làm bài! Hệ thống tự động nộp bài của em.');
+  await executeSubmit();
+}
+
+async function executeSubmit() {
+  stopAntiCheat();
+  clearInterval(timer);
+  showLoading('Hệ thống đang chấm điểm và lưu kết quả...');
+
+  let correct = 0;
+  curQs.forEach((q, idx) => {
+    if (answers[idx] === q.dapan) correct++;
+  });
+
+  const rawScore = (correct / curQs.length) * quizConfig.maxScore;
+  const finalScore = Math.round(rawScore * 100) / 100;
+  const timeUsedSec = Math.round((new Date() - startTime) / 1000);
+  const timeMinStr = `${Math.floor(timeUsedSec / 60)}p ${timeUsedSec % 60}s`;
+
+  try {
+    await apiCall({
+      action: 'submitResult',
+      name: currentStudent,
+      score: finalScore,
+      details: `${correct}/${curQs.length}`,
+      timeUsed: timeMinStr,
+      cheats: cheatCount > 0 ? `Vi phạm ${cheatCount} lần` : 'Không'
+    });
+  } catch(e) {
+    console.error('Lỗi lưu sheet:', e);
+  }
+
+  hideLoading();
+  document.getElementById('sQuiz').classList.remove('active');
+  document.getElementById('sResult').classList.add('active');
+
+  // Giao diện kết quả
+  document.getElementById('sScoreNum').textContent = finalScore;
+  document.getElementById('sScoreMax').textContent = quizConfig.maxScore;
+  document.getElementById('sStudentName').textContent = `Học sinh: ${currentStudent}`;
+  document.getElementById('rCorrect').textContent = correct;
+  document.getElementById('rWrong').textContent = curQs.length - correct;
+  document.getElementById('rTime').textContent = Math.ceil(timeUsedSec / 60);
+  document.getElementById('scoreRing').style.setProperty('--p', `${(finalScore / quizConfig.maxScore) * 360}deg`);
+
+  runConfetti();
+}
+
+// FX hiệu ứng hoa văn nhỏ khi hoàn thành bài
+function runConfetti() {
+  const canvas = document.getElementById('cvs');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  let pts = [];
+  for(let i=0;i<70;i++){
+    pts.push({
+      x: Math.random()*canvas.width, y: Math.random()*canvas.height - canvas.height,
+      r: Math.random()*6+4, d: Math.random()*canvas.height,
+      color: ['#58a6ff','#3fb950','#bc8cff','#d29922','#f85149'][Math.floor(Math.random()*5)],
+      v: Math.random()*2+2
+    });
+  }
+  let anim = setInterval(() => {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pts.forEach(p => {
+      ctx.beginPath(); ctx.fillStyle = p.color;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill();
+      p.y += p.v; if(p.y > canvas.height) p.y = -10;
+    });
+  }, 25);
+  setTimeout(() => clearInterval(anim), 4000);
+}
+
 // ════════════════════════════════════════════════
-// TEACHER AUTH
+// TEACHER CONTROLLER
 // ════════════════════════════════════════════════
 function tDoLogin() {
-  TEACHER_PWD = localStorage.getItem(LS_PWD) || 'khtn2025';
-  if (document.getElementById('tPwd').value === TEACHER_PWD) {
-    goT('tSetup'); setTimeout(loadDefaultQuestions, 80);
-  } else alert('❌ Sai mật khẩu!');
+  const p = document.getElementById('tPwd').value;
+  if (p === TEACHER_PWD) {
+    document.getElementById('tLogin').classList.remove('active');
+    document.getElementById('tSetup').classList.add('active');
+    localStorage.setItem(LS_PWD, p);
+  } else {
+    alert('❌ Mật khẩu không chính xác!');
+  }
 }
 function tLogout() {
-  clearInterval(dashRefreshInterval);
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('tLogin').classList.add('active');
-  document.getElementById('tPwd').value = '';
+  localStorage.removeItem(LS_PWD);
+  window.location.hash = '';
+  location.reload();
 }
+
+function initTeacherView() {
+  document.getElementById('qCnt').textContent = `${NGAN_HANG_CAU_HOI.length} câu`;
+}
+
+function renderQuestionBank() {
+  const container = document.getElementById('qList');
+  container.innerHTML = '';
+  NGAN_HANG_CAU_HOI.forEach((q, index) => {
+    const item = document.createElement('div');
+    item.className = 'q-item';
+    item.innerHTML = `
+      <div class="q-hdr">
+        <span class="q-tag">Mã câu: ${q.id || (index+1)}</span>
+        <button class="del-btn" onclick="deleteQ(${index})">🗑️</button>
+      </div>
+      <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">${q.cauhoi}</div>
+      <div style="font-size:.78rem;color:var(--muted)">A. ${q.A} | B. ${q.B} | C. ${q.C} | D. ${q.D}</div>
+      <div style="font-size:.75rem;color:var(--green);margin-top:4px">Đáp án chuẩn: ${q.dapan}</div>
+    `;
+    container.appendChild(item);
+  });
+  document.getElementById('qCnt').textContent = `${NGAN_HANG_CAU_HOI.length} câu`;
+}
+
+function deleteQ(index) {
+  if(confirm('Xóa câu hỏi này khỏi đề hiện tại?')) {
+    NGAN_HANG_CAU_HOI.splice(index, 1);
+    renderQuestionBank();
+  }
+}
+
+function qAddManual() {
+  const txt = prompt("Nhập câu hỏi dạng văn bản thô theo cấu trúc:\nCâu hỏi? | Tùy chọn A | Tùy chọn B | Tùy chọn C | Tùy chọn D | Đáp án đúng (A/B/C/D)");
+  if (!txt) return;
+  const parts = txt.split('|').map(x => x.trim());
+  if (parts.length < 6) {
+    alert('❌ Viết sai cấu trúc phân tách ngăn cách bởi dấu |');
+    return;
+  }
+  NGAN_HANG_CAU_HOI.push({
+    id: 'TAY_' + Date.now().toString().slice(-4),
+    cauhoi: parts[0], A: parts[1], B: parts[2], C: parts[3], D: parts[4], dapan: parts[5].toUpperCase(), giaithich: ''
+  });
+  renderQuestionBank();
+}
+
+async function tActivate() {
+  const title = document.getElementById('cfgTitle').value.trim();
+  const timeMin = parseInt(document.getElementById('cfgTime').value) || 15;
+  const maxScore = parseInt(document.getElementById('cfgMax').value) || 10;
+  const numQ = parseInt(document.getElementById('cfgNumQ').value) || 10;
+  const rawStus = document.getElementById('cfgStudents').value.split('\n');
+  const students = rawStus.map(s => s.trim()).filter(s => s.length > 0);
+
+  if (!title) { alert('Vui lòng điền tên bài thi'); return; }
+  if (students.length === 0) { alert('Vui lòng thêm danh sách học sinh tham gia lớp học'); return; }
+  if (NGAN_HANG_CAU_HOI.length === 0) { alert('Ngân hàng câu hỏi trống!'); return; }
+
+  const payload = {
+    action: 'setConfig',
+    title: title,
+    timeMin: timeMin,
+    maxScore: maxScore,
+    numQ: numQ,
+    students: students,
+    questions: NGAN_HANG_CAU_HOI
+  };
+
+  showLoading('Đang truyền cấu hình lên Google Sheets...');
+  const res = await apiCall(payload);
+  hideLoading();
+
+  if (res.ok || res.status === 'success') {
+    alert('🎉 Kích hoạt bài kiểm tra thành công! Học sinh đã có thể vào làm.');
+    goT('tDash');
+  } else {
+    alert('❌ Lỗi kích hoạt cấu hình hệ thống.');
+  }
+}
+
+function goT(screenId) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(screenId).classList.add('active');
+  if (screenId === 'tDash') {
+    startDashRefresh();
+  } else {
+    clearInterval(dashRefreshInterval);
+  }
+}
+
+// ĐỔI MẬT KHẨU GIÁO VIÊN
 function changePwd() {
   const old = document.getElementById('pwdOld').value;
-  const nw  = document.getElementById('pwdNew').value.trim();
-  const msg = document.getElementById('pwdMsg'); msg.style.display = 'block';
-  TEACHER_PWD = localStorage.getItem(LS_PWD) || 'khtn2025';
-  if (old !== TEACHER_PWD) { msg.textContent='❌ Mật khẩu hiện tại sai!'; msg.style.color='var(--red)'; return; }
-  if (nw.length < 4) { msg.textContent='⚠️ Mật khẩu mới phải có ít nhất 4 ký tự!'; msg.style.color='var(--yellow)'; return; }
-  TEACHER_PWD = nw; localStorage.setItem(LS_PWD, nw);
-  document.getElementById('pwdOld').value = '';
-  document.getElementById('pwdNew').value = '';
-  msg.textContent = '✅ Đổi mật khẩu thành công!'; msg.style.color = 'var(--green)';
-  setTimeout(() => msg.style.display='none', 3000);
-}
+  const nPwd = document.getElementById('pwdNew').value;
+  const msg = document.getElementById('pwdMsg');
+  msg.style.display = 'block';
 
-// ════════════════════════════════════════════════
-// TEACHER — Kích hoạt
-// ════════════════════════════════════════════════
-async function tActivate() {
-  const title    = document.getElementById('cfgTitle').value.trim();
-  const timeMin  = parseInt(document.getElementById('cfgTime').value);
-  const numQ     = parseInt(document.getElementById('cfgNumQ').value);
-  const maxScore = parseInt(document.getElementById('cfgMax').value);
-  const students = document.getElementById('cfgStudents').value.trim().split('\n').map(s=>s.trim()).filter(Boolean);
-  if (!students.length) { alert('⚠️ Nhập danh sách học sinh!'); return; }
-  const questions = [];
-  document.querySelectorAll('.q-item').forEach(it => {
-    const q = it.querySelector('.qt').value.trim();
-    const opts = it.querySelector('.qo').value.trim().split('\n').map(o=>o.trim()).filter(Boolean);
-    const ans = parseInt(it.querySelector('.qa').value);
-    const explain = it.querySelector('.qe').value.trim();
-    if (q && opts.length) questions.push({q, opts, ans, explain});
-  });
-  if (!questions.length) { alert('⚠️ Thêm ít nhất 1 câu hỏi!'); return; }
-  const actualNum = Math.min(numQ, questions.length);
-  const config = { title, timeMin, numQ:actualNum, maxScore, questions, students };
-
-  showLoading('Đang kích hoạt bài kiểm tra...');
-  try {
-    await apiCall({ action:'setConfig', config: JSON.stringify(config) });
-    hideLoading();
-    quizConfig = config;
-    alert(`✅ Đã kích hoạt thành công!\n👥 ${students.length} học sinh\n❓ ${actualNum} câu\n⏱ ${timeMin} phút\n\n📤 Copy link ở trên gửi cho học sinh qua Zalo là xong!`);
-    goT('tDash');
-    startDashAutoRefresh();
-  } catch(e) {
-    hideLoading();
-    alert('❌ Lỗi kết nối Google Sheets. Kiểm tra lại Apps Script!');
+  if (old !== TEACHER_PWD) {
+    msg.textContent = '❌ Mật khẩu hiện tại không khớp!';
+    msg.style.color = 'var(--red)';
+    return;
   }
+  if (nPwd.length < 4) {
+    msg.textContent = '❌ Mật khẩu mới phải từ 4 ký tự trở lên!';
+    msg.style.color = 'var(--red)';
+    return;
+  }
+  TEACHER_PWD = nPwd;
+  localStorage.setItem(LS_PWD, nPwd);
+  msg.textContent = '✅ Thay đổi mật khẩu thành công!';
+  msg.style.color = 'var(--green)';
 }
 
-async function deactivateQuiz() {
-  if (!confirm('⏹ Kết thúc bài kiểm tra? Học sinh sẽ không làm được nữa.')) return;
-  showLoading('Đang kết thúc bài...');
-  try {
-    await apiCall({ action: 'deactivate' });
-    hideLoading();
-    alert('✅ Đã kết thúc bài kiểm tra!');
-    refreshDash();
-  } catch(e) { hideLoading(); }
-}
-
-// ════════════════════════════════════════════════
-// TEACHER — Dashboard
-// ════════════════════════════════════════════════
-function startDashAutoRefresh() {
+// DASHBOARD BẢNG ĐIỂM
+function startDashRefresh() {
+  refreshDash();
   clearInterval(dashRefreshInterval);
-  dashRefreshInterval = setInterval(refreshDash, 15000); // Tự làm mới mỗi 15 giây
+  dashRefreshInterval = setInterval(refreshDash, 10000); // 10s tự động load
 }
 
+let LAST_DATA_ROWS = [];
 async function refreshDash() {
-  // FIX 3: Nếu quizConfig null (mở tab mới, F5...) → load lại từ server
-  if (!quizConfig) {
-    try {
-      const data = await apiCall({ action: 'getConfig' });
-      if (data.active && data.config) {
-        try {
-          quizConfig = (typeof data.config === 'object') ? data.config : JSON.parse(data.config);
-        } catch(e) { return; }
-      } else { return; }
-    } catch(e) { return; }
-  }
-  document.getElementById('dashTitle').textContent = quizConfig.title;
-  const all = quizConfig.students;
-
+  if (!isTeacher) return;
+  document.getElementById('dashTitle').textContent = document.getElementById('cfgTitle').value;
   try {
-    const data = await apiCall({ action: 'getResults' });
-    const submittedMap = {};
-    (data.results||[]).forEach(r => { submittedMap[r.name] = r; });
-    const cheatMap = {};
-    (data.cheats||[]).forEach(c => { cheatMap[c.name] = c.count; });
+    const res = await apiCall({ action: 'getResults' });
+    const records = res.results || [];
+    const cheats = res.cheats || [];
+    LAST_DATA_ROWS = records;
 
-    const done   = all.filter(s => submittedMap[s]);
-    const absent = all.filter(s => !submittedMap[s]);
+    const rawStus = document.getElementById('cfgStudents').value.split('\n');
+    const allStudents = rawStus.map(s => s.trim()).filter(s => s.length > 0);
 
-    document.getElementById('dTotal').textContent  = all.length;
-    document.getElementById('dDone').textContent   = done.length;
-    document.getElementById('dAbsent').textContent = absent.length;
-    document.getElementById('doneCount').textContent = done.length;
-    document.getElementById('dAvg').textContent = done.length
-      ? (done.reduce((a,s) => a + submittedMap[s].score, 0) / done.length).toFixed(1) : '–';
+    document.getElementById('dTotal').textContent = allStudents.length;
+    document.getElementById('dDone').textContent = records.length;
+    document.getElementById('doneCount').textContent = records.length;
 
-    // ABSENT PANEL
-    document.getElementById('absentBadge').textContent = absent.length + ' em';
-    const grid = document.getElementById('absentGrid');
-    if (!absent.length) {
-      grid.innerHTML = '<div class="all-done">🎉 Tất cả học sinh đã nộp bài!</div>';
+    const absentList = allStudents.filter(name => !records.some(r => r.name.trim().toLowerCase() === name.toLowerCase()));
+    document.getElementById('dAbsent').textContent = absentList.length;
+    document.getElementById('absentBadge').textContent = `${absentList.length} em`;
+
+    // Render danh sách chưa nộp bài
+    const aGrid = document.getElementById('absentGrid');
+    if (absentList.length === 0) {
+      aGrid.innerHTML = '<div class="all-done">🎉 Tất cả đã nộp bài đầy đủ!</div>';
     } else {
-      grid.innerHTML = absent.map(s => {
-        const ini = s.trim().split(' ').map(w=>w[0]||'').join('').slice(0,2).toUpperCase();
-        return `<div class="absent-chip"><div class="av">${ini}</div><div class="nm" title="${s}">${s}</div></div>`;
-      }).join('');
+      aGrid.innerHTML = '';
+      absentList.forEach(name => {
+        const chip = document.createElement('div');
+        chip.className = 'absent-chip';
+        chip.innerHTML = `<div class="av">${name.charAt(0).toUpperCase()}</div><div class="nm">${name}</div>`;
+        aGrid.appendChild(chip);
+      });
     }
 
-    // DONE TABLE
-    const tb = document.getElementById('tbDone'); tb.innerHTML = '';
-    document.getElementById('noDoneMsg').style.display = done.length ? 'none' : 'block';
-    done.sort((a,b) => submittedMap[b].score - submittedMap[a].score).forEach((s,i) => {
-      const r = submittedMap[s], pct = r.score / quizConfig.maxScore;
-      const cls = pct>=.8 ? 'bg' : pct>=.5 ? 'by' : 'br';
-      const med = ['🥇','🥈','🥉'][i] || (i+1);
-      const cv = cheatMap[s]>0 ? `<span class="badge br">⚠️${cheatMap[s]}x</span>` : '<span style="color:var(--muted);font-size:.78rem">–</span>';
-      tb.innerHTML += `<tr><td>${med}</td><td>${s}</td><td><span class="badge ${cls}">${r.score}/${quizConfig.maxScore}</span></td><td style="color:var(--muted);font-size:.78rem">${r.correct}/${quizConfig.numQ}</td><td style="color:var(--muted);font-size:.76rem">${r.timeStr}</td><td>${cv}</td></tr>`;
-    });
+    // Tính điểm trung bình cộng lớp
+    if (records.length > 0) {
+      const sum = records.reduce((a, b) => a + parseFloat(b.score || 0), 0);
+      document.getElementById('dAvg').textContent = (sum / records.length).toFixed(1);
+    } else {
+      document.getElementById('dAvg').textContent = '–';
+    }
 
-    // CHEAT TABLE
-    const tc = document.getElementById('tbCheat'); tc.innerHTML = '';
-    const cl = Object.entries(cheatMap).filter(([,c])=>c>0);
-    document.getElementById('noCheatMsg').style.display = cl.length ? 'none' : 'block';
-    cl.forEach(([s,c],i) => { tc.innerHTML += `<tr><td>${i+1}</td><td>${s}</td><td>Thoát cửa sổ bài thi</td><td><span class="badge br">${c} lần</span></td></tr>`; });
+    // Bảng đã nộp bài
+    const tbody = document.getElementById('tbDone');
+    tbody.innerHTML = '';
+    if (records.length === 0) {
+      document.getElementById('noDoneMsg').style.display = 'block';
+    } else {
+      document.getElementById('noDoneMsg').style.display = 'none';
+      records.forEach((r, idx) => {
+        const tr = document.createElement('tr');
+        const sc = parseFloat(r.score);
+        let bCls = 'by';
+        if (sc >= 8) bCls = 'bg';
+        else if (sc < 5) bCls = 'br';
 
-    // Lưu để copy
-    window._dashData = { all, done, absent, submittedMap, cheatMap };
+        tr.innerHTML = `
+          <td>${idx + 1}</td>
+          <td style="font-weight:700">${r.name}</td>
+          <td><span class="badge ${bCls}">${r.score}</span></td>
+          <td>${r.details || '–'}</td>
+          <td style="color:var(--muted);font-size:.75rem">${r.timestamp || '–'}</td>
+          <td><span style="color:${r.cheats !== 'Không' ? 'var(--red)' : 'var(--muted)'}">${r.cheats || 'Không'}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Bảng quản lý vi phạm gian lận hành vi
+    const tCheat = document.getElementById('tbCheat');
+    tCheat.innerHTML = '';
+    if (cheats.length === 0) {
+      document.getElementById('noCheatMsg').style.display = 'block';
+    } else {
+      document.getElementById('noCheatMsg').style.display = 'none';
+      cheats.forEach((c, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${idx + 1}</td>
+          <td style="color:var(--red);font-weight:700">${c.name}</td>
+          <td>${c.type}</td>
+          <td><span class="badge br">${c.count} lần</span></td>
+        `;
+        tCheat.appendChild(tr);
+      });
+    }
+
   } catch(e) {
-    console.error('Refresh error:', e);
+    console.warn('Lập lịch Refresh lỗi:', e);
   }
 }
 
-function switchT(id,btn){
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById(id).classList.add('active'); btn.classList.add('active');
+function switchT(tabId, btn) {
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
 }
 
 function copyAbsent() {
-  if (!window._dashData) { alert('Bấm 🔄 Làm mới trước!'); return; }
-  const { absent, all } = window._dashData;
-  if (!absent.length) { alert('🎉 Tất cả đã nộp rồi!'); return; }
-  const t = new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
-  let txt = `📢 Nhắc làm bài: "${quizConfig.title}" — ${t}\n\n❌ ${absent.length} bạn CHƯA làm:\n`;
-  absent.forEach((s,i) => txt += `${i+1}. ${s}\n`);
-  txt += '\nVui lòng hoàn thành sớm nhé! 🙏';
-  navigator.clipboard.writeText(txt).then(() => alert('✅ Đã sao chép!\nDán vào Zalo để nhắc học sinh.'));
+  const chips = document.querySelectorAll('#absentGrid .nm');
+  if (chips.length === 0) { alert('Tất cả học sinh đã nộp bài xong!'); return; }
+  let txt = '🔔 THÔNG BÁO NHẮC LÀM BÀI KIỂM TRA:\nHọc sinh chưa hoàn thành nộp bài:\n';
+  chips.forEach((c, i) => txt += `${i+1}. ${c.textContent}\n`);
+  txt += `👉 Các em khẩn trương click vào link để hoàn thành: ${document.getElementById('shareLinkBox').textContent}`;
+  navigator.clipboard.writeText(txt).then(() => alert('📋 Đã copy mẫu văn bản nhắc nhở! Thầy cô chỉ việc dán sang nhóm lớp Zalo.'));
 }
 
 function copyReport() {
-  if (!window._dashData) { alert('Bấm 🔄 Làm mới trước!'); return; }
-  const { done, absent, submittedMap, cheatMap } = window._dashData;
-  let txt = `📊 BẢNG ĐIỂM: ${quizConfig.title}\n📅 ${new Date().toLocaleString('vi-VN')}\n${'─'.repeat(30)}\n`;
-  txt += `✅ ĐÃ NỘP (${done.length}):\n`;
-  done.sort((a,b) => submittedMap[b].score - submittedMap[a].score).forEach((s,i) => {
-    const r = submittedMap[s], w = cheatMap[s]>0 ? ` ⚠️(${cheatMap[s]} vi phạm)` : '';
-    txt += `${i+1}. ${s}: ${r.score}/${quizConfig.maxScore}${w}\n`;
+  if (LAST_DATA_ROWS.length === 0) { alert('Bảng điểm rỗng!'); return; }
+  let txt = `BẢNG ĐIỂM BÀI KIỂM TRA: ${document.getElementById('cfgTitle').value}\n# | Họ và tên | Điểm số | Đúng/Tổng | Thời gian làm | Vi phạm\n`;
+  LAST_DATA_ROWS.forEach((r, i) => {
+    txt += `${i+1}\t${r.name}\t${r.score}\t${r.details}\t${r.timeUsed}\t${r.cheats}\n`;
   });
-  txt += `\n❌ CHƯA LÀM (${absent.length}):\n`;
-  absent.forEach((s,i) => txt += `${i+1}. ${s}\n`);
-  navigator.clipboard.writeText(txt).then(() => alert('✅ Đã sao chép bảng điểm!'));
+  navigator.clipboard.writeText(txt).then(() => alert('📋 Đã sao chép bảng tổng hợp điểm dạng Excel!'));
 }
 
-// ════════════════════════════════════════════════
-// AI GENERATOR
-// ════════════════════════════════════════════════
-async function aiGenerate() {
-  const obj = document.getElementById('aiObj').value.trim();
-  if (!obj) { alert('⚠️ Nhập yêu cầu cần đạt trước!'); return; }
-  const n = parseInt(document.getElementById('aiN').value);
-  const msg = document.getElementById('aiMsg'), btn = document.getElementById('aiBtnGen'), prev = document.getElementById('aiPreview');
-  msg.style.display='block'; msg.style.color='var(--muted)';
-  msg.innerHTML='<span class="ai-spinner"></span> AI đang soạn câu hỏi...';
-  prev.style.display='none'; btn.disabled=true;
-  const prompt=`Bạn là chuyên gia soạn câu hỏi trắc nghiệm môn Khoa học tự nhiên lớp 7 (Chân trời sáng tạo).
-Yêu cầu cần đạt: ${obj}
-Soạn ĐÚNG ${n} câu hỏi trắc nghiệm 4 đáp án. Yêu cầu: phù hợp HS lớp 7, bao phủ đều các mức độ, đáp án nhiễu hợp lý.
-Chỉ trả về JSON thuần (KHÔNG markdown): {"questions":[{"q":"câu hỏi","opts":["A. ...","B. ...","C. ...","D. ..."],"ans":0,"explain":"giải thích"}]}`;
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4000,messages:[{role:'user',content:prompt}]})});
-    const data = await res.json();
-    const raw = data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
-    aiQuestions = JSON.parse(raw).questions;
-    let html = '';
-    aiQuestions.forEach((q,i) => {
-      const oc = q.opts.map((o,j)=>`<span style="color:${j===q.ans?'var(--green)':'var(--muted)'}">${j===q.ans?'✅ ':''}${o}</span>`).join('<br>');
-      html += `<div class="ai-q"><div class="ai-q-t">Câu ${i+1}. ${q.q}</div><div class="ai-q-o">${oc}</div><div class="ai-q-e">💡 ${q.explain}</div></div>`;
-    });
-    document.getElementById('aiPreviewContent').innerHTML = html;
-    prev.style.display = 'block';
-    msg.innerHTML = `✅ Soạn xong <strong>${aiQuestions.length} câu</strong>! Bấm "Thêm vào ngân hàng".`;
-    msg.style.color = 'var(--green)';
-  } catch(e) {
-    msg.innerHTML = '❌ Lỗi kết nối AI. Nhắn yêu cầu cần đạt qua chat để tôi soạn thay.';
-    msg.style.color = 'var(--red)';
-  }
-  btn.disabled = false;
+async function deactivateQuiz() {
+  if (!confirm('Hành động này sẽ đóng hoàn toàn bài kiểm tra hiện tại. Học sinh không thể làm tiếp được nữa. Thầy cô đồng ý chứ?')) return;
+  showLoading('Đang tiến hành ngắt bài...');
+  await apiCall({ action: 'deactivate' });
+  hideLoading();
+  alert('⏹️ Đã kết thúc và khóa bài kiểm tra thành công!');
+  goT('tSetup');
 }
 
-function aiAddToBank() {
-  if (!aiQuestions.length) return;
-  aiQuestions.forEach(q => qAddToDOM(q)); updateQCnt();
-  document.getElementById('aiPreview').style.display = 'none';
-  document.getElementById('aiMsg').innerHTML = `✅ Đã thêm ${aiQuestions.length} câu!`;
-  aiQuestions = [];
-}
-
-// ════════════════════════════════════════════════
-// QUESTION BANK
-// ════════════════════════════════════════════════
-function qAddManual() { qAddToDOM({q:'',opts:['A. ','B. ','C. ','D. '],ans:0,explain:''}); updateQCnt(); }
-function qAddToDOM(d) {
-  qCnt++;
-  const id='q'+qCnt, div=document.createElement('div');
-  div.className='q-item'; div.id=id;
-  const opts=(d.opts||['A. ','B. ','C. ','D. ']).join('\n');
-  div.innerHTML=`<div class="q-hdr"><span class="q-tag">Câu #${document.getElementById('qList').children.length+1}</span>
-    <button class="del-btn" onclick="this.closest('.q-item').remove();updateQCnt()">🗑</button></div>
-    <label>Câu hỏi</label><input class="qt" type="text" value="${esc(d.q)}" placeholder="Nhập câu hỏi..." style="margin-bottom:7px">
-    <label>Đáp án (mỗi dòng 1 đáp án)</label>
-    <textarea class="qo" style="min-height:68px;margin-bottom:7px">${esc(opts)}</textarea>
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:7px">
-      <div><label>Đáp án đúng (0=A 1=B 2=C 3=D)</label><input class="qa" type="number" min="0" max="3" value="${d.ans}"></div>
-      <div><label>Giải thích</label><input class="qe" type="text" value="${esc(d.explain)}" placeholder="Lý do đáp án đúng..."></div>
-    </div>`;
-  document.getElementById('qList').appendChild(div);
-}
-function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function updateQCnt(){document.getElementById('qCnt').textContent=document.getElementById('qList').children.length+' câu';}
-
-// ════════════════════════════════════════════════
-// NAVIGATION
-// ════════════════════════════════════════════════
-function goS(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
-function goT(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  if(id==='tDash'){refreshDash();startDashAutoRefresh();}
-}
-
-// ════════════════════════════════════════════════
-// ANTI-CHEAT
-// ════════════════════════════════════════════════
-document.addEventListener('visibilitychange',()=>{
-  if(document.hidden&&currentStudent&&document.getElementById('sQuiz').classList.contains('active')){
-    cheatCount++;
-    document.getElementById('acOverlay').style.display='flex';
-    // Gửi cảnh báo lên server ngay
-    apiCall({action:'submitCheat',name:currentStudent,count:cheatCount}).catch(()=>{});
-  }
-});
-document.addEventListener('contextmenu',e=>{if(document.getElementById('sQuiz').classList.contains('active'))e.preventDefault();});
-document.addEventListener('keydown',e=>{
-  if(document.getElementById('sQuiz').classList.contains('active')&&(e.ctrlKey||e.metaKey)&&['c','v','a','u','p'].includes(e.key.toLowerCase()))e.preventDefault();
-});
-function closeAC(){document.getElementById('acOverlay').style.display='none';}
-
-// ════════════════════════════════════════════════
-// CONFETTI
-// ════════════════════════════════════════════════
-function confetti(){
-  const c=document.getElementById('cvs'),ctx=c.getContext('2d');
-  c.width=window.innerWidth;c.height=window.innerHeight;
-  const cols=['#58a6ff','#3fb950','#f85149','#bc8cff','#d29922','#fff'];
-  const ps=Array.from({length:100},()=>({x:Math.random()*c.width,y:Math.random()*-c.height,w:7+Math.random()*7,h:5+Math.random()*5,color:cols[~~(Math.random()*cols.length)],vy:2+Math.random()*4,vx:(Math.random()-.5)*3,rot:Math.random()*360,dr:(Math.random()-.5)*6}));
-  let f=0;(function a(){ctx.clearRect(0,0,c.width,c.height);ps.forEach(p=>{p.y+=p.vy;p.x+=p.vx;p.rot+=p.dr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.color;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();});if(++f<160)requestAnimationFrame(a);else ctx.clearRect(0,0,c.width,c.height);})();
-}
-
-// ════════════════════════════════════════════════
-// NGÂN HÀNG MẶC ĐỊNH – Tập tính động vật
-// ════════════════════════════════════════════════
-const DEFAULT_QUESTIONS=[
-  {q:"Tập tính ở động vật là gì?",opts:["A. Khả năng di chuyển của động vật theo mùa","B. Chuỗi phản ứng của động vật trả lời kích thích từ môi trường, đảm bảo tồn tại và phát triển","C. Phản xạ không điều kiện xảy ra khi có ánh sáng","D. Sự thay đổi hình dạng cơ thể khi gặp nguy hiểm"],ans:1,explain:"Tập tính là chuỗi phản ứng trả lời kích thích môi trường, giúp động vật tồn tại và phát triển."},
-  {q:"Tập tính bẩm sinh là loại tập tính như thế nào?",opts:["A. Được hình thành qua quá trình học tập lâu dài","B. Sinh ra đã có, được di truyền từ bố mẹ, đặc trưng cho loài","C. Chỉ xuất hiện ở động vật bậc cao như chó, mèo","D. Hình thành do tác động của con người"],ans:1,explain:"Tập tính bẩm sinh sinh ra đã có, mang tính di truyền, đặc trưng cho từng loài."},
-  {q:"Tập tính học được hình thành do đâu?",opts:["A. Do gen quy định từ khi mới sinh","B. Do quá trình học tập, rút kinh nghiệm trong cuộc sống","C. Do cấu trúc hệ thần kinh của loài","D. Do sự thay đổi của khí hậu"],ans:1,explain:"Tập tính học được hình thành qua học tập và rút kinh nghiệm từ môi trường sống."},
-  {q:"Vai trò chính của tập tính đối với động vật là gì?",opts:["A. Giúp động vật tăng trưởng nhanh hơn","B. Đảm bảo cho động vật thích nghi, tồn tại và duy trì nòi giống","C. Giúp động vật thay đổi màu sắc cơ thể","D. Giúp động vật quang hợp được"],ans:1,explain:"Tập tính giúp động vật thích nghi với môi trường, kiếm ăn, tránh kẻ thù và duy trì nòi giống."},
-  {q:"Ví dụ nào sau đây là tập tính BẨM SINH?",opts:["A. Chó được huấn luyện ngồi khi nghe lệnh","B. Vịt con mới nở đã biết bơi","C. Chuột học cách đi qua mê cung để lấy thức ăn","D. Khỉ bắt chước con người mở hộp"],ans:1,explain:"Vịt con mới nở đã biết bơi là tập tính bẩm sinh, do gen quy định, không cần học."},
-  {q:"Ếch đực kêu vào mùa mưa để gọi ếch cái là ví dụ về tập tính gì?",opts:["A. Tập tính kiếm ăn","B. Tập tính sinh sản","C. Tập tính bảo vệ lãnh thổ","D. Tập tính di cư"],ans:1,explain:"Ếch đực kêu thu hút bạn tình là tập tính sinh sản bẩm sinh."},
-  {q:"Nhện giăng tơ bắt mồi, ong xây tổ, chim làm tổ đều là ví dụ về loại tập tính nào?",opts:["A. Tập tính học được","B. Tập tính bẩm sinh","C. Tập tính hỗn hợp","D. Tập tính di cư"],ans:1,explain:"Nhện giăng tơ, ong xây tổ, chim làm tổ đều là tập tính bẩm sinh – sinh ra đã có."},
-  {q:"Tại sao động vật có hệ thần kinh phát triển lại có nhiều tập tính học được hơn?",opts:["A. Vì chúng sống gần người nên dễ bắt chước","B. Vì hệ thần kinh phát triển giúp học hỏi, ghi nhớ và linh hoạt hơn","C. Vì chúng ăn nhiều thức ăn giàu dinh dưỡng hơn","D. Vì chúng sống ở vùng khí hậu ôn đới"],ans:1,explain:"Hệ thần kinh càng phát triển, khả năng học hỏi và hình thành tập tính mới càng cao."},
-  {q:"Khi bị kẻ thù tấn công, mực phun mực đen để trốn thoát. Đây là tập tính gì?",opts:["A. Tập tính sinh sản","B. Tập tính tự vệ bẩm sinh","C. Tập tính kiếm ăn học được","D. Tập tính di cư theo mùa"],ans:1,explain:"Mực phun mực là tập tính tự vệ bẩm sinh, không cần học."},
-  {q:"Chim di cư từ vùng lạnh về vùng ấm theo mùa là ví dụ về tập tính nào?",opts:["A. Tập tính sinh sản","B. Tập tính kiếm ăn","C. Tập tính di cư – bẩm sinh","D. Tập tính học được"],ans:2,explain:"Chim di cư là tập tính bẩm sinh, giúp tránh mùa đông lạnh giá."},
-  {q:"Trong chăn nuôi, huấn luyện bò sữa quen với giờ vắt sữa cố định vận dụng nguyên lý nào?",opts:["A. Tập tính bẩm sinh không thể thay đổi","B. Hình thành tập tính học được thông qua lặp lại có điều kiện","C. Thay đổi cấu trúc gen của bò","D. Kích thích hệ miễn dịch"],ans:1,explain:"Lặp lại cùng giờ vắt sữa tạo phản xạ có điều kiện – ứng dụng tập tính học được."},
-  {q:"Học sinh đặt báo thức mỗi sáng, lâu dần không cần báo thức vẫn tự dậy. Đây là biểu hiện của điều gì?",opts:["A. Tập tính bẩm sinh được kích hoạt","B. Hình thành tập tính học được qua thói quen lặp lại","C. Cơ thể tự thay đổi gen","D. Phản xạ không điều kiện"],ans:1,explain:"Lặp lại nhiều lần tạo thói quen – đây là tập tính học được."},
-  {q:"Người nông dân dùng bù nhìn đuổi chim. Sau một thời gian, chim không còn sợ nữa. Hiện tượng này là gì?",opts:["A. Tập tính bẩm sinh mới hình thành","B. Quen nhờn – giảm phản ứng khi kích thích lặp lại mà không gây hại","C. Tập tính di cư","D. Phản xạ không điều kiện mất đi"],ans:1,explain:"'Quen nhờn' – kích thích lặp lại không gây nguy hiểm thật, phản ứng giảm dần."},
-  {q:"Khi quan sát tập tính mèo săn mồi: rình, bò sát, nhảy vồ. Đây là tập tính nào?",opts:["A. Tập tính sinh sản – quan sát gián tiếp","B. Tập tính kiếm ăn bẩm sinh – quan sát trực tiếp ngoài thực địa","C. Tập tính học được – trong phòng thí nghiệm","D. Tập tính tự vệ – qua kính hiển vi"],ans:1,explain:"Mèo săn mồi là tập tính kiếm ăn bẩm sinh. Ghi chép trực tiếp là phương pháp quan sát thực địa."},
-  {q:"Bước quan trọng nhất khi thực hành quan sát tập tính của kiến là gì?",opts:["A. Chụp ảnh thật đẹp","B. Quan sát kiên nhẫn, ghi chép tỉ mỉ và trung thực","C. Tìm tài liệu trên mạng rồi sao chép","D. Dùng kẹo để dụ kiến"],ans:1,explain:"Quan sát trung thực, ghi chép tỉ mỉ là yêu cầu cốt lõi của thực hành khoa học."}
-];
-
-function loadDefaultQuestions(){
-  if(document.getElementById('qList').children.length>0) return;
-  DEFAULT_QUESTIONS.forEach(q=>qAddToDOM(q)); updateQCnt();
-  document.getElementById('cfgTitle').value='Kiểm tra KHTN 7 – Tập tính ở động vật';
-}
-
-// ════════════════════════════════════════════════
-// BỘ ĐỀ SẴN — BÀI 32: CẢM ỨNG Ở SINH VẬT (KHTN 7 CTST)
-// ════════════════════════════════════════════════
-function loadBai32() {
-  if (document.querySelectorAll('.q-item').length > 0) {
-    if (!confirm('⚠️ Ngân hàng đang có câu hỏi. Thêm 15 câu Bài 32 vào không?')) return;
-  }
-  const bai32 = [
-    {
-      q: 'Cảm ứng ở sinh vật là gì?',
-      opts: ['Khả năng tiếp nhận kích thích và phản ứng lại các kích thích từ môi trường', 'Khả năng tự tổng hợp chất dinh dưỡng của sinh vật', 'Khả năng sinh sản và duy trì nòi giống', 'Khả năng di chuyển từ nơi này sang nơi khác'],
-      ans: 0,
-      explain: 'Cảm ứng là khả năng tiếp nhận kích thích và phản ứng lại các kích thích từ môi trường bên trong và bên ngoài cơ thể. Đây là đặc trưng cơ bản của mọi sinh vật sống.'
-    },
-    {
-      q: 'Tác nhân của môi trường tác động tới cơ thể sinh vật được gọi là gì?',
-      opts: ['Kích thích', 'Cảm ứng', 'Phản ứng', 'Xung thần kinh'],
-      ans: 0,
-      explain: 'Các tác nhân của môi trường (ánh sáng, nhiệt độ, âm thanh, hóa chất...) tác động lên sinh vật được gọi là kích thích. Sinh vật tiếp nhận kích thích và phản ứng lại.'
-    },
-    {
-      q: 'Đặc điểm nào sau đây đúng về cảm ứng ở thực vật?',
-      opts: ['Diễn ra chậm, khó nhận thấy', 'Diễn ra nhanh, dễ nhận thấy', 'Diễn ra chậm, dễ nhận thấy', 'Diễn ra nhanh, khó nhận thấy'],
-      ans: 0,
-      explain: 'Cảm ứng ở thực vật thường diễn ra rất chậm (có thể mất nhiều giờ đến nhiều ngày) và khó nhận thấy bằng mắt thường, vì thực vật không có hệ thần kinh.'
-    },
-    {
-      q: 'Hiện tượng nào sau đây KHÔNG phải là cảm ứng ở thực vật?',
-      opts: ['Lá cây bàng rụng vào mùa đông', 'Hoa hướng dương hướng về phía Mặt Trời', 'Rễ cây mọc hướng về phía có nước', 'Cây nắp ấm bắt ruồi'],
-      ans: 0,
-      explain: 'Lá cây bàng rụng vào mùa đông là hiện tượng sinh lý theo mùa, không phải phản ứng với kích thích tức thời từ môi trường, nên không phải cảm ứng. Các hiện tượng còn lại đều là phản ứng với kích thích cụ thể.'
-    },
-    {
-      q: 'Hiện tượng rễ cây mọc hướng về phía có nguồn nước là biểu hiện của tính gì?',
-      opts: ['Tính hướng nước', 'Tính hướng sáng', 'Tính hướng tiếp xúc', 'Tính hướng hóa'],
-      ans: 0,
-      explain: 'Tính hướng nước (Hydrotropism) là hiện tượng rễ cây mọc và uốn cong về phía có nguồn nước. Đây là cảm ứng giúp cây hút được nhiều nước hơn để sống.'
-    },
-    {
-      q: 'Hoa hướng dương luôn quay về phía Mặt Trời là do hiện tượng nào?',
-      opts: ['Tính hướng sáng', 'Tính hướng nước', 'Tính hướng đất', 'Tính hướng hóa'],
-      ans: 0,
-      explain: 'Tính hướng sáng (Phototropism) là phản ứng của thực vật với ánh sáng. Hoa hướng dương có tính hướng sáng dương, luôn quay về phía nguồn ánh sáng để quang hợp tốt hơn.'
-    },
-    {
-      q: 'Cây trinh nữ (cây xấu hổ) cụp lá khi bị chạm vào là ví dụ về loại cảm ứng nào?',
-      opts: ['Tính hướng tiếp xúc', 'Tính hướng sáng', 'Tính hướng nước', 'Tính hướng trọng lực'],
-      ans: 0,
-      explain: 'Cây trinh nữ cụp lá khi bị chạm là phản ứng với kích thích tiếp xúc (cơ học). Đây là hình thức cảm ứng ở thực vật xảy ra tương đối nhanh so với các loại cảm ứng khác.'
-    },
-    {
-      q: 'Cảm ứng ở động vật khác với cảm ứng ở thực vật ở điểm nào?',
-      opts: ['Diễn ra nhanh hơn và đa dạng hơn', 'Diễn ra chậm hơn và khó nhận thấy hơn', 'Không cần có kích thích từ môi trường', 'Chỉ xảy ra khi có ánh sáng'],
-      ans: 0,
-      explain: 'Động vật có hệ thần kinh nên cảm ứng diễn ra nhanh hơn rất nhiều và đa dạng hơn so với thực vật. Thực vật không có hệ thần kinh nên phản ứng chậm hơn.'
-    },
-    {
-      q: 'Khi tay chạm vào vật nóng, ta rút tay lại ngay. Đây là ví dụ về cảm ứng ở cấp độ nào?',
-      opts: ['Cơ thể (phản xạ)', 'Tế bào', 'Mô', 'Cơ quan'],
-      ans: 0,
-      explain: 'Rút tay khỏi vật nóng là phản xạ — dạng cảm ứng ở cấp độ cơ thể. Kích thích được tiếp nhận qua thụ quan, truyền theo dây thần kinh đến trung ương và điều khiển cơ co lại.'
-    },
-    {
-      q: 'Vai trò của cảm ứng đối với sinh vật là gì?',
-      opts: ['Giúp sinh vật thích nghi với môi trường để tồn tại và phát triển', 'Giúp sinh vật tiêu hóa thức ăn tốt hơn', 'Giúp sinh vật tăng trưởng nhanh hơn', 'Giúp sinh vật sinh sản nhiều hơn'],
-      ans: 0,
-      explain: 'Cảm ứng là đặc trưng của sự sống, giúp sinh vật phản ứng phù hợp với các thay đổi của môi trường, từ đó thích nghi, tồn tại và phát triển. Không có cảm ứng, sinh vật không thể sống sót.'
-    },
-    {
-      q: 'Thân cây trồng cạnh cửa sổ thường uốn cong về phía có ánh sáng. Đây là do thực vật có:',
-      opts: ['Tính hướng sáng dương', 'Tính hướng sáng âm', 'Tính hướng nước dương', 'Tính hướng đất âm'],
-      ans: 0,
-      explain: 'Thân cây hướng về phía ánh sáng là tính hướng sáng dương. Ngược lại, rễ cây mọc tránh xa ánh sáng là tính hướng sáng âm. Tính hướng sáng giúp cây tối ưu hóa khả năng quang hợp.'
-    },
-    {
-      q: 'Con sâu cuộn tròn lại khi bị chạm vào là ví dụ về cảm ứng ở:',
-      opts: ['Động vật', 'Thực vật', 'Nấm', 'Vi khuẩn'],
-      ans: 0,
-      explain: 'Con sâu cuộn tròn là phản ứng tự vệ của động vật trước kích thích tiếp xúc. Động vật có hệ thần kinh nên phản ứng xảy ra nhanh chóng, giúp bảo vệ cơ thể khỏi nguy hiểm.'
-    },
-    {
-      q: 'Trong thí nghiệm trồng cây đậu trong hộp kín có đục lỗ một bên, ngọn cây sẽ:',
-      opts: ['Uốn cong về phía có lỗ (phía có ánh sáng)', 'Mọc thẳng lên', 'Uốn cong về phía không có lỗ', 'Không phát triển được'],
-      ans: 0,
-      explain: 'Do tính hướng sáng dương, ngọn cây sẽ uốn cong về phía có ánh sáng — tức là phía có lỗ. Đây là thí nghiệm kinh điển chứng minh tính hướng sáng của thực vật.'
-    },
-    {
-      q: 'Kích thích từ môi trường có thể là:',
-      opts: ['Ánh sáng, nhiệt độ, hóa chất, lực cơ học', 'Chỉ có ánh sáng và nhiệt độ', 'Chỉ có hóa chất', 'Chỉ có âm thanh'],
-      ans: 0,
-      explain: 'Kích thích có thể là nhiều dạng khác nhau: ánh sáng, nhiệt độ, hóa chất, lực cơ học (va chạm), âm thanh, điện... Mỗi loại sinh vật có thể tiếp nhận các dạng kích thích khác nhau.'
-    },
-    {
-      q: 'Phát biểu nào sau đây về cảm ứng là ĐÚNG?',
-      opts: ['Cảm ứng xảy ra ở cả thực vật lẫn động vật', 'Chỉ động vật mới có cảm ứng', 'Chỉ thực vật mới có cảm ứng', 'Cảm ứng chỉ xảy ra với kích thích ánh sáng'],
-      ans: 0,
-      explain: 'Cảm ứng là đặc trưng chung của mọi sinh vật — cả thực vật lẫn động vật đều có khả năng này. Tuy nhiên mức độ, tốc độ và hình thức cảm ứng khác nhau tùy loài.'
-    }
-  ];
-
-  bai32.forEach(q => qAddToDOM(q));
-  updateQCnt();
-
-  // Tự động điền tên bài
-  const titleInput = document.getElementById('cfgTitle');
-  if (!titleInput.value || titleInput.value.includes('Tập tính')) {
-    titleInput.value = 'Kiểm tra KHTN 7 – Bài 32: Cảm ứng ở sinh vật';
-  }
-
-  alert(`✅ Đã nạp 15 câu Bài 32 "Cảm ứng ở sinh vật" vào ngân hàng!\n\n💡 Thầy có thể chỉnh số câu mỗi HS nhận (mặc định lấy ngẫu nhiên từ ngân hàng).`);
-}
-
-// ════════════════════════════════════════════════
-// INIT
-// ════════════════════════════════════════════════
-route();
+function aiGenerate() { alert('Chức năng AI tự động soạn đang tải thư viện, Thầy hãy gửi yêu cầu cần đạt qua cửa sổ chat với AI trợ lý để soạn câu hỏi nhanh hơn nhé.'); }
+function aiAddToBank() {}
 </script>
 </body>
 </html>
