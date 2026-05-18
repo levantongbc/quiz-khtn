@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phiếu Khảo Sát KHTN 7</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap');
+  :root {
+    --navy:#1B3A6B; --navy2:#2a5298; --orange:#E07B30;
+    --green:#1a7a4a; --purple:#6A4C93;
+    --bg:#F0F4FA; --card:#fff; --text:#1a2540; --muted:#6b7a99; --border:#d0daea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy2) 55%,var(--purple));color:#fff;padding:26px 20px 20px;text-align:center;position:relative;overflow:hidden;}
+  .header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(224,123,48,.25),transparent 55%),radial-gradient(circle at 10% 80%,rgba(106,76,147,.3),transparent 50%);}
+  .header h1{font-size:1.25rem;font-weight:800;position:relative;}
+  .header p{font-size:.78rem;opacity:.8;margin-top:4px;position:relative;}
+  .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 14px;font-size:.7rem;margin-bottom:8px;position:relative;}
+
+  .tab-bar{display:flex;background:#fff;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(27,58,107,.08);}
+  .tab-btn{flex:1;padding:12px 6px;border:none;background:none;cursor:pointer;font-family:inherit;font-size:.8rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;}
+  .tab-btn.active{color:var(--navy);border-bottom-color:var(--orange);}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .2s;}
+  .tab-btn.active .dot{background:var(--orange);}
+  .dot.done{background:var(--green)!important;}
+
+  .page{display:none;padding:14px;max-width:600px;margin:0 auto;}
+  .page.active{display:block;}
+
+  .sec-label{display:flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:1px;color:var(--navy);text-transform:uppercase;margin:18px 0 8px;}
+  .sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  .q-card{background:#fff;border-radius:14px;padding:15px;margin-bottom:10px;border:1.5px solid var(--border);transition:border-color .2s,box-shadow .2s;}
+  .q-card:focus-within{border-color:var(--navy2);box-shadow:0 0 0 3px rgba(27,58,107,.07);}
+  .q-card.answered{border-color:#a8d5b5;background:#f6fdf9;}
+  .q-num{font-size:.66rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+  .q-text{font-size:.88rem;font-weight:600;line-height:1.5;margin-bottom:11px;}
+
+  .options{display:flex;flex-direction:column;gap:6px;}
+  .opt-label{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:9px;border:1.5px solid var(--border);cursor:pointer;font-size:.82rem;transition:all .15s;background:var(--bg);}
+  .opt-label:hover{border-color:var(--navy2);background:#eef2fb;}
+  .opt-label input[type=radio]{display:none;}
+  .rc{width:17px;height:17px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+  .opt-label input:checked~.rc{border-color:var(--navy);background:var(--navy);}
+  .opt-label input:checked~.rc::after{content:'';width:5px;height:5px;border-radius:50%;background:#fff;}
+  .opt-label:has(input:checked){border-color:var(--navy);background:#eef2fb;font-weight:600;}
+
+  .likert-wrap{overflow-x:auto;margin-top:4px;}
+  .lt{width:100%;border-collapse:collapse;font-size:.76rem;min-width:460px;}
+  .lt th{background:var(--navy);color:#fff;padding:7px 5px;text-align:center;font-weight:600;}
+  .lt th:first-child{text-align:left;padding-left:10px;}
+  .lt td{padding:8px 5px;border-bottom:1px solid var(--border);text-align:center;}
+  .lt td:first-child{text-align:left;padding-left:10px;font-size:.78rem;line-height:1.4;}
+  .lt tr:nth-child(even) td{background:#f7f9fd;}
+  .lt input[type=radio]{width:15px;height:15px;accent-color:var(--navy);cursor:pointer;}
+
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+  .info-field label{font-size:.73rem;font-weight:600;color:var(--navy);display:block;margin-bottom:3px;}
+  .info-field input,.info-field select{width:100%;padding:8px 11px;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:.83rem;outline:none;transition:border-color .2s;background:#fff;}
+  .info-field input:focus,.info-field select:focus{border-color:var(--navy2);}
+
+  .note-box{background:#fff8f0;border:1.5px solid #f0c080;border-radius:10px;padding:11px 13px;font-size:.77rem;color:#7a4a10;line-height:1.5;margin-bottom:12px;}
+  .note-box strong{color:var(--orange);}
+
+  .prog-bar{height:3px;background:var(--border);border-radius:2px;margin:10px 0;overflow:hidden;}
+  .prog-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--navy));border-radius:2px;transition:width .4s ease;}
+
+  .submit-btn{width:100%;padding:13px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:.92rem;font-weight:700;cursor:pointer;margin-top:14px;box-shadow:0 4px 16px rgba(27,58,107,.3);transition:transform .15s,box-shadow .15s;}
+  .submit-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,58,107,.4);}
+  .submit-btn:disabled{background:#ccc;box-shadow:none;cursor:not-allowed;transform:none;}
+
+  /* Spinner */
+  .spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* Result */
+  .result-hero{background:linear-gradient(135deg,var(--green),#2ecc71);color:#fff;border-radius:16px;padding:22px;text-align:center;margin-bottom:14px;}
+  .result-hero .icon{font-size:2.6rem;}
+  .result-hero h2{font-size:1.1rem;font-weight:800;margin:8px 0 4px;}
+  .result-hero p{font-size:.8rem;opacity:.9;}
+
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;}
+  .stat-card{background:#fff;border-radius:12px;padding:13px 8px;text-align:center;border:1.5px solid var(--border);}
+  .stat-card .num{font-size:1.5rem;font-weight:800;color:var(--navy);}
+  .stat-card .lbl{font-size:.68rem;color:var(--muted);margin-top:2px;}
+
+  .chart-card{background:#fff;border-radius:14px;padding:15px;border:1.5px solid var(--border);margin-bottom:11px;}
+  .chart-title{font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:11px;}
+
+  .bar-row{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+  .bar-lbl{font-size:.73rem;width:140px;flex-shrink:0;line-height:1.3;}
+  .bar-track{flex:1;background:var(--bg);border-radius:5px;height:19px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:5px;transition:width 1s cubic-bezier(.4,0,.2,1);}
+  .bar-fill span{font-size:.62rem;font-weight:700;color:#fff;}
+  .bar-cnt{font-size:.73rem;font-weight:700;color:var(--navy);width:30px;text-align:right;}
+
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+  .cc{background:#fff;border-radius:12px;padding:13px;border:1.5px solid var(--border);}
+  .cc.before{border-top:3px solid var(--orange);}
+  .cc.after{border-top:3px solid var(--green);}
+  .cc-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
+  .cc.before .cc-lbl{color:var(--orange);}
+  .cc.after .cc-lbl{color:var(--green);}
+  .cc-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+  .cc-row .ct{font-size:.73rem;color:var(--muted);}
+  .cc-row .cv{font-size:.82rem;font-weight:700;}
+
+  .export-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--orange),#f0a060);color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:.86rem;font-weight:700;cursor:pointer;margin-top:8px;box-shadow:0 4px 16px rgba(224,123,48,.35);transition:transform .15s;}
+  .export-btn:hover{transform:translateY(-1px);}
+
+  .sheet-setup{background:#fff;border-radius:14px;padding:16px;border:1.5px solid var(--border);margin-bottom:12px;}
+  .sheet-setup h3{font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+  .step-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
+  .step-num{width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .step-text{font-size:.78rem;line-height:1.5;color:var(--text);}
+  .step-text code{background:#eef2fb;padding:1px 5px;border-radius:4px;font-size:.74rem;color:var(--navy);font-family:monospace;}
+  .url-input{width:100%;padding:9px 11px;border:1.5px solid var(--border);border-radius:9px;font-family:monospace;font-size:.76rem;outline:none;margin-top:6px;}
+  .url-input:focus{border-color:var(--navy2);}
+  .save-url-btn{padding:8px 16px;background:var(--navy);color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:.78rem;font-weight:700;cursor:pointer;margin-top:6px;}
+
+  @media(max-width:380px){.info-grid{grid-template-columns:1fr;}.stats-grid{grid-template-columns:repeat(3,1fr);}.compare-grid{grid-template-columns:1fr;}}
+  @media print{.tab-bar,.submit-btn,.export-btn,.sheet-setup,.note-box{display:none!important;}.page{display:block!important;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">🏫 KHTN 7 · Chân Trời Sáng Tạo</div>
+  <h1>📋 Phiếu Khảo Sát Học Sinh</h1>
+  <p>Năm học 2024–2025 · GV: Lê Văn Tổng</p>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" id="tab-dau" onclick="switchTab('dau')">
+    <div class="dot" id="dot-dau"></div>Đầu năm
+  </button>
+  <button class="tab-btn" id="tab-cuoi" onclick="switchTab('cuoi')">
+    <div class="dot" id="dot-cuoi"></div>Cuối năm
+  </button>
+  <button class="tab-btn" id="tab-kq" onclick="switchTab('kq')">
+    <div class="dot" id="dot-kq"></div>Kết quả
+  </button>
+  <button class="tab-btn" id="tab-setup" onclick="switchTab('setup')">
+    <div class="dot" id="dot-setup"></div>⚙️ Cài đặt
+  </button>
+</div>
+
+<!-- ══════════ SETUP ══════════ -->
+<div class="page" id="page-setup">
+  <div class="sec-label">⚙️ Kết nối Google Sheets</div>
+  <div class="sheet-setup">
+    <h3>📌 Hướng dẫn 3 bước (5 phút một lần duy nhất)</h3>
+
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-text">Tạo <strong>Google Sheets</strong> mới → Vào menu <code>Tiện ích mở rộng</code> → <code>Apps Script</code> → Xóa code cũ → Dán đoạn code bên dưới vào → <strong>Lưu</strong> (Ctrl+S)</div>
+    </div>
+
+    <div style="background:#1e2a3a;border-radius:10px;padding:13px;margin:8px 0;position:relative;">
+      <button onclick="copyScript()" style="position:absolute;top:8px;right:8px;padding:4px 10px;background:#E07B30;color:#fff;border:none;border-radius:6px;font-size:.7rem;cursor:pointer;font-weight:700;" id="copy-btn">📋 Sao chép</button>
+      <pre id="script-code" style="color:#a8d8b0;font-size:.7rem;line-height:1.6;overflow-x:auto;white-space:pre-wrap;font-family:monospace;">function doPost(e) {
+  try {
+    var data = JSON.parse(e.postData.contents);
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheetName = data.loai === 'dau' ? 'DauNam' : 'CuoiNam';
+    var sheet = ss.getSheetByName(sheetName);
+    if (!sheet) {
+      sheet = ss.insertSheet(sheetName);
+      // Header
+      if (data.loai === 'dau') {
+        sheet.appendRow(['Thời gian','Họ tên','Lớp',
+          'Hứng thú (1-4)','Tập trung (1-4)','Tự ôn bài (1-4)',
+          'Khó khăn','Muốn CN số (1-4)',
+          'Hiểu bài (1-5)','Dám hỏi (1-5)','Nhớ bài (1-5)',
+          'KHTN có ích (1-5)','Hài lòng (1-5)']);
+      } else {
+        sheet.appendRow(['Thời gian','Họ tên','Lớp',
+          'So sánh đầu-cuối (1-4)','CN hiệu quả nhất',
+          'Ôn bài nhiều hơn (1-4)','Tự tin hơn (1-4)','Muốn nhân rộng (1-4)',
+          'Quiz giúp hiểu (1-5)','Spin wheel (1-5)',
+          'Slide rõ (1-5)','Mind map (1-5)','Hài lòng (1-5)']);
+      }
+    }
+    var row = data.loai === 'dau'
+      ? [data.thoiGian, data.ten, data.lop,
+         data.q1, data.q2, data.q3, data.q4, data.q5,
+         data.l1, data.l2, data.l3, data.l4, data.l5]
+      : [data.thoiGian, data.ten, data.lop,
+         data.q1, data.q2, data.q3, data.q4, data.q5,
+         data.l1, data.l2, data.l3, data.l4, data.l5];
+    sheet.appendRow(row);
+    return ContentService.createTextOutput(
+      JSON.stringify({status:'ok', sheet: sheetName})
+    ).setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    return ContentService.createTextOutput(
+      JSON.stringify({status:'error', message: err.toString()})
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var result = {};
+  ['DauNam','CuoiNam'].forEach(function(name) {
+    var sheet = ss.getSheetByName(name);
+    if (sheet) {
+      var data = sheet.getDataRange().getValues();
+      result[name] = data;
+    }
+  });
+  return ContentService.createTextOutput(
+    JSON.stringify(result)
+  ).setMimeType(ContentService.MimeType.JSON);
+}</pre>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-text">Trong Apps Script → Bấm <strong>Triển khai</strong> → <strong>Triển khai mới</strong> → Chọn loại <code>Ứng dụng web</code> → Ai có quyền truy cập: <code>Mọi người</code> → <strong>Triển khai</strong> → <strong>Sao chép URL</strong></div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-text">Dán URL vào ô bên dưới rồi bấm <strong>Lưu</strong>. Xong! Mọi phiếu HS điền sẽ tự động vào Sheets.</div>
+    </div>
+
+    <input type="url" class="url-input" id="apps-script-url"
+      placeholder="https://script.google.com/macros/s/ABC.../exec"
+      value="">
+    <br>
+    <button class="save-url-btn" onclick="saveUrl()">💾 Lưu URL & Kiểm tra kết nối</button>
+    <div id="url-status" style="font-size:.75rem;margin-top:6px;"></div>
+  </div>
+
+  <div class="note-box">
+    <strong>💡 Mẹo:</strong> Sau khi HS nộp phiếu, mở Google Sheets lên → tab <em>DauNam</em> và <em>CuoiNam</em> sẽ có đủ dữ liệu. Vào <strong>Chèn → Biểu đồ</strong> để tạo chart đẹp đính vào SKKN!
+  </div>
+</div>
+
+<!-- ══════════ ĐẦU NĂM ══════════ -->
+<div class="page active" id="page-dau">
+  <div class="prog-bar"><div class="prog-fill" id="prog-dau" style="width:0%"></div></div>
+  <div class="note-box"><strong>📌 Hướng dẫn:</strong> Em hãy trả lời trung thực — không có đúng sai. Thông tin giúp thầy cải thiện giờ học!</div>
+
+  <div class="sec-label">📝 Thông tin</div>
+  <div class="info-grid">
+    <div class="info-field"><label>Họ và tên *</label><input type="text" id="d-ten" placeholder="Nguyễn Văn A" oninput="calcProg('dau')"></div>
+    <div class="info-field"><label>Lớp *</label>
+      <select id="d-lop" onchange="calcProg('dau')">
+        <option value="">-- Chọn lớp --</option>
+        <option>7A</option><option>7B</option><option>7C</option><option>7D</option><option>7E</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec-label">🔍 Phần A – Cảm nhận hiện tại (5 câu)</div>
+
+  <div class="q-card" id="dc1">
+    <div class="q-num">Câu 1</div>
+    <div class="q-text">Em cảm thấy thế nào về giờ học KHTN hiện tại?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="dq1" value="1" onchange="markOk('dc1');calcProg('dau')"><div class="rc"></div>😴 Nhàm chán, không muốn học</label>
+      <label class="opt-label"><input type="radio" name="dq1" value="2" onchange="markOk('dc1');calcProg('dau')"><div class="rc"></div>😐 Bình thường, không thích không ghét</label>
+      <label class="opt-label"><input type="radio" name="dq1" value="3" onchange="markOk('dc1');calcProg('dau')"><div class="rc"></div>🙂 Khá thú vị, thỉnh thoảng hứng thú</label>
+      <label class="opt-label"><input type="radio" name="dq1" value="4" onchange="markOk('dc1');calcProg('dau')"><div class="rc"></div>😄 Rất thú vị, luôn mong đến giờ học</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="dc2">
+    <div class="q-num">Câu 2</div>
+    <div class="q-text">Trong một tiết 45 phút, em tập trung được bao lâu?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="dq2" value="1" onchange="markOk('dc2');calcProg('dau')"><div class="rc"></div>⏱ Dưới 15 phút</label>
+      <label class="opt-label"><input type="radio" name="dq2" value="2" onchange="markOk('dc2');calcProg('dau')"><div class="rc"></div>⏱ 15 – 25 phút</label>
+      <label class="opt-label"><input type="radio" name="dq2" value="3" onchange="markOk('dc2');calcProg('dau')"><div class="rc"></div>⏱ 25 – 35 phút</label>
+      <label class="opt-label"><input type="radio" name="dq2" value="4" onchange="markOk('dc2');calcProg('dau')"><div class="rc"></div>⏱ Gần như cả tiết (trên 40 phút)</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="dc3">
+    <div class="q-num">Câu 3</div>
+    <div class="q-text">Em có thường tự ôn bài KHTN ở nhà không?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="dq3" value="1" onchange="markOk('dc3');calcProg('dau')"><div class="rc"></div>❌ Hầu như không ôn</label>
+      <label class="opt-label"><input type="radio" name="dq3" value="2" onchange="markOk('dc3');calcProg('dau')"><div class="rc"></div>🔸 Chỉ trước khi kiểm tra</label>
+      <label class="opt-label"><input type="radio" name="dq3" value="3" onchange="markOk('dc3');calcProg('dau')"><div class="rc"></div>✅ 1–2 lần/tuần</label>
+      <label class="opt-label"><input type="radio" name="dq3" value="4" onchange="markOk('dc3');calcProg('dau')"><div class="rc"></div>⭐ Thường xuyên, gần như mỗi ngày</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="dc4">
+    <div class="q-num">Câu 4</div>
+    <div class="q-text">Điều gì khiến em KHÓ HỌC nhất trong giờ KHTN?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="dq4" value="Slide nhiều chữ" onchange="markOk('dc4');calcProg('dau')"><div class="rc"></div>📖 Slide quá nhiều chữ, không nhìn rõ</label>
+      <label class="opt-label"><input type="radio" name="dq4" value="Kiến thức khó" onchange="markOk('dc4');calcProg('dau')"><div class="rc"></div>🧠 Kiến thức khó, trừu tượng</label>
+      <label class="opt-label"><input type="radio" name="dq4" value="Ít tham gia" onchange="markOk('dc4');calcProg('dau')"><div class="rc"></div>😶 Ít được tham gia, chỉ nghe thầy giảng</label>
+      <label class="opt-label"><input type="radio" name="dq4" value="Đơn điệu" onchange="markOk('dc4');calcProg('dau')"><div class="rc"></div>😴 Giờ học đơn điệu, buồn ngủ</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="dc5">
+    <div class="q-num">Câu 5</div>
+    <div class="q-text">Em có muốn giờ học có câu hỏi tương tác, mini-game không?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="dq5" value="1" onchange="markOk('dc5');calcProg('dau')"><div class="rc"></div>❌ Không cần</label>
+      <label class="opt-label"><input type="radio" name="dq5" value="2" onchange="markOk('dc5');calcProg('dau')"><div class="rc"></div>🤔 Tùy, không quan trọng</label>
+      <label class="opt-label"><input type="radio" name="dq5" value="3" onchange="markOk('dc5');calcProg('dau')"><div class="rc"></div>👍 Có cũng được, sẽ vui hơn</label>
+      <label class="opt-label"><input type="radio" name="dq5" value="4" onchange="markOk('dc5');calcProg('dau')"><div class="rc"></div>🔥 Rất muốn! Sẽ học hứng hơn nhiều</label>
+    </div>
+  </div>
+
+  <div class="sec-label">📊 Phần B – Thang điểm 1→5</div>
+  <div class="q-card">
+    <div class="likert-wrap">
+      <table class="lt">
+        <thead><tr><th style="width:50%">Tiêu chí</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+        <tbody>
+          <tr><td>Em hiểu bài ngay sau khi thầy giảng</td>
+            <td><input type="radio" name="dl1" value="1" onchange="calcProg('dau')"></td><td><input type="radio" name="dl1" value="2" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl1" value="3" onchange="calcProg('dau')"></td><td><input type="radio" name="dl1" value="4" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl1" value="5" onchange="calcProg('dau')"></td></tr>
+          <tr><td>Em dám đặt câu hỏi khi không hiểu</td>
+            <td><input type="radio" name="dl2" value="1" onchange="calcProg('dau')"></td><td><input type="radio" name="dl2" value="2" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl2" value="3" onchange="calcProg('dau')"></td><td><input type="radio" name="dl2" value="4" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl2" value="5" onchange="calcProg('dau')"></td></tr>
+          <tr><td>Em nhớ kiến thức bài học sau 1 tuần</td>
+            <td><input type="radio" name="dl3" value="1" onchange="calcProg('dau')"></td><td><input type="radio" name="dl3" value="2" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl3" value="3" onchange="calcProg('dau')"></td><td><input type="radio" name="dl3" value="4" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl3" value="5" onchange="calcProg('dau')"></td></tr>
+          <tr><td>Em thấy KHTN có ích cho cuộc sống</td>
+            <td><input type="radio" name="dl4" value="1" onchange="calcProg('dau')"></td><td><input type="radio" name="dl4" value="2" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl4" value="3" onchange="calcProg('dau')"></td><td><input type="radio" name="dl4" value="4" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl4" value="5" onchange="calcProg('dau')"></td></tr>
+          <tr><td>Em hài lòng với cách dạy học hiện tại</td>
+            <td><input type="radio" name="dl5" value="1" onchange="calcProg('dau')"></td><td><input type="radio" name="dl5" value="2" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl5" value="3" onchange="calcProg('dau')"></td><td><input type="radio" name="dl5" value="4" onchange="calcProg('dau')"></td>
+            <td><input type="radio" name="dl5" value="5" onchange="calcProg('dau')"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <button class="submit-btn" id="btn-dau" onclick="submitForm('dau')">📤 Nộp phiếu đầu năm</button>
+</div>
+
+<!-- ══════════ CUỐI NĂM ══════════ -->
+<div class="page" id="page-cuoi">
+  <div class="prog-bar"><div class="prog-fill" id="prog-cuoi" style="width:0%"></div></div>
+  <div class="note-box"><strong>📌 Hướng dẫn:</strong> Em đánh giá dựa trên trải nghiệm thực tế cả năm học vừa qua nhé!</div>
+
+  <div class="sec-label">📝 Thông tin</div>
+  <div class="info-grid">
+    <div class="info-field"><label>Họ và tên *</label><input type="text" id="c-ten" placeholder="Nguyễn Văn A" oninput="calcProg('cuoi')"></div>
+    <div class="info-field"><label>Lớp *</label>
+      <select id="c-lop" onchange="calcProg('cuoi')">
+        <option value="">-- Chọn lớp --</option>
+        <option>7A</option><option>7B</option><option>7C</option><option>7D</option><option>7E</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec-label">🔍 Phần A – Đánh giá sau khi học với công cụ số</div>
+
+  <div class="q-card" id="cc1">
+    <div class="q-num">Câu 1</div>
+    <div class="q-text">So với đầu năm, em thấy giờ KHTN năm nay như thế nào?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="cq1" value="1" onchange="markOk('cc1');calcProg('cuoi')"><div class="rc"></div>📉 Kém hơn, không thích bằng</label>
+      <label class="opt-label"><input type="radio" name="cq1" value="2" onchange="markOk('cc1');calcProg('cuoi')"><div class="rc"></div>➡️ Không khác gì mấy</label>
+      <label class="opt-label"><input type="radio" name="cq1" value="3" onchange="markOk('cc1');calcProg('cuoi')"><div class="rc"></div>📈 Thú vị hơn, dễ hiểu hơn</label>
+      <label class="opt-label"><input type="radio" name="cq1" value="4" onchange="markOk('cc1');calcProg('cuoi')"><div class="rc"></div>🚀 Thú vị hơn RẤT NHIỀU!</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="cc2">
+    <div class="q-num">Câu 2</div>
+    <div class="q-text">Công cụ nào HIỆU QUẢ NHẤT với em trong năm học này?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="cq2" value="Quiz trực tuyến" onchange="markOk('cc2');calcProg('cuoi')"><div class="rc"></div>📱 Quiz trực tuyến</label>
+      <label class="opt-label"><input type="radio" name="cq2" value="Vòng quay may mắn" onchange="markOk('cc2');calcProg('cuoi')"><div class="rc"></div>🎡 Vòng quay may mắn</label>
+      <label class="opt-label"><input type="radio" name="cq2" value="Slide bài giảng" onchange="markOk('cc2');calcProg('cuoi')"><div class="rc"></div>📺 Slide bài giảng</label>
+      <label class="opt-label"><input type="radio" name="cq2" value="Sơ đồ tư duy" onchange="markOk('cc2');calcProg('cuoi')"><div class="rc"></div>🗺 Sơ đồ tư duy</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="cc3">
+    <div class="q-num">Câu 3</div>
+    <div class="q-text">Nhờ quiz online, em ôn bài ở nhà nhiều hơn không?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="cq3" value="1" onchange="markOk('cc3');calcProg('cuoi')"><div class="rc"></div>❌ Không ôn thêm</label>
+      <label class="opt-label"><input type="radio" name="cq3" value="2" onchange="markOk('cc3');calcProg('cuoi')"><div class="rc"></div>🔸 Thỉnh thoảng</label>
+      <label class="opt-label"><input type="radio" name="cq3" value="3" onchange="markOk('cc3');calcProg('cuoi')"><div class="rc"></div>✅ Thường xuyên hơn</label>
+      <label class="opt-label"><input type="radio" name="cq3" value="4" onchange="markOk('cc3');calcProg('cuoi')"><div class="rc"></div>⭐ Gần như mỗi ngày</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="cc4">
+    <div class="q-num">Câu 4</div>
+    <div class="q-text">Em tự tin hơn khi làm bài kiểm tra KHTN so với đầu năm?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="cq4" value="1" onchange="markOk('cc4');calcProg('cuoi')"><div class="rc"></div>😟 Không, vẫn lo như cũ</label>
+      <label class="opt-label"><input type="radio" name="cq4" value="2" onchange="markOk('cc4');calcProg('cuoi')"><div class="rc"></div>😐 Không khác mấy</label>
+      <label class="opt-label"><input type="radio" name="cq4" value="3" onchange="markOk('cc4');calcProg('cuoi')"><div class="rc"></div>🙂 Tự tin hơn một chút</label>
+      <label class="opt-label"><input type="radio" name="cq4" value="4" onchange="markOk('cc4');calcProg('cuoi')"><div class="rc"></div>💪 Tự tin hơn rõ rệt</label>
+    </div>
+  </div>
+
+  <div class="q-card" id="cc5">
+    <div class="q-num">Câu 5</div>
+    <div class="q-text">Em muốn các môn khác cũng dạy theo cách này không?</div>
+    <div class="options">
+      <label class="opt-label"><input type="radio" name="cq5" value="1" onchange="markOk('cc5');calcProg('cuoi')"><div class="rc"></div>❌ Không cần</label>
+      <label class="opt-label"><input type="radio" name="cq5" value="2" onchange="markOk('cc5');calcProg('cuoi')"><div class="rc"></div>🤔 Tùy môn</label>
+      <label class="opt-label"><input type="radio" name="cq5" value="3" onchange="markOk('cc5');calcProg('cuoi')"><div class="rc"></div>👍 Có, sẽ tốt hơn</label>
+      <label class="opt-label"><input type="radio" name="cq5" value="4" onchange="markOk('cc5');calcProg('cuoi')"><div class="rc"></div>🔥 Rất muốn! Tất cả môn nên áp dụng</label>
+    </div>
+  </div>
+
+  <div class="sec-label">📊 Phần B – Thang điểm 1→5</div>
+  <div class="q-card">
+    <div class="likert-wrap">
+      <table class="lt">
+        <thead><tr><th style="width:50%">Tiêu chí</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+        <tbody>
+          <tr><td>Quiz giúp em hiểu bài sâu hơn cách học cũ</td>
+            <td><input type="radio" name="cl1" value="1" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl1" value="2" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl1" value="3" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl1" value="4" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl1" value="5" onchange="calcProg('cuoi')"></td></tr>
+          <tr><td>Vòng quay giúp em tập trung từ đầu tiết</td>
+            <td><input type="radio" name="cl2" value="1" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl2" value="2" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl2" value="3" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl2" value="4" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl2" value="5" onchange="calcProg('cuoi')"></td></tr>
+          <tr><td>Slide chữ lớn giúp em nhìn rõ và theo dõi</td>
+            <td><input type="radio" name="cl3" value="1" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl3" value="2" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl3" value="3" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl3" value="4" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl3" value="5" onchange="calcProg('cuoi')"></td></tr>
+          <tr><td>Sơ đồ tư duy giúp em hệ thống kiến thức</td>
+            <td><input type="radio" name="cl4" value="1" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl4" value="2" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl4" value="3" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl4" value="4" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl4" value="5" onchange="calcProg('cuoi')"></td></tr>
+          <tr><td>Em hài lòng với cách dạy học năm nay</td>
+            <td><input type="radio" name="cl5" value="1" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl5" value="2" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl5" value="3" onchange="calcProg('cuoi')"></td><td><input type="radio" name="cl5" value="4" onchange="calcProg('cuoi')"></td>
+            <td><input type="radio" name="cl5" value="5" onchange="calcProg('cuoi')"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <button class="submit-btn" id="btn-cuoi" onclick="submitForm('cuoi')">📤 Nộp phiếu cuối năm</button>
+</div>
+
+<!-- ══════════ KẾT QUẢ ══════════ -->
+<div class="page" id="page-kq">
+  <div class="sec-label">📊 Dữ liệu từ Google Sheets</div>
+  <div class="note-box"><strong>💡 Lưu ý:</strong> Cần nhập URL Apps Script ở tab ⚙️ Cài đặt trước. Dữ liệu được kéo trực tiếp từ Google Sheets thực tế.</div>
+  <button onclick="fetchAndRender()" style="width:100%;padding:11px;background:var(--navy);color:#fff;border:none;border-radius:11px;font-family:inherit;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:12px;">
+    🔄 Tải dữ liệu từ Google Sheets
+  </button>
+  <div id="kq-area"><div style="text-align:center;color:var(--muted);font-size:.82rem;padding:20px;">Bấm nút trên để tải dữ liệu thực tế từ Sheets.</div></div>
+</div>
+
+<script>
+// ── URL lưu trong localStorage ─────────────────────────────
+const LS_KEY = 'khtn7_script_url';
+let SCRIPT_URL = localStorage.getItem(LS_KEY) || '';
+document.getElementById('apps-script-url').value = SCRIPT_URL;
+
+function saveUrl() {
+  const val = document.getElementById('apps-script-url').value.trim();
+  if (!val.startsWith('https://script.google.com')) {
+    document.getElementById('url-status').innerHTML = '<span style="color:red">❌ URL không hợp lệ. Phải bắt đầu bằng https://script.google.com</span>';
+    return;
+  }
+  SCRIPT_URL = val;
+  localStorage.setItem(LS_KEY, val);
+  document.getElementById('url-status').innerHTML = '<span style="color:var(--green)">✅ Đã lưu! Đang kiểm tra kết nối...</span>';
+  // Test ping
+  fetch(SCRIPT_URL + '?test=1').then(()=>{
+    document.getElementById('url-status').innerHTML = '<span style="color:var(--green)">✅ Kết nối thành công! Sẵn sàng nhận phiếu.</span>';
+    document.getElementById('dot-setup').classList.add('done');
+  }).catch(()=>{
+    document.getElementById('url-status').innerHTML = '<span style="color:orange">⚠️ Đã lưu nhưng chưa kiểm tra được (bình thường nếu chưa triển khai).</span>';
+  });
+}
+
+function copyScript() {
+  const code = document.getElementById('script-code').innerText;
+  navigator.clipboard.writeText(code).then(()=>{
+    document.getElementById('copy-btn').textContent = '✅ Đã sao chép!';
+    setTimeout(()=>document.getElementById('copy-btn').textContent='📋 Sao chép',2000);
+  });
+}
+
+// ── Tab switching ──────────────────────────────────────────
+function switchTab(t) {
+  ['dau','cuoi','kq','setup'].forEach(x=>{
+    document.getElementById('page-'+x).classList.remove('active');
+    document.getElementById('tab-'+x).classList.remove('active');
+  });
+  document.getElementById('page-'+t).classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+}
+
+function markOk(id) { document.getElementById(id).classList.add('answered'); }
+
+function calcProg(form) {
+  const names = form==='dau'
+    ? ['dq1','dq2','dq3','dq4','dq5','dl1','dl2','dl3']
+    : ['cq1','cq2','cq3','cq4','cq5','cl1','cl2','cl3'];
+  let done = 0;
+  names.forEach(n=>{ if(document.querySelector(`input[name="${n}"]:checked`)) done++; });
+  document.getElementById('prog-'+form).style.width = Math.round(done/names.length*100)+'%';
+}
+
+function getV(name) {
+  const el = document.querySelector(`input[name="${name}"]:checked`);
+  return el ? el.value : '';
+}
+
+// ── Submit ─────────────────────────────────────────────────
+async function submitForm(form) {
+  const isD = form === 'dau';
+  const ten = document.getElementById(isD?'d-ten':'c-ten').value.trim();
+  const lop = document.getElementById(isD?'d-lop':'c-lop').value;
+
+  if (!ten) { alert('⚠️ Vui lòng nhập họ tên!'); return; }
+  if (!lop) { alert('⚠️ Vui lòng chọn lớp!'); return; }
+
+  const prefix = isD ? 'd' : 'c';
+  const lPrefix = isD ? 'dl' : 'cl';
+
+  const payload = {
+    loai: form,
+    thoiGian: new Date().toLocaleString('vi-VN'),
+    ten, lop,
+    q1: getV(prefix+'q1'), q2: getV(prefix+'q2'),
+    q3: getV(prefix+'q3'), q4: getV(prefix+'q4'), q5: getV(prefix+'q5'),
+    l1: getV(lPrefix+'1'), l2: getV(lPrefix+'2'), l3: getV(lPrefix+'3'),
+    l4: getV(lPrefix+'4'), l5: getV(lPrefix+'5'),
+  };
+
+  const btn = document.getElementById('btn-'+form);
+
+  if (!SCRIPT_URL) {
+    // Offline mode: lưu local
+    const stored = JSON.parse(localStorage.getItem('khtn7_'+form)||'[]');
+    stored.push(payload);
+    localStorage.setItem('khtn7_'+form, JSON.stringify(stored));
+    document.getElementById('dot-'+form).classList.add('done');
+    alert(`✅ Đã lưu phiếu của ${ten}!\n\n⚠️ Chưa có URL Sheets nên lưu tạm trên máy này.\nVào ⚙️ Cài đặt để kết nối Google Sheets.`);
+    return;
+  }
+
+  // Online mode
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Đang gửi...';
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    document.getElementById('dot-'+form).classList.add('done');
+    btn.innerHTML = '✅ Đã nộp thành công!';
+    btn.style.background = 'linear-gradient(135deg,var(--green),#2ecc71)';
+    alert(`🎉 Cảm ơn ${ten}!\nPhiếu đã được gửi vào Google Sheets thành công.`);
+  } catch(e) {
+    btn.disabled = false;
+    btn.innerHTML = '📤 Nộp phiếu ' + (isD ? 'đầu năm' : 'cuối năm');
+    alert('❌ Lỗi kết nối. Kiểm tra URL hoặc internet.');
+  }
+}
+
+// ── Fetch & Render từ Sheets ───────────────────────────────
+async function fetchAndRender() {
+  const area = document.getElementById('kq-area');
+  if (!SCRIPT_URL) {
+    // Dùng dữ liệu local nếu chưa có Sheets
+    const dn = JSON.parse(localStorage.getItem('khtn7_dau')||'[]');
+    const cn = JSON.parse(localStorage.getItem('khtn7_cuoi')||'[]');
+    renderDashboard(dn, cn, area);
+    return;
+  }
+  area.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:.82rem;"><span class="spinner" style="border-color:rgba(27,58,107,.3);border-top-color:var(--navy);"></span> Đang tải từ Google Sheets...</div>';
+  try {
+    const res = await fetch(SCRIPT_URL);
+    const data = await res.json();
+    const dn = (data.DauNam||[]).slice(1).map(r=>({ten:r[1],lop:r[2],q1:+r[3],q2:+r[4],q3:+r[5],q4:r[6],q5:+r[7],l1:+r[8],l2:+r[9],l3:+r[10],l4:+r[11],l5:+r[12]}));
+    const cn = (data.CuoiNam||[]).slice(1).map(r=>({ten:r[1],lop:r[2],q1:+r[3],q2:r[4],q3:+r[5],q4:+r[6],q5:+r[7],l1:+r[8],l2:+r[9],l3:+r[10],l4:+r[11],l5:+r[12]}));
+    renderDashboard(dn, cn, area);
+  } catch(e) {
+    area.innerHTML = '<div class="note-box">❌ Không tải được dữ liệu. Kiểm tra URL và quyền truy cập Sheets.</div>';
+  }
+}
+
+function pct(arr, key, vals) {
+  if(!arr.length) return 0;
+  const v = Array.isArray(vals)?vals:[vals];
+  return Math.round(arr.filter(x=>v.includes(x[key])).length/arr.length*100);
+}
+function avgL(arr, key) {
+  if(!arr.length) return '–';
+  return (arr.reduce((s,x)=>s+(+x[key]||0),0)/arr.length).toFixed(1);
+}
+
+function renderDashboard(dn, cn, area) {
+  const nd=dn.length, nc=cn.length;
+  if(!nd && !nc){ area.innerHTML='<div class="note-box">Chưa có dữ liệu. Thu thập phiếu từ học sinh trước!</div>'; return; }
+
+  const dHung = pct(dn,'q1',[3,4]);
+  const cHung = pct(cn,'q1',[3,4]);
+  const dTT   = pct(dn,'q2',[3,4]);
+  const cTT   = pct(cn,'q3',[3,4]);
+  const dOn   = pct(dn,'q3',[3,4]);
+  const cOn   = pct(cn,'q3',[3,4]);
+  const dHL   = Math.round(dn.filter(x=>x.l5>=4).length/Math.max(nd,1)*100);
+  const cHL   = Math.round(cn.filter(x=>x.l5>=4).length/Math.max(nc,1)*100);
+  const dMuon = pct(dn,'q5',[3,4]);
+
+  // Công cụ hiệu quả nhất
+  const tools = {Quiz:0, Vòng:0, Slide:0, Sơ:0};
+  cn.forEach(x=>{
+    if((x.q2||'').includes('Quiz')) tools.Quiz++;
+    else if((x.q2||'').includes('quay')) tools.Vòng++;
+    else if((x.q2||'').includes('Slide')) tools.Slide++;
+    else tools.Sơ++;
+  });
+
+  function barCmp(lbl, b, a) {
+    const d = a - b;
+    return `<div style="margin-bottom:13px;">
+      <div style="font-size:.73rem;font-weight:600;margin-bottom:4px;">${lbl}</div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;">
+        <div style="font-size:.65rem;color:var(--orange);width:62px;flex-shrink:0;">Đầu năm</div>
+        <div style="flex:1;background:var(--bg);border-radius:4px;height:16px;overflow:hidden;">
+          <div style="width:${b}%;height:100%;background:linear-gradient(90deg,#e07b30,#f0a060);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:4px;">
+            <span style="font-size:.6rem;color:#fff;font-weight:700;">${b}%</span></div></div></div>
+      <div style="display:flex;align-items:center;gap:5px;">
+        <div style="font-size:.65rem;color:var(--green);width:62px;flex-shrink:0;">Cuối năm</div>
+        <div style="flex:1;background:var(--bg);border-radius:4px;height:16px;overflow:hidden;">
+          <div style="width:${a}%;height:100%;background:linear-gradient(90deg,var(--green),#2ecc71);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:4px;">
+            <span style="font-size:.6rem;color:#fff;font-weight:700;">${a}%</span></div></div>
+        <div style="font-size:.7rem;font-weight:800;color:${d>=0?'var(--green)':'#c0392b'};width:34px;text-align:right;">${d>=0?'+':''}${d}%</div>
+      </div></div>`;
+  }
+
+  function barS(lbl, val, color) {
+    return `<div class="bar-row"><div class="bar-lbl">${lbl}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${val}%;background:${color};">
+        ${val>8?`<span>${val}%</span>`:''}</div></div>
+      <div class="bar-cnt">${val}%</div></div>`;
+  }
+
+  area.innerHTML = `
+    <div class="result-hero">
+      <div class="icon">📊</div>
+      <h2>Kết quả Khảo sát Thực tế</h2>
+      <p>Đầu năm: <strong>${nd} phiếu</strong> &nbsp;|&nbsp; Cuối năm: <strong>${nc} phiếu</strong></p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">${nd}</div><div class="lbl">Phiếu đầu năm</div></div>
+      <div class="stat-card"><div class="num">${nc}</div><div class="lbl">Phiếu cuối năm</div></div>
+      <div class="stat-card"><div class="num" style="color:var(--green)">+${Math.max(0,cHung-dHung)}%</div><div class="lbl">Tăng hứng thú</div></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">📈 So sánh chỉ số chính: Đầu năm vs Cuối năm</div>
+      ${barCmp('Mức hứng thú cao (chọn 3–4)',dHung,cHung)}
+      ${barCmp('Tập trung tốt trong giờ học',dTT,cTT)}
+      ${barCmp('Tự ôn bài ở nhà',dOn,cOn)}
+      ${barCmp('Hài lòng với giờ học',dHL,cHL)}
+    </div>
+    ${nd?`<div class="chart-card">
+      <div class="chart-title">🔥 Đầu năm: HS muốn có công cụ tương tác (${dMuon}% đồng ý)</div>
+      ${barS('Không cần (1)', pct(dn,'q5',[1]),'#e74c3c')}
+      ${barS('Tùy (2)', pct(dn,'q5',[2]),'#e67e22')}
+      ${barS('Có cũng được (3)', pct(dn,'q5',[3]),'#3498db')}
+      ${barS('Rất muốn! (4)', pct(dn,'q5',[4]),'var(--green)')}
+    </div>`:''}
+    ${nc?`<div class="chart-card">
+      <div class="chart-title">🏆 Cuối năm: Công cụ hiệu quả nhất theo bình chọn</div>
+      ${barS('📱 Quiz trực tuyến', nc?Math.round(tools.Quiz/nc*100):0,'var(--navy)')}
+      ${barS('🎡 Vòng quay may mắn', nc?Math.round(tools.Vòng/nc*100):0,'var(--orange)')}
+      ${barS('📺 Slide bài giảng', nc?Math.round(tools.Slide/nc*100):0,'var(--purple)')}
+      ${barS('🗺 Sơ đồ tư duy', nc?Math.round(tools.Sơ/nc*100):0,'var(--green)')}
+    </div>`:''}
+    <div class="compare-grid">
+      <div class="cc before"><div class="cc-lbl">📍 Đầu năm</div>
+        <div class="cc-row"><div class="ct">Hứng thú học</div><div class="cv">${dHung}%</div></div>
+        <div class="cc-row"><div class="ct">Tập trung tốt</div><div class="cv">${dTT}%</div></div>
+        <div class="cc-row"><div class="ct">Tự ôn bài</div><div class="cv">${dOn}%</div></div>
+        <div class="cc-row"><div class="ct">Hài lòng GH</div><div class="cv">${dHL}%</div></div>
+        <div class="cc-row"><div class="ct">Muốn CN số</div><div class="cv">${dMuon}%</div></div>
+      </div>
+      <div class="cc after"><div class="cc-lbl">✅ Cuối năm</div>
+        <div class="cc-row"><div class="ct">Hứng thú học</div><div class="cv">${nc?cHung+'%':'–'}</div></div>
+        <div class="cc-row"><div class="ct">Tập trung tốt</div><div class="cv">${nc?cTT+'%':'–'}</div></div>
+        <div class="cc-row"><div class="ct">Tự ôn bài</div><div class="cv">${nc?cOn+'%':'–'}</div></div>
+        <div class="cc-row"><div class="ct">Hài lòng GH</div><div class="cv">${nc?cHL+'%':'–'}</div></div>
+        <div class="cc-row"><div class="ct">Cải thiện rõ</div><div class="cv">${nc?(cHung>dHung?'✅ Có':'—'):'–'}</div></div>
+      </div>
+    </div>
+    <button class="export-btn" onclick="window.print()">🖨 In / Chụp màn hình đính SKKN</button>
+    <div style="height:20px"></div>`;
+}
+</script>
+</body>
+</html>
